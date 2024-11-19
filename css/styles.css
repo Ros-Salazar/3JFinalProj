@@ -163,10 +163,20 @@ body {
     color: #fff !important;
     transition: all 0.3s ease;
     position: relative;
-    opacity: 1;
 }
 
-/* Text change animations */
+/* Add gradient text effect for all states */
+.navbar-brand, 
+.navbar-brand.scrolled,
+.navbar.scrolled .navbar-brand {
+    background:  #d4af37;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Keep the animations */
 .navbar-brand.fade-in {
     animation: textFadeIn 0.5s ease forwards;
 }
