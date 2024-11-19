@@ -165,22 +165,160 @@
             <h2 class="text-center mb-5">What Our Clients Say</h2>
             <div class="row">
                 <!-- Testimonial 1 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card testimonial-card">
-                        <div class="card-body text-center">
-                            <img src="https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="rounded-circle mb-3" alt="Client">
-                            <h5 class="card-title">Drew Hays</h5>
-                            <p class="card-text">"Amazing experience! The therapists are very professional."</p>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                    <div class="col-md-4 mb-4">
+                        <div class="card testimonial-card">
+                            <div class="card-body text-center">
+                                <img src="https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="rounded-circle mb-3" alt="Client">
+                                <h5 class="card-title">Drew Hays</h5>
+                                <p class="card-text">"Amazing experience! The therapists are very professional."</p>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card testimonial-card">
+                            <div class="card-body text-center">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80" class="rounded-circle mb-3" alt="Client">
+                                <h5 class="card-title">Sarah Johnson</h5>
+                                <p class="card-text">"The deep tissue massage was exactly what I needed. Highly recommended!"</p>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card testimonial-card">
+                            <div class="card-body text-center">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e" class="rounded-circle mb-3" alt="Client">
+                                <h5 class="card-title">Michael Chen</h5>
+                                <p class="card-text">"Regular sports massages have significantly improved my performance!"</p>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 4 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card testimonial-card">
+                            <div class="card-body text-center">
+                                <img src="https://images.pexels.com/photos/12846223/pexels-photo-12846223.jpeg?auto=compress&cs=tinysrgb&w=600" class="rounded-circle mb-3" alt="Client">
+                                <h5 class="card-title">Maricel Santos</h5>
+                                <p class="card-text">"Ang galing ng couples massage sis! Perfect para sa anniversary namin. Sobrang relaxing!"</p>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 5 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card testimonial-card">
+                            <div class="card-body text-center">
+                                <img src="https://images.pexels.com/photos/3155723/pexels-photo-3155723.jpeg?auto=compress&cs=tinysrgb&w=600" class="rounded-circle mb-3" alt="Client">
+                                <h5 class="card-title">Jun Reyes</h5>
+                                <p class="card-text">"Nawala ang chronic back pain ko. Salamat sa mga therapist, ang ganda ni ate kaya full five stars!"</p>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 6 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card testimonial-card">
+                            <div class="card-body text-center">
+                                <img src="https://images.pexels.com/photos/4815216/pexels-photo-4815216.png?auto=compress&cs=tinysrgb&w=600" class="rounded-circle mb-3" alt="Client">
+                                <h5 class="card-title">Ana Dela Cruz</h5>
+                                <p class="card-text">"Best spa sa area! Napaka-professional ng staff d tulad ng mga taga mcdo char. napaka-relaxing ng ambiance."</p>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 7 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card testimonial-card">
+                            <div class="card-body text-center">
+                                <img src="https://images.pexels.com/photos/3031774/pexels-photo-3031774.jpeg?auto=compress&cs=tinysrgb&w=600" class="rounded-circle mb-3" alt="Client">
+                                <h5 class="card-title">Paolo Mendoza</h5>
+                                <p class="card-text">"Perfect ang chair massage para sa busy schedule ko. sana ibenta nila sakin to HAHAHAHA"</p>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 8 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card testimonial-card">
+                            <div class="card-body text-center">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdNIrNbiiPAgB_-pD5W0mVgEN0kFSGxdfiHW_wF-iOLJWmCFyr6A6mMYjmUYWglMxifFc&usqp=CAU" class="rounded-circle mb-3" alt="Client">
+                                <h5 class="card-title">Bos sing Labn Kha</h5>
+                                <p class="card-text">"Halluh!!!! infairness sya sis, super worth it, Grabe bhi, maganda....."</p>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 9 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card testimonial-card">
+                            <div class="card-body text-center">
+                                <img src="https://images.pexels.com/photos/5063434/pexels-photo-5063434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="rounded-circle mb-3" alt="Client">
+                                <h5 class="card-title">Yuki Tanaka</h5>
+                                <p class="card-text">"とてもリラックスできました！スタッフの皆さんがとても親切で、マッサージも最高でした。また来ます！"</p>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
                 <!-- we can add more testimonials here -->
             </div>
         </div>
