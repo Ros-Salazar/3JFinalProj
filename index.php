@@ -334,27 +334,102 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-light py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5>Contact Us</h5>
-                    <p>Email: info@wellness.com<br>Phone: (555) 123-4567</p>
+    <footer class="footer-premium">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row g-4">
+                    <!-- Contact Info -->
+                    <div class="col-lg-4">
+                        <div class="footer-info">
+                            <h3 class="brand-name">Serenity Spa</h3>
+                            <p class="footer-desc">Where tranquility meets luxury. Experience the perfect blend of traditional techniques and modern wellness solutions.</p>
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>123 Wellness Street, Metro Manila, Philippines</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <span>+63 912 345 6789</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>info@serenityspa.ph</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Links -->
+                    <div class="col-lg-4">
+                        <div class="quick-links">
+                            <h4>Quick Links</h4>
+                            <div class="links-grid">
+                                <a href="#" class="link-item">
+                                    <i class="fas fa-spa"></i>
+                                    <span>Our Services</span>
+                                </a>
+                                <a href="#" class="link-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>Book Appointment</span>
+                                </a>
+                                <a href="#" class="link-item">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>About Us</span>
+                                </a>
+                                <a href="#" class="link-item">
+                                    <i class="fas fa-gift"></i>
+                                    <span>Gift Cards</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media & Newsletter -->
+                    <div class="col-lg-4">
+                        <div class="social-newsletter">
+                            <h4>Connect With Us</h4>
+                            <div class="social-links">
+                                <a href="#" class="social-icon facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-icon instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="social-icon twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-icon tiktok">
+                                    <i class="fab fa-tiktok"></i>
+                                </a>
+                            </div>
+                            <div class="newsletter-signup">
+                                <h5>Subscribe to Our Newsletter</h5>
+                                <form class="newsletter-form">
+                                    <div class="input-group">
+                                        <input type="email" class="form-control" placeholder="Enter your email">
+                                        <button class="btn btn-primary" type="submit">
+                                            <i class="fas fa-paper-plane"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-light">Services</a></li>
-                        <li><a href="#" class="text-light">Book Appointment</a></li>
-                        <li><a href="#" class="text-light">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Follow Us</h5>
-                    <div class="social-links">
-                        <a href="#" class="text-light me-2"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-light me-2"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-light me-2"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="copyright">© 2024 Serenity Spa. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-links">
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms of Service</a>
+                        </div>
                     </div>
                 </div>
             </div>
