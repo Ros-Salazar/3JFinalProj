@@ -1,0 +1,131 @@
+/* General Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    background-image: url("https://images.pexels.com/photos/10894308/pexels-photo-10894308.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding: 0;
+    height: 100vh;
+    min-height: 600px;
+}
+
+.hero-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
+}
+
+.hero-section .container {
+    z-index: 1;
+}
+
+.hero-content {
+    padding: 3rem;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.1);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-section h1 {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-size: 3.5rem;
+}
+
+.hero-section .lead {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+.hero-buttons .btn {
+    padding: 12px 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.hero-buttons .btn-primary {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.hero-buttons .btn-primary:hover {
+    background-color: #218838;
+    border-color: #218838;
+    transform: translateY(-2px);
+}
+
+.hero-buttons .btn-outline-light:hover {
+    background-color: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+}
+
+/* Service Cards */
+.service-card {
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.price {
+    font-size: 1.25rem;
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+    height: 100%;
+}
+
+.testimonial-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.stars {
+    color: #ffc107;
+}
+
+/* CTA Section */
+.cta-section {
+    background-color: #f8f9fa;
+}
+
+/* Custom Button Styles */
+.btn-primary {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+    border-color: #218838;
+}
+
+/* Social Links */
+.social-links a {
+    font-size: 1.5rem;
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    opacity: 0.8;
+}
