@@ -10,20 +10,22 @@
     <link href="css/styles.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Manhattan Font -->
+    <link href="https://fonts.cdnfonts.com/css/manhattan-darling" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" href="#">Wellness Center</a>
+            <a class="navbar-brand" href="#">Serenity Spa</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Book Now</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.php">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.php">Book Now</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
                 </ul>
             </div>
@@ -34,14 +36,14 @@
     <header class="hero-section">
         <div class="overlay"></div>
         <div class="container position-relative">
-            <div class="row min-vh-75 align-items-center">
-                <div class="col-lg-6">
+            <div class="row min-vh-75 align-items-center justify-content-center text-center">
+                <div class="col-lg-10">
                     <div class="hero-content">
-                        <h1 class="display-4 fw-bold mb-4 text-white">Your Wellness Journey Starts Here</h1>
-                        <p class="lead text-white mb-4">Experience tranquility and rejuvenation with our premium wellness services. Let our expert therapists guide you to ultimate relaxation.</p>
+                        <h1 class="mb-4 text-white">Your Wellness Journey Starts Here</h1>
+                        <p class="lead text-white mb-5">Experience tranquility and rejuvenation with our premium wellness services. Let our expert therapists guide you to ultimate relaxation.</p>
                         <div class="hero-buttons">
-                            <a href="booking.php" class="btn btn-primary btn-lg me-3 px-4">Book Now</a>
-                            <a href="services.php" class="btn btn-outline-light btn-lg px-4">View Services</a>
+                            <a href="booking.php" class="btn btn-primary btn-lg me-3">Book Now</a>
+                            <a href="services.php" class="btn btn-outline-light btn-lg">View Services</a>
                         </div>
                     </div>
                 </div>
@@ -66,7 +68,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Add more service cards here -->
+                <!-- we can add more service cards here -->
             </div>
         </div>
     </section>
@@ -93,7 +95,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Add more testimonials here -->
+                <!-- we can add more testimonials here -->
             </div>
         </div>
     </section>
@@ -137,5 +139,6 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/navigation.js"></script>
 </body>
 </html>

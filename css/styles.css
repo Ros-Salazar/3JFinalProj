@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Manhattan Darling', sans-serif;
     color: #333;
 }
 
@@ -11,7 +11,7 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    padding: 0;
+    padding:0;
     height: 100vh;
     min-height: 600px;
 }
@@ -30,30 +30,40 @@ body {
 }
 
 .hero-content {
+    position: relative;
+    margin-top: 5rem;
     padding: 3rem;
     border-radius: 15px;
     backdrop-filter: blur(5px);
-    background: rgba(255, 255, 255, 0.1);
+    /* background: rgba(255, 255, 255, 0.1); */
     max-width: 900px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 
 .hero-section h1 {
+    font-family: 'Manhattan Darling', serif;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    font-size: 3.5rem;
+    font-size: 5rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
 }
 
 .hero-section .lead {
+    font-family: 'Manhattan Darling', serif;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    font-size: 1.4rem;
+    font-size: 2rem;
     line-height: 1.6;
+    font-weight: 300;
+    letter-spacing: 0.03em;
 }
 
 .hero-buttons .btn {
-    padding: 12px 30px;
-    font-weight: 600;
+    font-family: 'Manhattan Darling', serif;
+    font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
+    padding: 12px 30px;
     transition: all 0.3s ease;
 }
 
@@ -128,4 +138,122 @@ body {
 
 .social-links a:hover {
     opacity: 0.8;
+}
+
+/* Navigation Styles */
+.navbar {
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    padding: 1.5rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-family: 'Manhattan Darling', serif;
+    font-size: 2.5rem;
+    color: #fff !important;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar-brand::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-brand:hover::after {
+    width: 70%;
+}
+
+.navbar.scrolled .navbar-brand::after {
+    background-color: #333;
+}
+
+.navbar.scrolled .navbar-brand {
+    color: #333 !important;
+}
+
+.nav-link {
+    font-family: 'Manhattan Darling', serif;
+    color: #fff !important;
+    font-size: 1.4rem;
+    padding: 0.5rem 1.5rem !important;
+    margin: 0 0.2rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar.scrolled .nav-link {
+    color: #333 !important;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar.scrolled .nav-link::after {
+    background-color: #333;
+}
+
+.nav-link:hover::after {
+    width: 70%;
+}
+
+/* Mobile Navigation */
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar.scrolled .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+    }
+    
+    .nav-link {
+        color: #333 !important;
+    }
+    
+    .nav-link::after {
+        background-color: #333;
+    }
 }
