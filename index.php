@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Manhattan Font -->
     <link href="https://fonts.cdnfonts.com/css/manhattan-darling" rel="stylesheet">
+
+
+
+    <link rel="icon" type="image/png" href="images/logo_favicon.png">
+    <!-- For Apple devices -->
+    <link rel="apple-touch-icon" href="images/logo_favicon.png">
 </head>
 <body>
     <!-- Navigation -->

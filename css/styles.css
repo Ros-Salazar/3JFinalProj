@@ -163,6 +163,9 @@ body {
     color: #fff !important;
     transition: all 0.3s ease;
     position: relative;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
 /* Add gradient text effect for all states */
@@ -218,7 +221,7 @@ body {
     height: 2px;
     bottom: 0;
     left: 50%;
-    background-color: #fff;
+    background-color: #d4af37;
     transition: all 0.3s ease;
     transform: translateX(-50%);
 }
@@ -228,7 +231,7 @@ body {
 }
 
 .navbar.scrolled .navbar-brand::after {
-    background-color: #333;
+    background-color: #d4af37;
 }
 
 .navbar.scrolled .navbar-brand {
@@ -569,4 +572,38 @@ body {
         justify-content: flex-start;
         margin-top: 15px;
     }
+}
+
+/* Add specific styling for "Our Services" and "Testimonials" nav links */
+.nav-link[data-section="services"]::after,
+.nav-link[data-section="testimonials"]::after {
+    background-color: #d4af37 !important;
+}
+
+/* Keep other nav links with original white/dark underline */
+.nav-link:not([data-section="services"]):not([data-section="testimonials"])::after {
+    background-color: #fff;
+}
+
+.navbar.scrolled .nav-link:not([data-section="services"]):not([data-section="testimonials"])::after {
+    background-color: #333;
+}
+
+.navbar-logo {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    opacity: 1 !important;
+}
+
+.brand-text {
+    transition: opacity 0.5s ease;
+}
+
+.brand-text.fade-out {
+    opacity: 0;
+}
+
+.brand-text.fade-in {
+    opacity: 1;
 }
