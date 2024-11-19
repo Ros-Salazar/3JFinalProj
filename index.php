@@ -39,6 +39,7 @@
             <div class="row min-vh-75 align-items-center justify-content-center text-center">
                 <div class="col-lg-10">
                     <div class="hero-content">
+                        <!-- Website Title and desc: We can change this. -->
                         <h1 class="mb-4 text-white">Your Wellness Journey Starts Here</h1>
                         <p class="lead text-white mb-5">Experience tranquility and rejuvenation with our premium wellness services. Let our expert therapists guide you to ultimate relaxation.</p>
                         <div class="hero-buttons">
@@ -54,7 +55,7 @@
     <!-- Services Overview -->
     <section class="services-section py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Our Services</h2>
+            <h2 class="text-center mb-5">What we offer</h2>
             <div class="carousel-container">
                 <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -142,6 +143,8 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- We can add more services here if we want to. -->
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -165,8 +168,8 @@
                 <div class="col-md-4 mb-4">
                     <div class="card testimonial-card">
                         <div class="card-body text-center">
-                            <img src="/images/client1.jpg" class="rounded-circle mb-3" alt="Client">
-                            <h5 class="card-title">John Doe</h5>
+                            <img src="https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="rounded-circle mb-3" alt="Client">
+                            <h5 class="card-title">Drew Hays</h5>
                             <p class="card-text">"Amazing experience! The therapists are very professional."</p>
                             <div class="stars">
                                 <i class="fas fa-star"></i>

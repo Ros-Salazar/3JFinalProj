@@ -163,6 +163,42 @@ body {
     color: #fff !important;
     transition: all 0.3s ease;
     position: relative;
+    opacity: 1;
+}
+
+/* Text change animations */
+.navbar-brand.fade-in {
+    animation: textFadeIn 0.5s ease forwards;
+}
+
+.navbar-brand.fade-out {
+    animation: textFadeOut 0.5s ease forwards;
+}
+
+@keyframes textFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+        filter: blur(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes textFadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+        filter: blur(5px);
+    }
 }
 
 .navbar-brand::after {
