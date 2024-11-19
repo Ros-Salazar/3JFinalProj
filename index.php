@@ -55,20 +55,103 @@
     <section class="services-section py-5">
         <div class="container">
             <h2 class="text-center mb-5">Our Services</h2>
-            <div class="row">
-                <!-- Service Card 1 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card service-card">
-                        <img src="/images/service1.jpg" class="card-img-top" alt="Massage Therapy">
-                        <div class="card-body">
-                            <h5 class="card-title">Massage Therapy</h5>
-                            <p class="card-text">Relax and rejuvenate with our therapeutic massage services.</p>
-                            <p class="price">From 350 PHP</p>
-                            <a href="#" class="btn btn-primary">Book Now</a>
+            <div class="carousel-container">
+                <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <!-- Service 1 -->
+                        <div class="carousel-item active">
+                            <div class="card service-card">
+                                <div class="card-img-wrapper">
+                                    <img src="https://images.pexels.com/photos/6560304/pexels-photo-6560304.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Swedish Massage">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Swedish Massage</h5>
+                                    <p class="card-text">A classic stress-relieving massage using smooth flowing techniques.</p>
+                                    <p class="price">₱450</p>
+                                    <a href="booking.php" class="btn btn-primary">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Service 2 -->
+                        <div class="carousel-item">
+                            <div class="card service-card">
+                                <div class="card-img-wrapper">
+                                    <img src="https://images.pexels.com/photos/275768/pexels-photo-275768.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Sports Massage">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Sports Massage</h5>
+                                    <p class="card-text">Improve recovery and flexibility while reducing injury risks.</p>
+                                    <p class="price">₱550</p>
+                                    <a href="booking.php" class="btn btn-primary">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Service 3 -->
+                        <div class="carousel-item">
+                            <div class="card service-card">
+                                <div class="card-img-wrapper">
+                                    <img src="https://images.pexels.com/photos/6193357/pexels-photo-6193357.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Trigger Point Therapy">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Trigger Point Therapy</h5>
+                                    <p class="card-text">Release bound muscles causing pain or decreased motion range.</p>
+                                    <p class="price">₱600</p>
+                                    <a href="booking.php" class="btn btn-primary">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Service 4 -->
+                        <div class="carousel-item">
+                            <div class="card service-card">
+                                <div class="card-img-wrapper">
+                                    <img src="https://images.pexels.com/photos/7365442/pexels-photo-7365442.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Couples Massage">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Couples Massage</h5>
+                                    <p class="card-text">Share a relaxing experience with your loved one in our premium couples suite.</p>
+                                    <p class="price">₱900</p>
+                                    <a href="booking.php" class="btn btn-primary">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Service 5 -->
+                        <div class="carousel-item">
+                            <div class="card service-card">
+                                <div class="card-img-wrapper">
+                                    <img src="https://images.pexels.com/photos/10893352/pexels-photo-10893352.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Deep Tissue Massage">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Deep Tissue Massage</h5>
+                                    <p class="card-text">Intense pressure targeting chronic muscle tension and knots.</p>
+                                    <p class="price">₱650</p>
+                                    <a href="booking.php" class="btn btn-primary">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Service 6 -->
+                        <div class="carousel-item">
+                            <div class="card service-card">
+                                <div class="card-img-wrapper">
+                                    <img src="https://images.pexels.com/photos/4085448/pexels-photo-4085448.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Chair Massage">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Chair Massage</h5>
+                                    <p class="card-text">Quick and effective relief for neck, shoulder, and back tension.</p>
+                                    <p class="price">₱300</p>
+                                    <a href="booking.php" class="btn btn-primary">Book Now</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-                <!-- we can add more service cards here -->
             </div>
         </div>
     </section>
