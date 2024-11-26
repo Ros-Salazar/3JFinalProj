@@ -50,15 +50,12 @@
             $email = $_POST["email"];
             $password = $_POST["password"];
 
-            // Hash the password
-            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
             // Check with database
             $email_sql = "SELECT * FROM users WHERE email = '$email'";
             $email_result = $conn -> query($email_sql);
 
             if ($email_result -> num_rows > 0) {
-                $row = $result -> fetch_assoc();
+                $row = $email_result -> fetch_assoc();
                 // Verify password
                 if (password_verify($password, $row['password'])) {
                     // Login successful
@@ -66,7 +63,8 @@
                     exit();
                 } else {
                     // Incorrect password
-                    echo "Incorrect password. Please try again.";
+                    echo $hashed_password;
+                    echo "<br>Incorrect password. Please try again.";
                 }
 
                 // Store user information in session
@@ -77,8 +75,7 @@
                 $_SESSION["role"] = $row["role"];
             } else {
                 // User not found
-                echo "";
-                echo "User not found. Please register.";
+                echo "<br>User not found. Please register.";
             }       
             $conn -> close(); 
         }

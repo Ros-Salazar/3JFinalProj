@@ -58,7 +58,7 @@
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
             // Check with database
-            $check_sql = "SELECT COUNT(*) FROM users WHERE email = '$email'";
+            $check_sql = "SELECT * FROM users WHERE email = '$email'";
             $check_result = $conn -> query($check_sql);
 
             if ($check_result -> num_rows > 0) {
@@ -66,13 +66,14 @@
             } else {
                 // Insert the user into the database
                 $register_sql = "INSERT INTO users (full_name, email, phone_number, password, role, created_at) 
-                VALUES ('$full_name', '$email', '$phone_number', '$password', 'customer', NOW())";
+                VALUES ('$full_name', '$email', '$phone_number', '$hashed_password', 'customer', NOW())";
+                $register_result = $conn -> query($register_sql);
                 
                 if ($register_result) {
                     // Registration successful
                     echo "";
                     echo "Registration successful";
-                    header("Location: login-page.php");
+                    header("Location: login.php");
                     exit();
                 } else {
                     // Registration failed
