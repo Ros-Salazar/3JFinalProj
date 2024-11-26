@@ -6,6 +6,8 @@
     <title>Dashboard</title>
 </head>
 <body>
-    
+    <!-- Quick back to home while developing -->
+    <br><br><br>
+    <p><a href="index.php">Home</a></p>
 </body>
 </html>
