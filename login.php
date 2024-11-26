@@ -14,6 +14,23 @@
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
         <br>
+        <input type="checkbox" id="show-password">
+        <label for="show-password">Show Password</label>
+
+        <script>
+            const passwordInput = document.getElementById('password');
+            const showPasswordCheckbox = document.getElementById('show-password');
+
+            showPasswordCheckbox.addEventListener('change',() => {
+                if (showPasswordCheckbox.checked) {
+                    passwordInput.type = 'text';
+                } else {
+                    passwordInput.type = 'password';
+                }
+            });
+        </script>
+
+        <br><br>
         <button type="submit">Login</button>
     </form>
 
