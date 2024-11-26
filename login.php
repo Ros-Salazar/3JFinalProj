@@ -38,6 +38,9 @@
         // Connect to database
         include 'database.php';
 
+        // Start user session
+        session_start();
+
         // For debugging
         error_reporting(E_ALL);
         ini_set('display_errors', '1');
@@ -65,6 +68,13 @@
                     // Incorrect password
                     echo "Incorrect password. Please try again.";
                 }
+
+                // Store user information in session
+                $_SESSION["logged_in"] = true;
+                $_SESSION["email"] = $email;
+                $_SESSION["user_id"] = $row["user_id"];
+                $_SESSION["full_name"] = $row["full_name"];
+                $_SESSION["role"] = $row["role"];
             } else {
                 // User not found
                 echo "";
