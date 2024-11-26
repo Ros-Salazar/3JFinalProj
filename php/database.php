@@ -2,7 +2,7 @@
     // Initialization and declaration of variables
     $servername = "localhost";
     $username = "root";
-    $password = "*****";
+    $password = "Deuter0n0my318";
     $databasename = "establishment_db";
 
     // Connect to MySQL database

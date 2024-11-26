@@ -1,15 +1,17 @@
 <?php
-    // Connect the database
+    // Connect to database
     include 'database.php';
 
-    // Get customer data
+    // Get data
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $serviceId = $_POST['service'];
-        $therapistId = $_POST['therapist'];
-        $date = $_POST['date'];
-        $time = $_POST['time'];
-        $customerName = $_POST['customer_name'];
-        $customerEmail = $_POST['customer_email'];
+        $user_id = $_POST['user_id'];
+        $service_id = $_POST['service'];
+        $therapist_id = $_POST['therapist'];
+        $appointment_date = $_POST['date'];
+        $start_time = $_POST['start_time'];
+        $end_time = $_POST['end_time'];
+        $status = 'pending';
+        $created_at = $_POST['created_at'];
 
         // Validate form
         if (empty($serviceId) || empty($therapistId) || empty($date) || 
@@ -28,7 +30,7 @@
         //     echo "Error creating appointment: " . $conn -> error . ". Please try again.";
         // }
 
-        if ($count > 0) {
+        if ($conn -> query($check_sql) > 0) {
             // Therapist is unavailable
             echo "Sorry, the therapist is not available at that time.";
             exit;
@@ -39,15 +41,18 @@
     
             if ($conn -> query($add_sql)) {
                 echo "Appointment created successfully! Please wait for our confirmation.";
+                echo "";
+                echo "<p>Customer Name: " . $full_name . "</p>";
+                echo "<p>Customer Email: " . $email . "</p>";
+                echo "<p>Service: " . $service_id . "</p>";
+                echo "<p>Therapist: " . $therapist_id . "</p>";
+                echo "<p>Appointment Date: " . $appointment_date . "</p>";
+                echo "<p>Start Time: " . $start_time . "</p>";
+                echo "<p>Expected End Time: " . $end_time . "</p>";
             } else {
                 echo "Error creating appointment: " . $conn -> error . ". Please try again.";
             }
         }
-
-        
     }
-
-    // Redirect to confirmation page
-    header("Location: confirmation.php");
-    $conn->close();
+    $conn -> close();
 ?>
