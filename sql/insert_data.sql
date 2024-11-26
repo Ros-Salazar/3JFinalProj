@@ -2,9 +2,15 @@ USE establishment_db;
 
 INSERT INTO users (full_name, email, phone_number, password, role, created_at)
 VALUES
-    ('Manager', 'manager@example.com', '09345678912', 'hashed_password', 'admin', '2024-11-18'),
-    ('Adam Smith', 'adamsmith@example.com', '09234567891', 'hashed_password', 'therapist', '2024-11-18'),
-    ('Eve Smith', 'evesmith@example.com', '09234567891', 'hashed_password', 'therapist', '2024-11-18'),
+    ('Manager', 'manager@example.com', '09345678912', 'Admin_101', 'admin', '2024-11-18'),
+    ('Adam Smith', 'adamsmith@example.com', '09234567891', 'Therapist_101', 'therapist', '2024-11-18'),
+    ('Bob Smith', 'bobsmith@example.com', '09234567891', 'Therapist_101', 'therapist', '2024-11-18'),
+    ('Alvaro Mauro', 'alvaromauro@example.com', '09234567891', 'Therapist_101', 'therapist', '2024-11-18'),
+    ('Reno Sanchez', 'renosanchez@example.com', '09234567891', 'Therapist_101', 'therapist', '2024-11-18'),
+    ('Eve Smith', 'evesmith@example.com', '09234567891', 'Therapist_101', 'therapist', '2024-11-18'),
+    ('Alice Smith', 'alicesmith@example.com', '09234567891', 'Therapist_101', 'therapist', '2024-11-18'),
+    ('Kaitlin Monceda', 'kaitlinmonceda@example.com', '09234567891', 'Therapist_101', 'therapist', '2024-11-18'),
+    ('Leilani Rosario', 'leilanirosario@example.com', '09234567891', 'Therapist_101', 'therapist', '2024-11-18'),
     ('John Doe', 'johndoe@example.com', '09123456789', 'hashed_password', 'customer', '2024-11-18'),
     ('Jane Doe', 'janedoe@example.com', '09123456789', 'hashed_password', 'customer', '2024-11-18');
 
@@ -13,7 +19,9 @@ VALUES
     ('Swedish Massage', 'A classic stress-relieving massage using smooth flowing techniques to promote improved circulation and relaxation.', 60, 450.00, '2024-11-18'),
     ('Sports Massage', 'Improve recovery and flexibility while reducing the risk of injuryies. This massage utilizes a mixture of techniques and myofscial release preparing the athlete for peak performance.', 60, 550.00, '2024-11-18'),
     ('Trigger Point Therapy', 'Release those bound up muscles that are causing pain or decreasing your range of motion. This specifically designed massage alleviates the source of the pain or limitation through cycles of isolated pressure and release.', 90, 600.00, '2024-11-18'),
-    ('Deep Tissue Massage', 'Slow, deep pressure with skillful hand movements targeting stressed, overworked, and knotted muscles help unlock tension while relieveing pain. An ideal massage for the active individual.', 90, 650.00, '2024-11-18');
+    ('Deep Tissue Massage', 'Slow, deep pressure with skillful hand movements targeting stressed, overworked, and knotted muscles help unlock tension while relieveing pain. An ideal massage for the active individual.', 90, 650.00, '2024-11-18'),
+    ("Chair Massage", "A quick and effective way to alleviate stress and boost energy. Our Chair Massage offers a targeted massage experience, perfect for busy individuals. Relax and rejuvenate in a comfortable seated position.", 90, 350.00, '2024-11-18'),
+    ("Couple's Massage", "Indulge in ultimate relaxation with your loved one. Our Couple's Massage offers a serene and rejuvenating experience, tailored to your preferences. Unwind together and reconnect through the soothing touch of our expert therapists.", 90, 950.00, '2024-11-18');
 
 INSERT INTO appointments (user_id, therapist_id, service_id, appointment_date, start_time, end_time, status)
 VALUES
