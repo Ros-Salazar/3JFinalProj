@@ -6,9 +6,44 @@
     <title>Booking</title>
 </head>
   <body>
+    <!-- Display services -->
+     <h2>Services</h2>
+    <table>
+        <tr>
+            <th>Service Name</th>
+            <th>Description</th>
+            <th>Pricing</th>
+        </tr>
+        <?php
+          // Connect to database
+          include "database.php";
+
+          // Get services
+          $display_sql = "SELECT * FROM services";
+          $display_result = $conn -> query($display_sql);
+
+          if ($display_result -> num_rows > 0) {
+              while ($display_row = $display_result -> fetch_assoc()) {
+                  echo "<tr>";
+                  echo "<td>" . $display_row['service_name'] . "</td>";
+                  echo "<td>" . $display_row['description'] . "</td>";
+                  echo "<td>". "PHP " . $display_row['price'] . " / ". $display_row['duration'] . " minutes" . "</td>";
+                  echo "</tr>";
+              };
+          } else {
+              echo "<tr><td colspan='3'>No Services</td></tr>";
+          };
+        ?>
+        
+    </table>
+
+    <br> <br>
+
     <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+
       <!-- I'm not sure how about the back end for the login so that it will retain the user_id -->
-      <input type="hidden" name="user_id" value="<?php include 'database.php';echo $user_id; ?>">
+
+      <input type="hidden" name="user_id" value="<?php include 'database.php'; echo $user_id; ?>">
 
       <label for="service">Select Service:</label>
       <select name="service_id" id="service_id" required>
@@ -21,7 +56,7 @@
         <option value="6">Couple's Massage</option>
         </select>
 
-      <br>
+      <br> <br>
 
       <label for="therapist">Select Therapist:</label>
       <select name="therapist_id" id="therapist_id" required>
@@ -37,22 +72,22 @@
           <option value="9">Leilani Rosario</option>
       </select>
 
-      <br>
+      <br> <br>
 
       <label for="date">Select Appointment Date:</label>
       <input type="date" name="appointment_date" id="appointment_date" required>
 
-      <br>
+      <br> <br>
 
       <label for="time">Select Start Time:</label>
       <input type="time" name="start_time" id="start_time" required>
       
-      <br>
+      <br> <br>
 
       <label for="time">Select End Time:</label>
       <input type="time" name="end_time" id="end_time" required>
 
-      <br>
+      <br> <br>
 
       <button type="submit">Confirm Appointment</button>
     </form>
@@ -89,17 +124,6 @@
               }
             }
           }
-          
-          // if ($conn -> query($check_sql)) {
-          //     echo "Appointment created successfully! Please wait for our confirmation.";
-          // } else {
-          //     echo "Error creating appointment: " . $conn -> error . ". Please try again.";
-          // }
-
-          // if ($therapist_availability) {
-            // Therapist is available, so add appointment to database
-            
-            
       
           if ($therapist_availability) {
             // Get user details
@@ -141,14 +165,14 @@
             VALUES ($user_id, $service_id, $therapist_id, '$appointment_date', '$start_time', '$end_time', '$status')";
     
             if ($conn -> query($add_sql)) {
-                echo "<br>";
+                echo "<br> <br>";
                 echo "Appointment created successfully! Please wait for our confirmation.";
                 echo "<br>";
                 echo "<p>Customer Name: " . $full_name . "</p>";
                 echo "<p>Customer Email: " . $email . "</p>";
                 echo "<p>Service: " . $service_name . "</p>";
                 echo "<p>Therapist: " . $therapist_name . "</p>";
-                echo "<p>Appointment Date: " . $appointment_date . "</p>";
+                echo "<p>Appointment Date: " . date('F j, Y', strtotime($appointment_date)) . "</p>";
                 echo "<p>Start Time: " . $start_time . "</p>";
                 echo "<p>Expected End Time: " . $end_time . "</p>";
                 echo "<p>Appointment Status: " . $appointment_status . "</p>";
