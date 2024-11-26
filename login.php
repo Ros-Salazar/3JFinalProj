@@ -75,5 +75,9 @@
     ?>
 
     <p>Don't have an account? <a href="register.php">Register</a></p>
+
+    <!-- Quick back to home while developing -->
+    <br><br><br>
+    <p><a href="index.php">Home</a></p>
 </body>
 </html>
