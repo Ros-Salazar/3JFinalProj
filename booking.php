@@ -8,6 +8,34 @@
   <body>
     <!-- Display services -->
      <h2>Services</h2>
+
+     <!-- Greet user -->
+     <?php
+        // Connect to database
+        include 'database.php';
+
+        // For debugging
+        error_reporting(E_ALL);
+        ini_set('display_errors', '1');
+
+        // Start session
+        session_start();
+
+        // Check if user is logged in
+        if (!isset($_SESSION['user_id'])) {
+          header("Location: login.php");
+          exit();
+        } else {
+          // User is logged in, display user's name
+          echo "Welcome, ". $_SESSION['full_name']. "!";
+
+          // Get user_id from session
+          $user_id = $_SESSION['user_id'];
+        }
+    ?>
+
+    <br> <br>
+
     <table>
         <tr>
             <th>Service Name</th>
@@ -40,11 +68,6 @@
     <br> <br>
 
     <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
-
-      <!-- I'm not sure how about the back end for the login so that it will retain the user_id -->
-
-      <input type="hidden" name="user_id" value="<?php include 'database.php'; echo $user_id; ?>">
-
       <label for="service">Select Service:</label>
       <select name="service_id" id="service_id" required>
         <optgroup label="Services"></optgroup>
@@ -99,6 +122,9 @@
         // For debugging
         error_reporting(E_ALL);
         ini_set('display_errors', '1');
+
+        // Get user_id from session
+        $user_id = $_SESSION['user_id'];
     
         // Get data
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
