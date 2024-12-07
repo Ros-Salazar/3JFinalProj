@@ -56,6 +56,9 @@
 
             if ($email_result -> num_rows > 0) {
                 $row = $email_result -> fetch_assoc();
+                // Hash the password
+                $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
                 // Verify password
                 if (password_verify($password, $row['password'])) {
                     // Login successful
@@ -63,7 +66,6 @@
                     exit();
                 } else {
                     // Incorrect password
-                    echo $hashed_password;
                     echo "<br>Incorrect password. Please try again.";
                 }
 

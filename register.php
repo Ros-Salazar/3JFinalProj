@@ -82,7 +82,7 @@
                 }
             }
 
-            $conn -> close();
+            // $conn -> close();
         }
     ?>
 

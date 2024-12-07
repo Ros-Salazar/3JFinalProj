@@ -21,6 +21,12 @@
 </head>
 <body>
     <!-- Navigation -->
+    <?php
+        // Start session to get logged-in user data
+        session_start();
+    ?>
+
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="#">Serenity Spa</a>
@@ -32,7 +38,14 @@
                     <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.php">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="booking.php">Book Now</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
+
+                    <!-- Conditional Links Based on Login Status -->
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                        <li class="nav-item"><a class="nav-link" href="dashboard.php">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
+                    <?php else: ?>
+                        <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
