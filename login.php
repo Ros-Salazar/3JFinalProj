@@ -77,7 +77,7 @@
                 // User not found
                 echo "<br>User not found. Please register.";
             }       
-            $conn -> close(); 
+            // $conn -> close(); 
         }
     ?>
 

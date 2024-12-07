@@ -210,7 +210,7 @@
             echo "Sorry, the therapist is not available at that time.";
             exit;
           }
-        $conn -> close();
+        // $conn -> close();
       }
       ?>
 

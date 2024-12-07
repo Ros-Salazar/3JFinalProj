@@ -16,7 +16,7 @@
     // Create the database if it doesn't exist
     $db = "CREATE DATABASE IF NOT EXISTS $databasename";
     if ($conn->query($db) === TRUE) {
-        echo "Database created successfully or already exists.<br>";
+        // echo "Database created successfully or already exists.<br>";
     } else {
         die("Error creating database: " . $conn->error);
     }
@@ -36,14 +36,14 @@
         $statement = trim($statement);
         if (!empty($statement)) {
             if ($conn->query($statement) === TRUE) {
-                echo "SQL statement executed successfully: $statement<br>";
+                // echo "SQL statement executed successfully: $statement<br>";
             } else {
-                echo "Error executing statement: " . $conn->error . "<br>";
+                // echo "Error executing statement: " . $conn->error . "<br>";
             }
         }
     }
 
-    echo "Database setup complete.";
+    // echo "Database setup complete.";
 
-    $conn->close();
+    // $conn->close();
 ?>
