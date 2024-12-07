@@ -61,20 +61,24 @@
 
                 // Verify password
                 if (password_verify($password, $row['password'])) {
-                    // Login successful
-                    header("Location: dashboard.php");
+                    // Store user information in session
+                    $_SESSION["logged_in"] = true;
+                    $_SESSION["email"] = $email;
+                    $_SESSION["user_id"] = $row["user_id"];
+                    $_SESSION["full_name"] = $row["full_name"];
+                    $_SESSION["role"] = $row["role"];
+
+                    // Redirect based on user role
+                    if ($_SESSION['role'] == 'admin') {
+                        header("Location: dashboard-admin.php"); // Admin dashboard
+                    } else {
+                        header("Location: dashboard.php"); // Customer dashboard
+                    }
                     exit();
                 } else {
                     // Incorrect password
                     echo "<br>Incorrect password. Please try again.";
                 }
-
-                // Store user information in session
-                $_SESSION["logged_in"] = true;
-                $_SESSION["email"] = $email;
-                $_SESSION["user_id"] = $row["user_id"];
-                $_SESSION["full_name"] = $row["full_name"];
-                $_SESSION["role"] = $row["role"];
             } else {
                 // User not found
                 echo "<br>User not found. Please register.";
