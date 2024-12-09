@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <link rel="stylesheet" href="css/bookingstyles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Greet user -->
+        <div class="greeting">
+            <?php
+                include 'database.php';
+                session_start();
+
+                if (!isset($_SESSION['user_id'])) {
+                    header("Location: login.php");
+                    exit();
+                } else {
+                    echo "<h1>Welcome, " . $_SESSION['full_name'] . "!</h1>";
+                }
+            ?>
+        </div>
+
+        <!-- Services Section -->
+        <div class="services">
+            <h2>Available Services</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Service Name</th>
+                        <th>Description</th>
+                        <th>Pricing</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        include "database.php";
+                        $display_sql = "SELECT * FROM services";
+                        $display_result = $conn->query($display_sql);
+
+                        if ($display_result->num_rows > 0) {
+                            while ($display_row = $display_result->fetch_assoc()) {
+                                echo "<tr>";
+                                echo "<td>" . $display_row['service_name'] . "</td>";
+                                echo "<td>" . $display_row['description'] . "</td>";
+                                echo "<td>PHP " . $display_row['price'] . " / " . $display_row['duration'] . " minutes</td>";
+                                echo "</tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='3'>No Services Available</td></tr>";
+                        }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Booking Form -->
+        <div class="booking-form">
+            <h2>Book an Appointment</h2>
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                <label for="service">Select Service:</label>
+                <select name="service_id" id="service_id" required>
+                    <optgroup label="Services">
+                        <option value="1">Swedish Massage</option>
+                        <option value="2">Sports Massage</option>
+                        <option value="3">Trigger Point Therapy</option>
+                        <option value="4">Deep Tissue Massage</option>
+                        <option value="5">Chair Massage</option>
+                        <option value="6">Couple's Massage</option>
+                    </optgroup>
+                </select>
+
+                <label for="therapist">Select Therapist:</label>
+                <select name="therapist_id" id="therapist_id" required>
+                    <optgroup label="Male Therapists">
+                        <option value="2">Adam Smith</option>
+                        <option value="3">Bob Smith</option>
+                        <option value="4">Alvaro Mauro</option>
+                        <option value="5">Reno Sanchez</option>
+                    </optgroup>
+                    <optgroup label="Female Therapists">
+                        <option value="6">Eve Smith</option>
+                        <option value="7">Alice Smith</option>
+                        <option value="8">Kaitlin Monceda</option>
+                        <option value="9">Leilani Rosario</option>
+                    </optgroup>
+                </select>
+
+                <h3>Date and Time</h3>
+                <label for="appointment_date">Appointment Date:</label>
+                <input type="date" name="appointment_date" id="appointment_date" required>
+
+                <label for="start_time">Start Time:</label>
+                <input type="time" name="start_time" id="start_time" required>
+
+                <label for="end_time">End Time:</label>
+                <input type="time" name="end_time" id="end_time" required>
+
+                <h3>Confirmation and Payment</h3>
+                <label for="promo_code">Promo Code:</label>
+                <input type="text" name="promo_code" id="promo_code" placeholder="Enter promo code">
+
+                <label for="payment_method">Payment Method:</label>
+                <select name="payment_method" id="payment_method" required>
+                    <option value="cash">Cash</option>
+                    <option value="credit_card">Credit Card</option>
+                    <option value="paypal">PayPal</option>
+                </select>
+
+                <button type="submit">Confirm Appointment</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
