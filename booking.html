@@ -3,115 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking</title>
-    <link rel="stylesheet" href="css/bookingstyles.css">
+    <title>Booking Page</title>
+    <link rel="stylesheet" href="css/bookingstyles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link rel="icon" type="image/png" href="images/logo_favicon.png">
 </head>
 <body>
-    <div class="container">
-        <!-- Greet user -->
-        <div class="greeting">
-            <?php
-                include 'database.php';
-                session_start();
-
-                if (!isset($_SESSION['user_id'])) {
-                    header("Location: login.php");
-                    exit();
-                } else {
-                    echo "<h1>Welcome, " . $_SESSION['full_name'] . "!</h1>";
-                }
-            ?>
-        </div>
-
-        <!-- Services Section -->
-        <div class="services">
-            <h2>Available Services</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Service Name</th>
-                        <th>Description</th>
-                        <th>Pricing</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                        include "database.php";
-                        $display_sql = "SELECT * FROM services";
-                        $display_result = $conn->query($display_sql);
-
-                        if ($display_result->num_rows > 0) {
-                            while ($display_row = $display_result->fetch_assoc()) {
-                                echo "<tr>";
-                                echo "<td>" . $display_row['service_name'] . "</td>";
-                                echo "<td>" . $display_row['description'] . "</td>";
-                                echo "<td>PHP " . $display_row['price'] . " / " . $display_row['duration'] . " minutes</td>";
-                                echo "</tr>";
-                            }
-                        } else {
-                            echo "<tr><td colspan='3'>No Services Available</td></tr>";
-                        }
-                    ?>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Booking Form -->
-        <div class="booking-form">
-            <h2>Book an Appointment</h2>
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                <label for="service">Select Service:</label>
-                <select name="service_id" id="service_id" required>
-                    <optgroup label="Services">
-                        <option value="1">Swedish Massage</option>
-                        <option value="2">Sports Massage</option>
-                        <option value="3">Trigger Point Therapy</option>
-                        <option value="4">Deep Tissue Massage</option>
-                        <option value="5">Chair Massage</option>
-                        <option value="6">Couple's Massage</option>
-                    </optgroup>
+    <div class="booking-container">
+        <h1>Book Your Appointment</h1>
+        
+        <!-- Step 1: Select Service and Therapist -->
+        <div class="step" id="step-1">
+            <h2>Step 1: Select Service and Therapist</h2>
+            <form>
+                <label for="service">Choose a Service:</label>
+                <select id="service" name="service">
+                    <option value="massage">Massage Therapy</option>
+                    <option value="facial">Facial Treatment</option>
+                    <option value="acupuncture">Acupuncture</option>
                 </select>
 
-                <label for="therapist">Select Therapist:</label>
-                <select name="therapist_id" id="therapist_id" required>
-                    <optgroup label="Male Therapists">
-                        <option value="2">Adam Smith</option>
-                        <option value="3">Bob Smith</option>
-                        <option value="4">Alvaro Mauro</option>
-                        <option value="5">Reno Sanchez</option>
-                    </optgroup>
-                    <optgroup label="Female Therapists">
-                        <option value="6">Eve Smith</option>
-                        <option value="7">Alice Smith</option>
-                        <option value="8">Kaitlin Monceda</option>
-                        <option value="9">Leilani Rosario</option>
-                    </optgroup>
-                </select>
+                <label>Select Your Therapist:</label>
+                <div class="therapist-cards">
+                    <div class="card" onclick="selectTherapist('Jhon Doe')">
+                        <h3>Jhon Doe</h3>
+                        <p>Expert in Swedish and Deep Tissue Massage.</p>
+                    </div>
+                    <div class="card" onclick="selectTherapist('Tommy Atkins')">
+                        <h3>Tommy Atkins</h3>
+                        <p>Specializes in Sports and Trigger Point Therapy.</p>
+                    </div>
+                    <div class="card" onclick="selectTherapist('Eros Salazar')">
+                        <h3>Eros Salazar</h3>
+                        <p>Experienced in Aromatherapy and Relaxation Techniques.</p>
+                    </div>
+                </div>
 
-                <h3>Date and Time</h3>
-                <label for="appointment_date">Appointment Date:</label>
-                <input type="date" name="appointment_date" id="appointment_date" required>
+                <div class="service-summary">
+                    <h3>Service Summary</h3>
+                    <p id="service-summary">Selected Service Details and Price will appear here.</p>
+                </div>
 
-                <label for="start_time">Start Time:</label>
-                <input type="time" name="start_time" id="start_time" required>
-
-                <label for="end_time">End Time:</label>
-                <input type="time" name="end_time" id="end_time" required>
-
-                <h3>Confirmation and Payment</h3>
-                <label for="promo_code">Promo Code:</label>
-                <input type="text" name="promo_code" id="promo_code" placeholder="Enter promo code">
-
-                <label for="payment_method">Payment Method:</label>
-                <select name="payment_method" id="payment_method" required>
-                    <option value="cash">Cash</option>
-                    <option value="credit_card">Credit Card</option>
-                    <option value="paypal">PayPal</option>
-                </select>
-
-                <button type="submit">Confirm Appointment</button>
+                <button type="button" onclick="goToStep2()">Next</button>
             </form>
         </div>
+
+        <!-- Step 2: Choose Date and Time -->
+        <div class="step" id="step-2" style="display:none;">
+            <h2>Step 2: Choose Date and Time</h2>
+            <form>
+                <label for="date">Select Date:</label>
+                <input type="text" id="date" name="date" class="datepicker" placeholder="Select a date" required onchange="updateTimeSlots()">
+
+                <label for="time-slots">Available Time Slots:</label>
+                <select id="time-slots" name="time-slots">
+                    <!-- Time slots will be populated based on the selected date -->
+                </select>
+
+                <button type="button" onclick="goToStep1()">Previous</button>
+                <button type="button" onclick="goToStep3()">Next</button>
+            </form>
+        </div>
+
+        <!-- Step 3: Confirmation and Payment -->
+        <div class="step" id="step-3" style="display:none;">
+            <h2>Step 3: Confirmation and Payment</h2>
+            <div class="appointment-summary">
+                <h3>Appointment Summary</h3>
+                <p id="appointment-details">Details will be populated here.</p>
+            </div>
+
+            <label for="payment-method">Select Payment Method:</label>
+            <select id="payment-method" name="payment-method">
+                <option value="cash">Cash</option>
+                <option value="credit-card">Credit Card</option>
+                <option value="paypal">PayPal</option>
+            </select>
+
+            <label for="promo-code">Promo Code:</label>
+            <input type="text" id="promo-code" name="promo-code">
+
+            <button type="button" onclick="goToStep2()">Previous</button>
+            <button type="button" onclick="confirmBooking()">Confirm Appointment</button>
+        </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="js/booking.js"></script> <!-- Link to your JavaScript file -->
 </body>
 </html>

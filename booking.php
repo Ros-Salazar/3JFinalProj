@@ -7,7 +7,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/bookingstyles.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Manhattan Font -->
@@ -308,10 +308,14 @@
         // Insert appointment into database
         $add_sql = "INSERT INTO appointments (user_id, service_id, therapist_id, appointment_date, start_time, status)
                     VALUES ($user_id, $service_id, $therapist_id, '$appointment_date', '$start_time', 'pending')";
-        if ($conn->query($add_sql)) {
-            echo "<p>Appointment successfully created. Thank you for your booking!</p>";
+        if (isset($conn) && $conn instanceof mysqli) {
+            if ($conn->query($add_sql)) {
+                echo "<p>Appointment successfully created. Thank you for your booking!</p>";
+            } else {
+                echo "<p>Error: " . ($conn->error ?? 'Unknown error occurred') . "</p>";
+            }
         } else {
-            echo "<p>Error: " . $conn->error . "</p>";
+            echo "<p>Error: Database connection is not available.</p>";
         }
 
         // $conn -> close();
@@ -408,7 +412,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <p class="copyright">© 2024 Serenity Spa. All rights reserved.</p>
+                        <p class="copyright"> 2024 Serenity Spa. All rights reserved.</p>
                     </div>
                     <div class="col-md-6">
                         <div class="footer-links">

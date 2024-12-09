@@ -37,7 +37,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.php">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="booking.php">Book Now</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Book Now</a></li>
 
                     <!-- Conditional Links Based on Login Status -->
                     <?php if (isset($_SESSION['user_id'])): ?>
