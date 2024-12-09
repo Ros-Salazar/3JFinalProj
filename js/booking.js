@@ -12,22 +12,29 @@ function selectTherapist(name) {
     selectedTherapist = name; // Store the selected therapist's name
     alert("Selected Therapist: " + name);
 }
+
 function goToStep1() {
     document.getElementById('step-1').style.display = 'block';
     document.getElementById('step-2').style.display = 'none';
     document.getElementById('step-3').style.display = 'none';
+    document.getElementById('progress-bar').style.width = '20%'; // Update progress
+    document.getElementById('progress-bar').textContent = 'What can we do for you?'; // Update text
 }
 
 function goToStep2() {
     document.getElementById('step-1').style.display = 'none';
     document.getElementById('step-2').style.display = 'block';
     document.getElementById('step-3').style.display = 'none';
+    document.getElementById('progress-bar').style.width = '60%'; // Update progress
+    document.getElementById('progress-bar').textContent = 'What time?'; // Update text
 }
 
 function goToStep3() {
     document.getElementById('step-1').style.display = 'none';
     document.getElementById('step-2').style.display = 'none';
     document.getElementById('step-3').style.display = 'block';
+    document.getElementById('progress-bar').style.width = '90%'; // Update progress
+    document.getElementById('progress-bar').textContent = 'Nearly done!'; // Update text
 }
 
 function updateTimeSlots() {
@@ -40,7 +47,6 @@ function updateTimeSlots() {
     // Check if a date is selected
     if (date) {
         // Example logic to populate time slots
-        // You can replace this with an AJAX call to fetch available time slots from the server
         const availableSlots = ['10:00 AM', '11:00 AM', '1:00 PM', '2:00 PM', '3:00 PM']; // Example slots
 
         availableSlots.forEach(slot => {
@@ -53,11 +59,6 @@ function updateTimeSlots() {
         // If no date is selected, you can disable the time slots dropdown
         timeSlots.innerHTML = '<option value="">Select a date first</option>';
     }
-}
-
-function goToStep3() {
-    document.getElementById('step-2').style.display = 'none';
-    document.getElementById('step-3').style.display = 'block';
 }
 
 function confirmBooking() {
