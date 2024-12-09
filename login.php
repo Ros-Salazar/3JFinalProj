@@ -19,6 +19,12 @@
 </head>
 <body>
     <!-- Navigation -->
+    <?php
+        // Start session to get logged-in user data
+        session_start();
+    ?>
+    
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="#">Serenity Spa</a>

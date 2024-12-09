@@ -60,7 +60,7 @@
         <div class="overlay"></div>
         <div class="container position-relative">
             <div class="row min-vh-75 align-items-center justify-content-center text-center">
-                <div class="col-lg-10">
+                <!-- <div class="col-lg-10"> -->
                     <div class="hero-content">
                         <!-- Website Title and desc: We can change this. -->
                         <h1 class="mb-4 text-white">Your Wellness Journey Starts Here</h1>
