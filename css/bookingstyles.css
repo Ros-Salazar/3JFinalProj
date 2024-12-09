@@ -12,16 +12,18 @@ body {
     padding: 20px;
     background: white;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .booking-container:hover {
-    transform: scale(1.02);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
 h1, h2, h3 {
     color: #2c3e50;
+    text-align: center;
 }
 
 .step {
@@ -30,25 +32,37 @@ h1, h2, h3 {
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #fafafa;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    padding: 15px;
 }
 
 .step:hover {
     background-color: #eaeaea;
+    transform: scale(1.02);
 }
 
 button {
-    background-color: #3498db;
+    background-color: #28a745;
     color: white;
-    border: none;
-    padding: 10px 20px;
+    border: 2px solid #28a745;
+    padding: 12px 24px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 input[type="text"], input[type="date"], select {
@@ -85,6 +99,22 @@ input[type="text"]:focus, input[type="date"]:focus, select:focus {
 .card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.progress {
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+    transition: width 0.4s ease;
 }
 
 .modal {
@@ -128,4 +158,28 @@ input[type="text"]:focus, input[type="date"]:focus, select:focus {
 input.datepicker {
     text-align: center; /* Center the text in the input */
     margin: 20px 0; /* Add some margin for spacing */
+}
+
+.btn-back {
+    background-color: #28a745;
+    color: white;
+    border: 2px solid #28a745;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-back:hover {
+    background-color: #218838;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-back:active {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }

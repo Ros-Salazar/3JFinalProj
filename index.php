@@ -369,7 +369,7 @@
                             <div class="contact-info">
                                 <div class="contact-item">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    <span>123 Wellness Street, Metro Manila, Philippines</span>
+                                    <span>123 makapa ru road, Baguio City</span>
                                 </div>
                                 <div class="contact-item">
                                     <i class="fas fa-phone-alt"></i>
