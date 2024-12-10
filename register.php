@@ -25,7 +25,7 @@
     ?>
     
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg py-3">
         <div class="container">
             <a class="navbar-brand" href="#">Serenity Spa</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -55,38 +55,45 @@
     
     <!-- Registration Form -->
     <section class="cta-section py-5">
-        <div class="container text-center position-relative align-items-center justify-content-center text-center">
-            <h2>Register</h2>
-            <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
-                <label for="full_name">Full Name:</label>
-                <input type="text" id="full_name" name="full_name" required>
-                <br>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <br>
-                <label for="phone_number">Phone Number:</label>
-                <input type="tel" id="phone_number" name="phone_number" required>
-                <br>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                <br>
-                <input type="checkbox" id="show-password">
-                <label for="show-password">Show Password</label>
+        <div class="container d-flex flex-column align-items-center justify-content-center">
+            <h2 class="cta-heading mb-4">Register</h2>
 
-                <script>
-                    const passwordInput = document.getElementById('password');
-                    const showPasswordCheckbox = document.getElementById('show-password');
+            <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" class="login-form text-center w-50 p-4 shadow rounded bg-white">
+                <div class="mb-3">
+                    <label for="full_name" class="form-label text-dark">Full Name:</label>
+                    <input type="text" id="full_name" name="full_name" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label text-dark">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phone_number" class="form-label text-dark">Phone Number:</label>
+                    <input type="tel" id="phone_number" name="phone_number" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label text-dark">Password:</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <input type="checkbox" class="form-check-input" id="show-password">
+                    <label class="form-check-label text-dark" for="show-password">Show Password</label>
+                    
+                    <script>
+                        const passwordInput = document.getElementById('password');
+                        const showPasswordCheckbox = document.getElementById('show-password');
 
-                    showPasswordCheckbox.addEventListener('change',() => {
-                        if (showPasswordCheckbox.checked) {
-                            passwordInput.type = 'text';
-                        } else {
-                            passwordInput.type = 'password';
-                        }
-                    });
-                </script>
+                        showPasswordCheckbox.addEventListener('change',() => {
+                            if (showPasswordCheckbox.checked) {
+                                passwordInput.type = 'text';
+                            } else {
+                                passwordInput.type = 'password';
+                            }
+                        });
+                    </script>
+                </div>
                 <br><br>
-                <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                <button type="submit" class="btn btn-primary btn-lg w-100">Register</button>
             </form>
 
             <?php
@@ -136,7 +143,7 @@
                 }
             ?>
             <br> <br> <br>
-            <p class="lead">Already have an account? <a href="login.php">Login</a></p>
+            <p class="lead mt-4">Already have an account? <a href="login.php" class="text-primary">Login</a></p>
         </div>
     </section>
 

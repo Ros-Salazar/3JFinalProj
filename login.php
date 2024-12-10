@@ -25,7 +25,7 @@
     ?>
     
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg py-3">
         <div class="container">
             <a class="navbar-brand" href="#">Serenity Spa</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -55,19 +55,22 @@
 
     <!-- Login Form -->
     <section class="cta-section py-5">
-        <div class="container text-center position-relative align-items-center justify-content-center text-center">
-            <h2>Login to Your Account</h2>
+        <div class="container d-flex flex-column align-items-center justify-content-center">
+            <h2 class="cta-heading mb-4">Login to Your Account</h2>
 
-            <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <br>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                <br>
-                <input type="checkbox" id="show-password">
-                <label for="show-password">Show Password</label>
-
+            <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" class="login-form text-center w-50 p-4 shadow rounded bg-white">
+                <div class="mb-3">
+                    <label for="email" class="form-label text-dark">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label text-dark">Password:</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="show-password">
+                    <label class="form-check-label text-dark" for="show-password">Show Password</label>
+                </div>
                 <script>
                     const passwordInput = document.getElementById('password');
                     const showPasswordCheckbox = document.getElementById('show-password');
@@ -82,7 +85,7 @@
                 </script>
 
                 <br><br>
-                <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                <button type="submit" class="btn btn-primary btn-lg w-100">Login</button>
             </form>
 
             <?php
@@ -137,8 +140,8 @@
                     // $conn -> close(); 
                 }
             ?>
-            <br> <br> <br> <br>
-            <p class="lead">Don't have an account? <a href="register.php">Register Here</a></p>
+
+            <p  class="lead mt-4">Don't have an account? <a href="register.php" class="text-primary">Register Here</a></p>
         </div>
     </section>
 
