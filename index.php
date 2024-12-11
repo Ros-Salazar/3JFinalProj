@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,11 +37,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.php">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="booking.html">Book Now</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services-section">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.php">Book Now</a></li>
 
-                    <!-- Conditional Links Based on Login Status -->
-                    <?php if (isset($_SESSION['user_id'])): ?>
+                    <!--development-->
+                    <li class="nav-item"><a class="nav-link" href="dashboard-admin.php">Admin Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.php">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
+                    <!-- Conditional Links Based on Login Status --> 
+                    <!-- <?php if (isset($_SESSION['user_id'])): ?>
                         <?php if ($_SESSION['role'] == 'admin'): ?>
                             <li class="nav-item"><a class="nav-link" href="dashboard-admin.php">Admin Dashboard</a></li>
                         <?php else: ?>
@@ -49,7 +55,7 @@
                         <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
                     <?php else: ?>
                         <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
-                    <?php endif; ?>
+                    <?php endif; ?> -->
                 </ul>
             </div>
         </div>
@@ -76,7 +82,7 @@
     </header>
 
     <!-- Services Overview -->
-    <section class="services-section py-5">
+    <section  id="services-section" class="services-section py-5">
         <div class="container">
             <h2 class="text-center mb-5">What we offer</h2>
             <div class="carousel-container">
@@ -352,9 +358,9 @@
         <div class="container text-center">
             <h2>Ready to Start Your Wellness Journey?</h2>
             <p class="lead">Join us today and experience the difference.</p>
-            <a href="#" class="btn btn-primary btn-lg">Create Account</a>
+            <a href="register.php" class="btn btn-primary btn-lg">Create Account</a>
         </div>
-    </section>
+    </section>`
 
     <!-- Footer -->
     <footer class="footer-premium">
@@ -462,5 +468,6 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/navigation.js"></script>
+    <script src="js/animation.js"></script>
 </body>
 </html>
