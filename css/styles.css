@@ -1,5 +1,5 @@
 /* General Styles */
-body {
+body, th,tr {
     font-family: 'Manhattan Darling', serif;
     color: #333;
     margin: 0; /* Reset margin to avoid inconsistencies */

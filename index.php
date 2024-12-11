@@ -376,10 +376,6 @@
                             <p class="footer-desc">Where tranquility meets luxury. Experience the perfect blend of traditional techniques and modern wellness solutions.</p>
                             <div class="contact-info">
                                 <div class="contact-item">
-                                    <i class="fBaguio Country Club, Baguio Cityas fa-map-marker-alt"></i>
-                                    <span></span>
-                                </div>
-                                <div class="contact-item">
                                     <i class="fas fa-phone-alt"></i>
                                     <span>+63 912 345 6789</span>
                                 </div>
