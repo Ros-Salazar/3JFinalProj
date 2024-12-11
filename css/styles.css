@@ -1,12 +1,16 @@
 /* General Styles */
 body {
-    font-family: 'Manhattan Darling', sans-serif;
+    font-family: 'Manhattan Darling', serif;
     color: #333;
 }
 
 .bg-dark {
     background: linear-gradient(to right, #1a1a1a, #2d2d2d) !important;
     color: #fff;
+}
+
+.big-margin-top {
+    margin-top: 300px;
 }
 
 /* Hero Section */
@@ -134,13 +138,13 @@ body {
 }
 
 .dashboard-title {
-    font-family: 'Manhattan Darling', cursive;
+    font-family: 'Manhattan Darling', serif;
     color: #355c7d;
     margin-bottom: 0.5rem;
 }
 
 .dashboard-subtitle {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Manhattan Darling', serif;
     color: #6c757d;
     margin-bottom: 1.5rem;
 }

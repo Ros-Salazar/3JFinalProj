@@ -27,7 +27,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-dark py-3">
         <div class="container">
-            <a class="brand-name" href="#">Serenity Spa</a>
+            <a class="brand-name" href="#">Lotus Serenity Spa</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -56,7 +56,12 @@
     <!-- User Dashboard -->
     <section class="dashboard container py-5">
         <div class="text-center mb-5">
-            <h1 class="dashboard-title">Welcome, <?= htmlspecialchars($user_data['full_name']) ?>!</h1>
+            <p class="mb-5">.</p>
+        </div>
+        <div class="text-center mb-5">
+            <p class="mb-5"></p>
+            <p class="mb-5"></p>
+            <h1 class="dashboard-title big-margin-top">Welcome, <?= htmlspecialchars($user_data['full_name']) ?>!</h1>
             <p class="dashboard-subtitle">Here's an overview of your appointments and rewards.</p>
         </div>
         <div class="container text-center position-relative align-items-center justify-content-center text-center">
@@ -70,13 +75,14 @@
             ini_set('display_errors', '1');
 
             // Check if user is logged in
-            if (!isset($_SESSION['user_id'])) {
-                header("Location: login.php");
-                exit();
-            }
+            // if (!isset($_SESSION['user_id'])) {
+            //     header("Location: login.php");
+            //     exit();
+            // }
 
             // Get logged-in user's data
-            $user_id = $_SESSION['user_id'];
+            $user_id = 10;
+            // $user_id = $_SESSION['user_id'];
             $user_query = "SELECT * FROM users WHERE user_id = $user_id";
             $user_result = $conn->query($user_query);
             $user_data = $user_result->fetch_assoc();
@@ -173,8 +179,8 @@
 
                 <!-- Account Settings -->
                 <div class="dashboard-card mt-5 text-center">
-                    <a href="edit_profile.php" class="btn btn-secondary btn-lg mx-2">Edit Profile</a>
-                    <a href="change_password.php" class="btn btn-secondary btn-lg mx-2">Change Password</a>
+                    <a href="edit-profile.php" class="btn btn-secondary btn-lg mx-2">Edit Profile</a>
+                    <a href="change-password.php" class="btn btn-secondary btn-lg mx-2">Change Password</a>
                     <!-- <a href="logout.php" class="btn btn-danger btn-lg mx-2">Logout</a> -->
                 </div>
             </section>
@@ -187,12 +193,12 @@
                     <!-- Contact Info -->
                     <div class="col-lg-4">
                         <div class="footer-info">
-                            <h3 class="brand-name">Serenity Spa</h3>
+                            <h3 class="brand-name">Lotus Serenity Spa</h3>
                             <p class="footer-desc">Where tranquility meets luxury. Experience the perfect blend of traditional techniques and modern wellness solutions.</p>
                             <div class="contact-info">
                                 <div class="contact-item">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    <span>123 Wellness Street, Metro Manila, Philippines</span>
+                                    <span>Baguio Country Club, Baguio City</span>
                                 </div>
                                 <div class="contact-item">
                                     <i class="fas fa-phone-alt"></i>
@@ -200,7 +206,7 @@
                                 </div>
                                 <div class="contact-item">
                                     <i class="fas fa-envelope"></i>
-                                    <span>info@serenityspa.ph</span>
+                                    <span>info@lotusserenityspa.ph</span>
                                 </div>
                             </div>
                         </div>
@@ -269,7 +275,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <p class="copyright">© 2024 Serenity Spa. All rights reserved.</p>
+                        <p class="copyright">© 2024 Lotus Serenity Spa. All rights reserved.</p>
                     </div>
                     <div class="col-md-6">
                         <div class="footer-links">
