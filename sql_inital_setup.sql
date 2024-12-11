@@ -86,17 +86,16 @@ USE establishment_db;
 
 INSERT INTO users (full_name, email, phone_number, password, role, created_at)
 VALUES
-    ('Manager', 'manager@example.com', '09345678912', 'Admin_101', 'admin', '2024-11-18'),
-    ('Adam Smith', 'adamsmith@example.com', '09234567891', 'Therapist_101', 'therapist', '2024-11-18'),
-    ('Bob Smith', 'bobsmith@example.com', '09234567891', 'Therapist_101', 'therapist', '2024-11-18'),
-    ('Alvaro Mauro', 'alvaromauro@example.com', '09234567891', 'Therapist_101', 'therapist', '2024-11-18'),
-    ('Reno Sanchez', 'renosanchez@example.com', '09234567891', 'Therapist_101', 'therapist', '2024-11-18'),
-    ('Eve Smith', 'evesmith@example.com', '09234567891', 'Therapist_101', 'therapist', '2024-11-18'),
-    ('Alice Smith', 'alicesmith@example.com', '09234567891', 'Therapist_101', 'therapist', '2024-11-18'),
-    ('Kaitlin Monceda', 'kaitlinmonceda@example.com', '09234567891', 'Therapist_101', 'therapist', '2024-11-18'),
-    ('Leilani Rosario', 'leilanirosario@example.com', '09234567891', 'Therapist_101', 'therapist', '2024-11-18'),
-    ('John Doe', 'johndoe@example.com', '09123456789', 'hashed_password', 'customer', '2024-11-18'),
-    ('Jane Doe', 'janedoe@example.com', '09123456789', 'hashed_password', 'customer', '2024-11-18');
+    ('Manager', 'manager@example.com', '09345678912', '$2y$10$OlFRWN5oVccaGfAtOzCfzOEco28BHWolD0Fb188VXh1lOGNICbDcW', 'admin', '2024-11-18'),
+    ('Adam Smith', 'adamsmith@example.com', '09234567891', '$2y$10$cqDOoLb9goBbU9Q4bD0ije0b7FwaJB4K.BRArf1EngJAnnbs1lW1C', 'therapist', '2024-11-18'),
+    ('Bob Smith', 'bobsmith@example.com', '09456789123', '$2y$10$EENT3DxADS.7j/W.FEkgLeGQ4gOYImOmSJAfDroJRDlrxXCU1QDLa', 'therapist', '2024-11-18'),
+    ('Alvaro Mauro', 'alvaromauro@example.com', '09567891234', '$2y$10$jxEbCDy14xCHr1wF//BIDOl6UErOQK8W6..VZA98WbvA1xIlhkJJO', 'therapist', '2024-11-18'),
+    ('Reno Sanchez', 'renosanchez@example.com', '09678912345', '$2y$10$E5jhu4ytOakLTKzrqBVcpuL4z0zRmFf6u.Oysy9d9xqQQlzvoziiq', 'therapist', '2024-11-18'),
+    ('Eve Smith', 'evesmith@example.com', '09789123456', '$2y$10$Rnux17CWfaqNps7wHYLnLu7eZa3t2qw0jx0NHe9g0Y.1iKGsMFaqK', 'therapist', '2024-11-18'),
+    ('Alice Smith', 'alicesmith@example.com', '09891234567', '$2y$10$I2Mi8zi/8ao7QWGv6vHZa.HC3bKoVoShCkadkEKCMcxD87Ebp.zXy', 'therapist', '2024-11-18'),
+    ('Kaitlin Monceda', 'kaitlinmonceda@example.com', '09912345678', '$2y$10$/3K4ZJ0gmnrmV4s00g9/oOOe6ZkLSeHx7ESW.KxPFulaxVfCL2XS.', 'therapist', '2024-11-18'),
+    ('Leilani Rosario', 'leilanirosario@example.com', '09123456789', '$2y$10$tYvLIm.R2bvdTn2Isv9flOO9vd2k7US.doyKJJ.7NCMUgpvY5waVe', 'therapist', '2024-11-18'),
+    ('Juan Dela Cruz', 'juandelacruzo@example.com', '09000000000', '$2y$10$Qwl.c.yZd9FLmlILSp4Q7.JbxmE9v4JJnwqtARGMrKkV7VzuUxkGm', 'customer', '2024-11-18');
 
 INSERT INTO services (service_name, description, duration, price, created_at)
 VALUES
