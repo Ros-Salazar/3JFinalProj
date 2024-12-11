@@ -86,6 +86,10 @@
 
     <!-- Change Password Form -->
     <section class="container py-5">
+    <div class="text-center mb-5">
+            <p class="mb-5">.</p>
+            <p class="mb-2">`</p>
+        </div>
         <div class="card shadow-lg border-0 rounded-3 p-4 mx-auto" style="max-width: 500px;">
             <h2 class="text-center mb-4 fw-bold">Change Password</h2>
             <form method="post" class="form">
