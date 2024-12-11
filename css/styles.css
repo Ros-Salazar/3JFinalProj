@@ -1,6 +1,7 @@
 /* General Styles */
 body, th,tr {
-    font-family: 'Manhattan Darling', serif;
+    font-family: 'Libre Caslon Text', serif;
+    font-size: 1rem;
     color: #333;
     margin: 0; /* Reset margin to avoid inconsistencies */
     padding: 0; /* Reset padding to avoid inconsistencies */
@@ -54,25 +55,25 @@ body, th,tr {
 }
 
 .hero-section h1 {
-    font-family: 'Manhattan Darling', serif;
+    font-family: 'Libre Caslon Text', serif;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 400;
     letter-spacing: 0.02em;
     line-height: 1.2;
 }
 
 .hero-section .lead {
-    font-family: 'Manhattan Darling', serif;
+    font-family: 'Libre Caslon Text', serif;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 1.6;
     font-weight: 300;
     letter-spacing: 0.03em;
 }
 
 .hero-buttons .btn {
-    font-family: 'Manhattan Darling', serif;
+    font-family: 'Libre Caslon Text', serif;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -142,14 +143,17 @@ body, th,tr {
 }
 
 .dashboard-title {
-    font-family: 'Manhattan Darling', serif;
-    color: #355c7d;
+    font-family: 'Libre Caslon Text', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #d4af37; /* Gold color for luxury */
+    margin-top: 6rem;
     margin-bottom: 0.5rem;
 }
 
 .dashboard-subtitle {
-    font-family: 'Manhattan Darling', serif;
-    color: #6c757d;
+    font-family: 'Libre Caslon Text', serif;
+    color: #333;
     margin-bottom: 1.5rem;
 }
 
@@ -161,9 +165,9 @@ body, th,tr {
 }
 
 .card-title {
+    color: #333;
     font-size: 1.5rem;
     font-weight: 600;
-    color: #2c3e50;
     margin-bottom: 1rem;
 }
 
@@ -260,7 +264,7 @@ body, th,tr {
 }
 
 .navbar-brand {
-    font-family: 'Manhattan Darling', serif;
+    font-family: 'Libre Caslon Text', serif;
     font-size: 2.5rem;
     color: #fff !important;
     transition: all 0.3s ease;
@@ -342,7 +346,7 @@ body, th,tr {
 }
 
 .nav-link {
-    font-family: 'Manhattan Darling', serif;
+    font-family: 'Libre Caslon Text', serif;
     color: #fff !important;
     font-size: 1.4rem;
     padding: 0.5rem 1.5rem !important;
@@ -457,7 +461,7 @@ body, th,tr {
 }
 
 .service-card .card-title {
-    font-family: 'Manhattan Darling', serif;
+    font-family: 'Libre Caslon Text', serif;
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
@@ -510,7 +514,7 @@ body, th,tr {
 }
 
 .brand-name {
-    font-family: 'Manhattan Darling', serif;
+    font-family: 'Libre Caslon Text', serif;
     font-size: 2.5rem;
     margin-bottom: 20px;
     background: linear-gradient(45deg, #fff, #d4af37);
@@ -740,6 +744,7 @@ body, th,tr {
 
 .booking-title {
     font-size: 2.5rem;
+    font-weight: 700;
     color: #d4af37; /* Gold color for luxury */
     text-align: center;
     margin-bottom: 30px;
@@ -765,6 +770,7 @@ body, th,tr {
 }
 
 .booking-table th {
+    font-weight: 400;
     background-color: #d4af37; /* Gold color for header */
     color: white;
 }

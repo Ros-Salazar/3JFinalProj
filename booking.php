@@ -10,8 +10,10 @@
     <link href="css/styles.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Manhattan Font -->
-    <link href="https://fonts.cdnfonts.com/css/manhattan-darling" rel="stylesheet">
+    <!-- Libre Caslon Text Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="icon" type="image/png" href="images/logo_favicon.png">
     <!-- For Apple devices -->
@@ -26,7 +28,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg booking-navbar">
         <div class="container">
-            <a class="navbar-brand" href="#">Book Now</a>
+            <a class="navbar-brand" href="#">Lotus Serenity Spa</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -58,21 +60,21 @@
     
     <!-- Display services -->
     <div class="booking-container">
-        <h2 class="booking-title">Services</h2>
+        <div class="text-center mb-5">
+            <br>
+        </div>
+        <h2 class="booking-title">Booking</h2>
 
-        <br> <br>
-
-        <table class="table booking-table styled-table">
+        <!-- <table class="table booking-table styled-table">
             <thead>
                 <tr>
-                    <th>Service Name</th>
+                    <th>Service</th>
                     <th>Description</th>
                     <th>Pricing</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                /*
                   // Connect to database
                   include "database.php";
                   // Get services
@@ -89,15 +91,14 @@
                   } else {
                       echo "<tr><td colspan='3'>No Services</td></tr>";
                   };
-                */?>
+                ?>
             </tbody>
-        </table>
+        </table> -->
 
         <br> <br>
 
-        <h3 class="booking-subtitle">Service and Therapist</h3>
-
         <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" class="booking-form">
+            <h3 class="booking-subtitle">Service and Therapist</h3>
             <label for="service">Select Service:</label>
             <select name="service_id" id="service_id" class="animated-dropdown" required>
                 <optgroup label="Services"></optgroup>
@@ -172,12 +173,12 @@
                     <!-- Contact Info -->
                     <div class="col-lg-4">
                         <div class="footer-info">
-                            <h3 class="brand-name">Serenity Spa</h3>
+                            <h3 class="brand-name">Lotus Serenity Spa</h3>
                             <p class="footer-desc">Where tranquility meets luxury. Experience the perfect blend of traditional techniques and modern wellness solutions.</p>
                             <div class="contact-info">
                                 <div class="contact-item">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    <span>123 makapa ru road, Baguio City</span>
+                                    <span>Baguio Country Club, Baguio City</span>
                                 </div>
                                 <div class="contact-item">
                                     <i class="fas fa-phone-alt"></i>
@@ -255,7 +256,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <p class="copyright"> 2024 Serenity Spa. All rights reserved.</p>
+                        <p class="copyright"> 2024 Lotus Serenity Spa. All rights reserved.</p>
                     </div>
                     <div class="col-md-6">
                         <div class="footer-links">
