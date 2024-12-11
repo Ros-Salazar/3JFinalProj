@@ -117,3 +117,40 @@ function setDate() {
     document.getElementById('date').value = selectedDate; // Set the selected date in the main input
     closeDatePicker(); // Close the modal after selecting the date
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const serviceDropdown = document.getElementById('service_id');
+    const therapistDropdown = document.getElementById('therapist_id');
+
+    // Function to toggle dropdown animation
+    function toggleDropdown(dropdown) {
+        if (dropdown.classList.contains('open')) {
+            dropdown.classList.remove('open');
+            dropdown.classList.add('closed');
+        } else {
+            dropdown.classList.remove('closed');
+            dropdown.classList.add('open');
+        }
+    }
+
+    // Add event listeners to dropdowns
+    serviceDropdown.addEventListener('focus', () => {
+        serviceDropdown.classList.add('open');
+        serviceDropdown.classList.remove('closed');
+    });
+
+    serviceDropdown.addEventListener('blur', () => {
+        serviceDropdown.classList.remove('open');
+        serviceDropdown.classList.add('closed');
+    });
+
+    therapistDropdown.addEventListener('focus', () => {
+        therapistDropdown.classList.add('open');
+        therapistDropdown.classList.remove('closed');
+    });
+
+    therapistDropdown.addEventListener('blur', () => {
+        therapistDropdown.classList.remove('open');
+        therapistDropdown.classList.add('closed');
+    });
+});

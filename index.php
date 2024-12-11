@@ -376,10 +376,6 @@
                             <p class="footer-desc">Where tranquility meets luxury. Experience the perfect blend of traditional techniques and modern wellness solutions.</p>
                             <div class="contact-info">
                                 <div class="contact-item">
-                                    <i class="fBaguio Country Club, Baguio Cityas fa-map-marker-alt"></i>
-                                    <span></span>
-                                </div>
-                                <div class="contact-item">
                                     <i class="fas fa-phone-alt"></i>
                                     <span>+63 912 345 6789</span>
                                 </div>
@@ -396,22 +392,22 @@
                         <div class="quick-links">
                             <h4>Quick Links</h4>
                             <div class="links-grid">
-                                <a href="#" class="link-item">
-                                    <i class="fas fa-spa"></i>
-                                    <span>Our Services</span>
-                                </a>
-                                <a href="#" class="link-item">
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <span>Book Appointment</span>
-                                </a>
-                                <a href="#" class="link-item">
-                                    <i class="fas fa-info-circle"></i>
-                                    <span>About Us</span>
-                                </a>
-                                <a href="#" class="link-item">
-                                    <i class="fas fa-gift"></i>
-                                    <span>Gift Cards</span>
-                                </a>
+                            <a id="smooth-services2" href="#services-section" class="link-item">
+                                <i class="fas fa-spa"></i>
+                                <span>Our Services</span>
+                            </a>
+                            <a id="home-services" href="#hero-section" class="link-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Book Appointment</span>
+                            </a>
+                            <a id="home-services" href="#hero-section"  class="link-item">
+                                <i class="fas fa-info-circle"></i>
+                                <span>About Us</span>
+                            </a>
+                            <a id="home-services" href="#hero-section"  class="link-item">
+                                <i class="fas fa-gift"></i>
+                                <span>Gift Cards</span>
+                            </a>
                             </div>
                         </div>
                     </div>

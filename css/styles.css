@@ -1,8 +1,12 @@
 /* General Styles */
-body {
+body, th,tr {
     font-family: 'Manhattan Darling', serif;
     color: #333;
+    margin: 0; /* Reset margin to avoid inconsistencies */
+    padding: 0; /* Reset padding to avoid inconsistencies */
+    line-height: 1.6; /* Improve readability */
 }
+
 
 .bg-dark {
     background: linear-gradient(to right, #1a1a1a, #2d2d2d) !important;
@@ -839,4 +843,67 @@ body {
 
 .booking-navbar .navbar-toggler-icon {
     background-color: #d4af37; /* Gold color for toggler icon */
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1.2rem;
+    font-family: 'Arial', sans-serif;
+}
+
+.styled-table thead tr {
+    background-color: #d4af37; /* Gold color for header */
+    color: white;
+    text-align: left;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.styled-table tbody tr {
+    background-color: #f9f9f9; /* Light background for rows */
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f1f1f1; /* Light hover effect */
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f2f2f2; /* Zebra striping effect */
+}
+
+.animated-dropdown {
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    border: 1px solid #ccc; /* Border for the dropdown */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding for better spacing */
+    background-color: #fff; /* White background */
+    position: relative; /* Positioning for the dropdown */
+    overflow: hidden; /* Hide overflow for animation */
+}
+
+.animated-dropdown:focus {
+    border-color: #000000; /* Gold border on focus */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Glow effect on focus */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.animated-dropdown:hover {
+    background-color: #f9f9f9; /* Light background on hover */
+}
+
+/* Dropdown options animation */
+.animated-dropdown.open {
+    max-height: 200px; /* Set a max height for the dropdown */
+    transition: max-height 0.3s ease; /* Animate max-height */
+}
+
+.animated-dropdown.closed {
+    max-height: 0; /* Collapse the dropdown */
+    transition: max-height 0.3s ease; /* Animate max-height */
+    overflow: hidden; /* Hide overflow */
 }

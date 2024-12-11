@@ -1,19 +1,14 @@
-// Smooth scroll for "Services"
-document.getElementById('smooth-services').addEventListener('click', function (e) {
-    e.preventDefault(); // Prevent default link behavior
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-        smoothScrollTo(target, 2000); // Scroll to target over 2000ms (2 seconds)
-    }
-});
+// Attach smooth scroll functionality to multiple links
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent default link behavior
 
-// Smooth scroll for "Home"
-document.getElementById('home-services').addEventListener('click', function (e) {
-    e.preventDefault(); // Prevent default link behavior
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-        smoothScrollTo(target, 2000); // Scroll to target over 2000ms (2 seconds)
-    }
+        // Retrieve the target element
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            smoothScrollTo(target, 2000); // Scroll to target over 2000ms (2 seconds)
+        }
+    });
 });
 
 // Smooth scroll function
