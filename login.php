@@ -81,32 +81,33 @@
 
         
         <!-- Login Form -->
-        <section class="cta-section py-5 mt-5">
-            <div class="container d-flex flex-column align-items-center justify-content-center" style="max-width: 600px; min-height: 100vh;">
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form text-center w-100 p-4 shadow rounded bg-white animated fadeIn">
-                    <h2 class="text-center mb-4">Login to Your Account</h2>
-                    <div class="mb-3">
-                        <label for="email" class="form-label text-dark">Email:</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
+        <section class="cta-section">
+            <div class="container">
+                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form text-center w-100">
+                <h2>Login to Your Account</h2>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password:</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <input type="checkbox" class="form-check-input" id="show-password">
+                    <label class="form-check-label" for="show-password">Show Password</label>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+                <?php if (!empty($error_message)): ?>
+                    <div class="alert alert-danger mt-3">
+                    <?php echo $error_message; ?>
                     </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label text-dark">Password:</label>
-                        <input type="password" id="password" name="password" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <input type="checkbox" class="form-check-input" id="show-password">
-                        <label class="form-check-label text-dark" for="show-password">Show Password</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">Login</button>
-                    <?php if (!empty($error_message)): ?>
-                        <div class="alert alert-danger mt-3">
-                            <?php echo $error_message; ?>
-                        </div>
-                    <?php endif; ?>
+                <?php endif; ?>
                 </form>
                 <p class="lead mt-4">Don't have an account? <a href="register.php" class="text-primary">Register</a></p>
             </div>
         </section>
+
 
 
     </main>
