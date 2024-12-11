@@ -76,7 +76,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-dark py-3">
         <div class="container">
-            <a class="brand-name" href="#">Serenity Spa</a>
+            <a class="brand-name" href="#">Lotus Serenity Spa</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -157,12 +157,12 @@
                     <!-- Contact Info -->
                     <div class="col-lg-4">
                         <div class="footer-info">
-                            <h3 class="brand-name">Serenity Spa</h3>
+                            <h3 class="brand-name">Lotus Serenity Spa</h3>
                             <p class="footer-desc">Where tranquility meets luxury. Experience the perfect blend of traditional techniques and modern wellness solutions.</p>
                             <div class="contact-info">
                                 <div class="contact-item">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    <span>123 Wellness Street, Metro Manila, Philippines</span>
+                                    <span>Baguio Country Club, Baguio City</span>
                                 </div>
                                 <div class="contact-item">
                                     <i class="fas fa-phone-alt"></i>
@@ -170,7 +170,7 @@
                                 </div>
                                 <div class="contact-item">
                                     <i class="fas fa-envelope"></i>
-                                    <span>info@serenityspa.ph</span>
+                                    <span>info@lotusserenityspa.ph</span>
                                 </div>
                             </div>
                         </div>
@@ -239,7 +239,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <p class="copyright">© 2024 Serenity Spa. All rights reserved.</p>
+                        <p class="copyright">© 2024 Lotus Serenity Spa. All rights reserved.</p>
                     </div>
                     <div class="col-md-6">
                         <div class="footer-links">
