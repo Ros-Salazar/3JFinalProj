@@ -62,7 +62,8 @@
     ini_set('display_errors', '1');
     
     // Get logged-in user's data
-    $user_id = $_SESSION['user_id'];
+    $user_id = 10;
+    // $user_id = $_SESSION['user_id'];
     $user_query = "SELECT * FROM users WHERE user_id = $user_id";
     $user_result = $conn->query($user_query);
     $user_data = $user_result->fetch_assoc();

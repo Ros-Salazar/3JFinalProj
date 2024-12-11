@@ -56,7 +56,13 @@
     <!-- User Dashboard -->
     <section class="dashboard container py-5">
         <div class="text-center mb-5">
-            <h1 class="dashboard-title">Welcome, <?= htmlspecialchars($user_data['full_name']) ?>!</h1>
+            <p class="mb-5">.</p>
+            <p class="mb-5">.</p>
+        </div>
+        <div class="text-center mb-5">
+            <p class="mb-5"></p>
+            <p class="mb-5"></p>
+            <h1 class="dashboard-title big-margin-top">Welcome, <?= htmlspecialchars($user_data['full_name']) ?>!</h1>
             <p class="dashboard-subtitle">Here's an overview of your appointments and rewards.</p>
         </div>
         <div class="container text-center position-relative align-items-center justify-content-center text-center">
@@ -70,13 +76,14 @@
             ini_set('display_errors', '1');
 
             // Check if user is logged in
-            if (!isset($_SESSION['user_id'])) {
-                header("Location: login.php");
-                exit();
-            }
+            // if (!isset($_SESSION['user_id'])) {
+            //     header("Location: login.php");
+            //     exit();
+            // }
 
             // Get logged-in user's data
-            $user_id = $_SESSION['user_id'];
+            $user_id = 10;
+            // $user_id = $_SESSION['user_id'];
             $user_query = "SELECT * FROM users WHERE user_id = $user_id";
             $user_result = $conn->query($user_query);
             $user_data = $user_result->fetch_assoc();
