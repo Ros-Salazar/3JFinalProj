@@ -36,8 +36,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services-section">Services</a></li>
+                    <li class="nav-item"><a id="home-services" class="nav-link" href="#hero-section">Home</a></li>
+                    <li class="nav-item"><a id="smooth-services" class="nav-link" href="#services-section">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="booking.php">Book Now</a></li>
 
                     <!--development-->
@@ -62,7 +62,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero-section">
+    <header id="hero-section" class="hero-section">
         <div class="overlay"></div>
         <div class="container position-relative">
             <div class="row min-vh-75 align-items-center justify-content-center text-center">
