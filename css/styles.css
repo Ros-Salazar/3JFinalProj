@@ -703,3 +703,140 @@ body {
 .brand-text.fade-in {
     opacity: 1;
 }
+
+/* Styles specific to booking.php */
+
+.booking-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.booking-title {
+    font-size: 2.5rem;
+    color: #d4af37; /* Gold color for luxury */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.booking-subtitle {
+    font-size: 1.8rem;
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.booking-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.booking-table th, .booking-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.booking-table th {
+    background-color: #d4af37; /* Gold color for header */
+    color: white;
+}
+
+.booking-table tr:hover {
+    background-color: #f1f1f1; /* Light hover effect */
+}
+
+.booking-form {
+    background-color: #fff; /* White background for form */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.booking-form select, .booking-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.booking-form button {
+    background-color: #d4af37; /* Gold color for button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.booking-form button:hover {
+    background-color: #b5942a; /* Darker gold on hover */
+}
+
+/* Footer styles */
+.footer-premium {
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+}
+
+.footer-info h3 {
+    color: #d4af37; /* Gold color for footer brand name */
+}
+
+.footer-links a {
+    color: white;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #d4af37; /* Gold color on hover */
+}
+
+.social-icon {
+    color: white;
+    margin-right: 10px;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #d4af37; /* Gold color on hover */
+}
+
+/* Styles specific to booking.php navigation */
+.booking-navbar {
+    background-color: #333; /* Dark background for contrast */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.booking-navbar .nav-link {
+    color: white; /* White text for links */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.booking-navbar .nav-link:hover {
+    color: #d4af37; /* Gold color on hover */
+}
+
+.booking-navbar .navbar-brand {
+    color: #d4af37; /* Gold color for brand name */
+}
+
+.booking-navbar .navbar-toggler {
+    border-color: #d4af37; /* Gold border for toggler */
+}
+
+.booking-navbar .navbar-toggler-icon {
+    background-color: #d4af37; /* Gold color for toggler icon */
+}
