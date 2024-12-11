@@ -57,7 +57,7 @@
      <h2>Services</h2>
 
      <!-- Greet user -->
-     <?php
+     <?php/*
         // Connect to database
         include 'database.php';
 
@@ -79,7 +79,7 @@
           // Get user_id from session
           $user_id = $_SESSION['user_id'];
         }
-    ?>
+    */?>
 
     <br> <br>
 
@@ -90,6 +90,7 @@
             <th>Pricing</th>
         </tr>
         <?php
+        /*
           // Connect to database
           include "database.php";
 
@@ -108,7 +109,7 @@
           } else {
               echo "<tr><td colspan='3'>No Services</td></tr>";
           };
-        ?>
+        */?>
         
     </table>
 
@@ -182,7 +183,7 @@
       <button type="submit">Confirm Appointment</button>
     </form>
 
-    <?php
+    <?php /*
         // Connect to database
         include 'database.php';
 
@@ -320,7 +321,7 @@
 
         // $conn -> close();
       }
-      ?>
+      */?>
 
     <!-- Footer -->
     <footer class="footer-premium">
