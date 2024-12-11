@@ -173,8 +173,8 @@
 
                 <!-- Account Settings -->
                 <div class="dashboard-card mt-5 text-center">
-                    <a href="edit_profile.php" class="btn btn-secondary btn-lg mx-2">Edit Profile</a>
-                    <a href="change_password.php" class="btn btn-secondary btn-lg mx-2">Change Password</a>
+                    <a href="edit-profile.php" class="btn btn-secondary btn-lg mx-2">Edit Profile</a>
+                    <a href="change-password.php" class="btn btn-secondary btn-lg mx-2">Change Password</a>
                     <!-- <a href="logout.php" class="btn btn-danger btn-lg mx-2">Logout</a> -->
                 </div>
             </section>
