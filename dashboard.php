@@ -57,7 +57,6 @@
     <section class="dashboard container py-5">
         <div class="text-center mb-5">
             <p class="mb-5">.</p>
-            <p class="mb-5">.</p>
         </div>
         <div class="text-center mb-5">
             <p class="mb-5"></p>

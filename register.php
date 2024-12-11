@@ -99,10 +99,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     <!-- Registration Form -->
     <section class="cta-section py-5">
-        <div class="container d-flex flex-column align-items-center justify-content-center">
-            <h2 class="cta-heading mb-4">Register</h2>
+        <div class="container d-flex flex-column align-items-center justify-content-center"  style="max-width: 1000px;">
+            <p class="mb-5"></p>
+            <p class="mb-5"></p>
+            <p class="mb-3"></p>
+            
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form text-center w-50 p-4 shadow rounded bg-white">
-                <div class="mb-3">
+            <h2 class="cta-heading mb-4">Register an Account</h2>    
+            <div class="mb-3">
                     <label for="full_name" class="form-label">Full Name:</label>
                     <input type="text" id="full_name" name="full_name" class="form-control" required>
                 </div>

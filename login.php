@@ -110,10 +110,14 @@
 
     <!-- Login Form -->
     <section class="cta-section py-5">
-        <div class="container d-flex flex-column align-items-center justify-content-center">
-            <h2 class="text-center mb-5">Login to Your Account</h2>
+        <div class="container d-flex flex-column align-items-center justify-content-center" style="max-width: 1000px;">
+            <p class="mb-5"></p>
+            <p class="mb-5"></p>
+            <p class="mb-3"></p>
+            
 
             <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" class="login-form text-center w-50 p-4 shadow rounded bg-white">
+            <h2 class="text-center mb-5">Login to Your Account</h2>
                 <div class="mb-3">
                     <label for="email" class="form-label text-dark">Email:</label>
                     <input type="email" id="email" name="email" class="form-control" required>
