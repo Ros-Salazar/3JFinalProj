@@ -10,8 +10,10 @@
     <link href="css/styles.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Manhattan Font -->
-    <link href="https://fonts.cdnfonts.com/css/manhattan-darling" rel="stylesheet">
+    <!-- Libre Caslon Text Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="icon" type="image/png" href="images/logo_favicon.png">
     <!-- For Apple devices -->
@@ -56,12 +58,7 @@
     <!-- User Dashboard -->
     <section class="dashboard container py-5">
         <div class="text-center mb-5">
-            <p class="mb-5">.</p>
-        </div>
-        <div class="text-center mb-5">
-            <p class="mb-5"></p>
-            <p class="mb-5"></p>
-            <h1 class="dashboard-title big-margin-top">Welcome, <?= htmlspecialchars($user_data['full_name']) ?>!</h1>
+            <h1 class="dashboard-title">Welcome, <?= htmlspecialchars($user_data['full_name']) ?>!</h1>
             <p class="dashboard-subtitle">Here's an overview of your appointments and rewards.</p>
         </div>
         <div class="container text-center position-relative align-items-center justify-content-center text-center">
@@ -134,7 +131,7 @@
                                     <?php endwhile; ?>
                                 </ul>
                             <?php else: ?>
-                                <p>No upcoming appointments.</p>
+                                <p>No upcoming appointments</p>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -154,7 +151,7 @@
                                     <?php endwhile; ?>
                                 </ul>
                             <?php else: ?>
-                                <p>No past appointments.</p>
+                                <p>No past appointments</p>
                             <?php endif; ?>
                         </div>
                     </div>

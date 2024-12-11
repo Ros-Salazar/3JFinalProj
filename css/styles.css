@@ -190,11 +190,16 @@ body, th,tr {
     margin-right: 0.5rem;
 }
 
+.text-header-bold {
+    font-weight: 700;
+}
+
 .btn {
     border-radius: 25px;
 }
 
 .btn-secondary {
+    font-size: 1rem;
     background-color: #6c757d;
     color: #ffffff;
     border: none;

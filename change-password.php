@@ -10,8 +10,10 @@
     <link href="css/styles.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Manhattan Font -->
-    <link href="https://fonts.cdnfonts.com/css/manhattan-darling" rel="stylesheet">
+    <!-- Libre Caslon Text Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="icon" type="image/png" href="images/logo_favicon.png">
     <!-- For Apple devices -->
@@ -88,10 +90,10 @@
     <section class="container py-5">
     <div class="text-center mb-5">
             <p class="mb-5">.</p>
-            <p class="mb-2">`</p>
+            <br>
         </div>
         <div class="card shadow-lg border-0 rounded-3 p-4 mx-auto" style="max-width: 500px;">
-            <h2 class="text-center mb-4 fw-bold">Change Password</h2>
+            <h2 class="text-center mb-4 text-header-bold">Change Password</h2>
             <form method="post" class="form">
                 <div class="mb-3">
                     <label for="current_password" class="form-label">Current Password</label>
@@ -101,8 +103,8 @@
                     <label for="new_password" class="form-label">New Password</label>
                     <input type="password" class="form-control" id="new_password" name="new_password" placeholder="Enter new password" required>
                 </div>
-                <div class="d-flex justify-content-between mt-4"">
-                    <button type="submit" class="btn btn-primary">Change Password</button>
+                <div class="d-flex justify-content-between mt-4">
+                    <button type="submit" class="btn btn-primary">Update</button>
                     <a href="dashboard.php" class="btn btn-outline-secondary">Cancel</a>
                 </div>
             </form>
