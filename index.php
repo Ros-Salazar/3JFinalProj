@@ -30,7 +30,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" href="#">Serenity Spa</a>
+            <a class="navbar-brand" href="#">Lotus Serenity Spa</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -67,9 +67,11 @@
         <div class="container position-relative">
             <div class="row min-vh-75 align-items-center justify-content-center text-center">
                 <!-- <div class="col-lg-10"> -->
-                    <div class="hero-content">
+                    <div class="hero-content mb-5">
                         <!-- Website Title and desc: We can change this. -->
-                        <h1 class="mb-4 text-white">Your Wellness Journey Starts Here</h1>
+                        <p class="mb-5"></p>
+                        <p class="mb-5"></p>
+                        <h1 class="mb-5 text-white">Luxury Rooted in Tranquility</h1>
                         <p class="lead text-white mb-5">Experience tranquility and rejuvenation with our premium wellness services. Let our expert therapists guide you to ultimate relaxation.</p>
                         <div class="hero-buttons">
                             <a href="booking.php" class="btn btn-primary btn-lg me-3">Book Now</a>
@@ -84,7 +86,7 @@
     <!-- Services Overview -->
     <section  id="services-section" class="services-section py-5">
         <div class="container">
-            <h2 class="text-center mb-5">What we offer</h2>
+            <h2 class="text-center mb-5">What We Offer</h2>
             <div class="carousel-container">
                 <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -97,7 +99,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Swedish Massage</h5>
                                     <p class="card-text">A classic stress-relieving massage using smooth flowing techniques.</p>
-                                    <p class="price">₱450</p>
+                                    <p class="price">₱450 / hour</p>
                                     <a href="booking.php" class="btn btn-primary">Book Now</a>
                                 </div>
                             </div>
@@ -111,7 +113,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Sports Massage</h5>
                                     <p class="card-text">Improve recovery and flexibility while reducing injury risks.</p>
-                                    <p class="price">₱550</p>
+                                    <p class="price">₱550 / hour</p>
                                     <a href="booking.php" class="btn btn-primary">Book Now</a>
                                 </div>
                             </div>
@@ -125,7 +127,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Trigger Point Therapy</h5>
                                     <p class="card-text">Release bound muscles causing pain or decreased motion range.</p>
-                                    <p class="price">₱600</p>
+                                    <p class="price">₱600 / hour</p>
                                     <a href="booking.php" class="btn btn-primary">Book Now</a>
                                 </div>
                             </div>
@@ -139,7 +141,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Couples Massage</h5>
                                     <p class="card-text">Share a relaxing experience with your loved one in our premium couples suite.</p>
-                                    <p class="price">₱900</p>
+                                    <p class="price">₱900 / hour</p>
                                     <a href="booking.php" class="btn btn-primary">Book Now</a>
                                 </div>
                             </div>
@@ -153,7 +155,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Deep Tissue Massage</h5>
                                     <p class="card-text">Intense pressure targeting chronic muscle tension and knots.</p>
-                                    <p class="price">₱650</p>
+                                    <p class="price">₱650 / hour</p>
                                     <a href="booking.php" class="btn btn-primary">Book Now</a>
                                 </div>
                             </div>
@@ -167,7 +169,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Chair Massage</h5>
                                     <p class="card-text">Quick and effective relief for neck, shoulder, and back tension.</p>
-                                    <p class="price">₱300</p>
+                                    <p class="price">₱300 / hour</p>
                                     <a href="booking.php" class="btn btn-primary">Book Now</a>
                                 </div>
                             </div>
@@ -356,7 +358,7 @@
     <!-- Call to Action -->
     <section class="cta-section py-5">
         <div class="container text-center">
-            <h2>Ready to Start Your Wellness Journey?</h2>
+            <h2>Ready to Experience Luxurious Tranquility?</h2>
             <p class="lead">Join us today and experience the difference.</p>
             <a href="register.php" class="btn btn-primary btn-lg">Create Account</a>
         </div>
@@ -370,12 +372,12 @@
                     <!-- Contact Info -->
                     <div class="col-lg-4">
                         <div class="footer-info">
-                            <h3 class="brand-name">Serenity Spa</h3>
+                            <h3 class="brand-name">Lotus Serenity Spa</h3>
                             <p class="footer-desc">Where tranquility meets luxury. Experience the perfect blend of traditional techniques and modern wellness solutions.</p>
                             <div class="contact-info">
                                 <div class="contact-item">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>123 makapa ru road, Baguio City</span>
+                                    <i class="fBaguio Country Club, Baguio Cityas fa-map-marker-alt"></i>
+                                    <span></span>
                                 </div>
                                 <div class="contact-item">
                                     <i class="fas fa-phone-alt"></i>
@@ -383,7 +385,7 @@
                                 </div>
                                 <div class="contact-item">
                                     <i class="fas fa-envelope"></i>
-                                    <span>info@serenityspa.ph</span>
+                                    <span>info@lotusserenityspa.ph</span>
                                 </div>
                             </div>
                         </div>
@@ -452,7 +454,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <p class="copyright">© 2024 Serenity Spa. All rights reserved.</p>
+                        <p class="copyright">© 2024 Lotus Serenity Spa. All rights reserved.</p>
                     </div>
                     <div class="col-md-6">
                         <div class="footer-links">
