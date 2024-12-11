@@ -60,8 +60,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="css/styles.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Manhattan Font -->
-    <link href="https://fonts.cdnfonts.com/css/manhattan-darling" rel="stylesheet">
+    <!-- Libre Caslon Text Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="icon" type="image/png" href="images/logo_favicon.png">
     <!-- For Apple devices -->
@@ -152,7 +154,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 <?php endif; ?>
             </form>
-            <p class="lead mt-4">Already have an account? <a href="login.php" class="text-primary">Login</a></p>
+            <p class="mt-4">Already have an account? <a href="login.php" class="text-primary">Login</a></p>
             </div>
         </div>
     </section>
