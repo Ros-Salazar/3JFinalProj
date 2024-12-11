@@ -25,9 +25,9 @@
     ?>
     
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg bg-dark py-3">
         <div class="container">
-            <a class="navbar-brand" href="#">Serenity Spa</a>
+            <a class="brand-name" href="#">Serenity Spa</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -69,19 +69,67 @@
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $full_name = $conn->real_escape_string($_POST['full_name']);
+        $email = $conn->real_escape_string($_POST['email']);
         $phone_number = $conn->real_escape_string($_POST['phone_number']);
-        $update_query = "UPDATE users SET full_name = '$full_name', phone_number = '$phone_number' WHERE user_id = $user_id";
+        $update_query = "UPDATE users SET full_name = '$full_name', email = '$email', phone_number = '$phone_number' WHERE user_id = $user_id";
         $conn->query($update_query);
-        header("Location: dashboard.php");
+
+        if ($conn->query($update_query)) {
+            $success_message = "Profile updated successfully! Redirecting to login page...";
+            header("refresh:4;url=login.php"); // Redirect after 4 seconds
+            // exit(); // Stop further script execution
+        } else {
+            $error_message = "Profile update failed. Please try again.";
+        }
     }
     ?>
-    <form method="post">
-        <label>Full Name: <input type="text" name="full_name" value="<?= htmlspecialchars($user_data['full_name']) ?>"></label><br>
-        <label>Phone Number: <input type="text" name="phone_number" value="<?= htmlspecialchars($user_data['phone_number']) ?>"></label><br>
-        <button type="submit">Update</button>
-    </form>
 
-    <p><a href="dashboard.php">Cancel</a></p>
+    <!-- Edit Profile Form -->
+    <section class="container py-5">
+        <div class="card shadow-lg border-0 rounded-3 p-4 mx-auto" style="max-width: 500px;">
+            <h2 class="text-center mb-4">Update Your Profile</h2>
+            <form method="post" class="form">
+                <div class="mb-3">
+                    <label for="full_name" class="form-label">Full Name:</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="full_name" 
+                        name="full_name" 
+                        value="<?= htmlspecialchars($user_data['full_name']) ?>" 
+                        required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input 
+                        type="email" 
+                        class="form-control" 
+                        id="email" 
+                        name="email" 
+                        value="<?= htmlspecialchars($user_data['email']) ?>" 
+                        required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="phone_number" class="form-label">Phone Number:</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="phone_number" 
+                        name="phone_number" 
+                        value="<?= htmlspecialchars($user_data['phone_number']) ?>" 
+                        required>
+                </div>
+                
+                <div class="d-flex justify-content-between mt-4">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <a href="dashboard.php" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
 
     <!-- Footer -->
     <footer class="footer-premium">

@@ -17,17 +17,11 @@
     <!-- For Apple devices -->
     <link rel="apple-touch-icon" href="images/logo_favicon.png">
 </head>
-<body>
+<body>    
     <!-- Navigation -->
-    <?php
-        // Start session to get logged-in user data
-        session_start();
-    ?>
-    
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg bg-dark py-3">
         <div class="container">
-            <a class="navbar-brand" href="#">Serenity Spa</a>
+            <a class="brand-name" href="#">Serenity Spa</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -88,13 +82,28 @@
         }
     }
     ?>
-    <form method="post">
-        <label>Current Password: <input type="password" name="current_password" required></label><br>
-        <label>New Password: <input type="password" name="new_password" required></label><br>
-        <button type="submit">Change Password</button>
-    </form>
 
-    <p><a href="dashboard.php">Cancel</a></p>
+    <!-- Change Password Form -->
+    <section class="container py-5">
+        <div class="card shadow-lg border-0 rounded-3 p-4 mx-auto" style="max-width: 500px;">
+            <h2 class="text-center mb-4 fw-bold">Change Password</h2>
+            <form method="post" class="form">
+                <div class="mb-3">
+                    <label for="current_password" class="form-label">Current Password</label>
+                    <input type="password" class="form-control" id="current_password" name="current_password" placeholder="Enter current password" required>
+                </div>
+                <div class="mb-3">
+                    <label for="new_password" class="form-label">New Password</label>
+                    <input type="password" class="form-control" id="new_password" name="new_password" placeholder="Enter new password" required>
+                </div>
+                <div class="d-flex justify-content-between mt-4"">
+                    <button type="submit" class="btn btn-primary">Change Password</button>
+                    <a href="dashboard.php" class="btn btn-outline-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
 
     <!-- Footer -->
     <footer class="footer-premium">
