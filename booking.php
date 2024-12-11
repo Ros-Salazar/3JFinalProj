@@ -26,15 +26,14 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg booking-navbar">
         <div class="container">
-            <a class="navbar-brand" href="#">Serenity Spa</a>
+            <a class="navbar-brand" href="#">Book Now</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a id="home-services" class="nav-link" href="#hero-section">Home</a></li>
-                    <li class="nav-item"><a id="smooth-services" class="nav-link" href="#services-section">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="booking.php">Book Now</a></li>
+                    <li class="nav-item"><a id="home-services" class="nav-link" href="index.php">Home</a></li>
+                    <li class="nav-item"><a id="smooth-services" class="nav-link" href="index.php#services-section">Services</a></li>
 
                     <!--development-->
                     <li class="nav-item"><a class="nav-link" href="dashboard-admin.php">Admin Dashboard</a></li>
@@ -63,7 +62,7 @@
 
         <br> <br>
 
-        <table class="table booking-table">
+        <table class="table booking-table styled-table">
             <thead>
                 <tr>
                     <th>Service Name</th>
@@ -100,7 +99,7 @@
 
         <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" class="booking-form">
             <label for="service">Select Service:</label>
-            <select name="service_id" id="service_id" required>
+            <select name="service_id" id="service_id" class="animated-dropdown" required>
                 <optgroup label="Services"></optgroup>
                 <option value="1">Swedish Massage</option>
                 <option value="2">Sports Massage</option>
@@ -113,7 +112,7 @@
             <br> <br>
 
             <label for="therapist">Select Therapist:</label>
-            <select name="therapist_id" id="therapist_id" required>
+            <select name="therapist_id" id="therapist_id" class="animated-dropdown" required>
                 <optgroup label="Male Therapists"></optgroup>
                 <option value="2">Adam Smith</option>
                 <option value="3">Bob Smith</option>
@@ -131,29 +130,29 @@
             <h3 class="booking-subtitle">Date and Time</h3>
 
             <label for="date">Select Appointment Date:</label>
-            <input type="date" name="appointment_date" id="appointment_date" required>
+            <input class="animated-dropdown" type="date" name="appointment_date" id="appointment_date" required>
 
             <br> <br>
 
             <label for="time">Select Start Time:</label>
-            <input type="time" name="start_time" id="start_time" required>
+            <input class="animated-dropdown" type="time" name="start_time" id="start_time" required>
             
             <br> <br>
 
             <label for="time">Select End Time:</label>
-            <input type="time" name="end_time" id="end_time" required>
+            <input class="animated-dropdown" type="time" name="end_time" id="end_time" required>
 
             <br> <br>
 
             <h3 class="booking-subtitle">Confirmation and Payment</h3>
 
             <label for="promo_code">Promo Code:</label>
-            <input type="text" name="promo_code" id="promo_code" placeholder="Enter promo code">
+            <input class="animated-dropdown" type="text" name="promo_code" id="promo_code" placeholder="Enter promo code">
 
             <br><br>
 
             <label for="payment_method">Payment Method:</label>
-            <select name="payment_method" id="payment_method" required>
+            <select class="animated-dropdown" name="payment_method" id="payment_method" required>
                 <option value="cash">Cash</option>
                 <option value="credit_card">Credit Card</option>
                 <option value="paypal">PayPal</option>
@@ -178,7 +177,7 @@
                             <div class="contact-info">
                                 <div class="contact-item">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    <span>123 Wellness Street, Metro Manila, Philippines</span>
+                                    <span>123 makapa ru road, Baguio City</span>
                                 </div>
                                 <div class="contact-item">
                                     <i class="fas fa-phone-alt"></i>
@@ -191,13 +190,14 @@
                             </div>
                         </div>
                     </div>
+
                     
                     <!-- Quick Links -->
                     <div class="col-lg-4">
                         <div class="quick-links">
                             <h4>Quick Links</h4>
                             <div class="links-grid">
-                                <a href="#" class="link-item">
+                                <a href="index.php#services-section"  class="link-item">
                                     <i class="fas fa-spa"></i>
                                     <span>Our Services</span>
                                 </a>
@@ -205,7 +205,7 @@
                                     <i class="fas fa-calendar-alt"></i>
                                     <span>Book Appointment</span>
                                 </a>
-                                <a href="#" class="link-item">
+                                <a href="index.php#home-section" class="link-item">
                                     <i class="fas fa-info-circle"></i>
                                     <span>About Us</span>
                                 </a>
