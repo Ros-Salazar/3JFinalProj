@@ -19,7 +19,7 @@
     <!-- For Apple devices -->
     <link rel="apple-touch-icon" href="images/logo_favicon.png">
 </head>
-<body class= "booking-body">
+<body >
     <!-- Navigation -->
     <?php
         session_start();

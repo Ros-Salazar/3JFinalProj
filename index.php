@@ -22,7 +22,7 @@
     <!-- For Apple devices -->
     <link rel="apple-touch-icon" href="images/logo_favicon.png">
 </head>
-<body>
+<body class="index-body">
     <!-- Navigation -->
     <?php
         // Start session to get logged-in user data
