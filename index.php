@@ -375,6 +375,7 @@
                             <h3 class="brand-name">Lotus Serenity Spa</h3>
                             <p class="footer-desc">Where tranquility meets luxury. Experience the perfect blend of traditional techniques and modern wellness solutions.</p>
                             <div class="contact-info">
+
                                 <div class="contact-item">
                                     <i class="fas fa-phone-alt"></i>
                                     <span>+63 912 345 6789</span>
