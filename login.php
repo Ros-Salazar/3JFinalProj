@@ -58,11 +58,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/base.css" />
     <link rel="stylesheet" type="text/css" href="css/premium.css" />
+    <!-- Libre Caslon Text Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&display=swap" rel="stylesheet">
+    
     <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
     
     <link rel="icon" type="image/png" href="images/logo_favicon.png"><
 
-/head>
+</head>
 <body class="demo-4">
     <main>
         <div class="frame">
@@ -100,12 +105,14 @@
                     <input type="checkbox" class="form-check-input" id="show-password">
                     <label class="form-check-label" for="show-password">Show Password</label>
                 </div>
+                <br>
                 <button type="submit" class="btn btn-primary w-100">Login</button>
                 <?php if (!empty($error_message)): ?>
                     <div class="alert alert-danger mt-3">
                     <?php echo $error_message; ?>
                     </div>
                 <?php endif; ?>
+                <br>
                 </form>
                 <p class="lead mt-4">Don't have an account? <a href="register.php" class="text-primary">Register</a></p>
             </div>
