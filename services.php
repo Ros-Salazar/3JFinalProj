@@ -94,69 +94,29 @@
 
     <br> <br>
 
-    <!-- Service Cards; Also just an experiment -->
-    <?php
-        // Connect to database
-        include 'database.php';
-
-        // For debugging
-        error_reporting(E_ALL);
-        ini_set('display_errors', '1');
-
-        // Get services query
-        $services_sql = "SELECT * FROM services WHERE 1=1";
-
-        // Apply filters
-        if (!empty($_GET['service_type'])) {
-            $service_type = $conn->real_escape_string($_GET['service_type']);
-            $services_sql .= " AND service_name LIKE '%$service_type%'";
-        }
-
-        if (!empty($_GET['min_price'])) {
-            $min_price = $conn->real_escape_string($_GET['min_price']);
-            $services_sql .= " AND price >= $min_price";
-        }
-
-        if (!empty($_GET['max_price'])) {
-            $max_price = $conn->real_escape_string($_GET['max_price']);
-            $services_sql .= " AND price <= $max_price";
-        }
-
-        if (!empty($_GET['duration'])) {
-            $duration = $conn->real_escape_string($_GET['duration']);
-            $services_sql .= " AND duration = $duration";
-        }
-
-        // Apply sorting
-        $orderBy = "service_name ASC"; // Default sorting is alphabetical
-        if (!empty($_GET['sort'])) {
-            if ($_GET['sort'] == 'price') {
-                $orderBy = "price ASC";
-            } elseif ($_GET['sort'] == 'duration') {
-                $orderBy = "duration ASC";
-            } elseif ($_GET['sort'] == 'popularity') {
-                $orderBy = "service_name ASC"; //How do we do this popularity filter bruuuh
-            }
-        }
-        $services_sql .= " ORDER BY $orderBy";
-
-        // Fetch data
-        $services_result = $conn->query($services_sql);
-        
-        if ($services_result && $services_result->num_rows > 0) {
-            while ($row = $services_result->fetch_assoc()) {
-                echo "<div class='service-card'>";
-                // echo "<img src='placeholder.jpg' alt='Service Image'>";
-                echo "<h2>" . htmlspecialchars($row['service_name']) . "</h2>";
-                echo "<p><strong>Price: </strong>" . htmlspecialchars($row['price']) . "</p>";
-                echo "<p><strong>Duration: </strong>" . htmlspecialchars($row['duration']) . " mins</p>";
-                echo "<p>" . htmlspecialchars($row['description']) . "</p>";
-                echo "</div>";
-            }
-        } else {
-            echo "No Services Found";
-        }
-    ?>
+    <!-- Service Cards -->
+    <div class="container mt-5">
+        <div class="row">
+            <?php
+                // Fetch data
+                if ($services_result && $services_result->num_rows > 0) {
+                    while ($row = $services_result->fetch_assoc()) {
+                        echo "<div class='col-lg-4 col-md-6 mb-4'>";
+                        echo "<div class='service-card'>";
+                        echo "<h3 class='service-title'>" . htmlspecialchars($row['service_name']) . "</h3>";
+                        echo "<p class='service-price'><strong>Price: </strong>" . htmlspecialchars($row['price']) . "</p>";
+                        echo "<p class='service-duration'><strong>Duration: </strong>" . htmlspecialchars($row['duration']) . " mins</p>";
+                        echo "<p class='service-description'>" . htmlspecialchars($row['description']) . "</p>";
+                        echo "<button class='btn btn-primary'>Book Now</button>";
+                        echo "</div>";
+                        echo "</div>";
+                    }
+                } else {
+                    echo "<div class='col-12'><p>No Services Found</p></div>";
+                }
+            ?>
+        </div>
+    </div>
 
     <br> <br>
 

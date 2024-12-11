@@ -19,26 +19,27 @@
 </head>
 <body>
     <!-- Navigation -->
-    <?php
+    <?php /*
         // Start session to get logged-in user data
         session_start();
-    ?>
+    */ ?>
     
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-dark py-3">
         <div class="container">
-            <a class="brand-name" href="#">Lotus Serenity Spa</a>
+            <a class="brand-name" href="#">Dashboard</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.php">Services</a></li>
+                <li class="nav-item"><a id="home-services" class="nav-link" href="index.php">Home</a></li>
+                <li class="nav-item"><a id="smooth-services" class="nav-link" href="index.php#services-section">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="booking.php">Book Now</a></li>
 
                     <!-- Conditional Links Based on Login Status -->
-                    <?php if (isset($_SESSION['user_id'])): ?>
+                    <?php /*
+                    if (isset($_SESSION['user_id'])): ?>
                         <?php if ($_SESSION['role'] == 'admin'): ?>
                             <li class="nav-item"><a class="nav-link" href="dashboard-admin.php">Admin Dashboard</a></li>
                         <?php else: ?>
@@ -47,7 +48,7 @@
                         <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
                     <?php else: ?>
                         <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
-                    <?php endif; ?>
+                    <?php endif; */ ?>
                 </ul>
             </div>
         </div>
@@ -56,17 +57,14 @@
     <!-- User Dashboard -->
     <section class="dashboard container py-5">
         <div class="text-center mb-5">
-            <p class="mb-5">.</p>
         </div>
         <div class="text-center mb-5">
-            <p class="mb-5"></p>
-            <p class="mb-5"></p>
-            <h1 class="dashboard-title big-margin-top">Welcome, <?= htmlspecialchars($user_data['full_name']) ?>!</h1>
+            <h1 class="dashboard-title">Welcome, <?= htmlspecialchars($user_data['full_name']) ?>!</h1>
             <p class="dashboard-subtitle">Here's an overview of your appointments and rewards.</p>
         </div>
         <div class="container text-center position-relative align-items-center justify-content-center text-center">
             
-            <?php
+            <?php /*
             // Connect to database
             include 'database.php';
 
@@ -110,81 +108,88 @@
             SELECT * FROM promotions 
             WHERE start_date <= CURDATE() AND end_date >= CURDATE()";
             $promotions_result = $conn->query($promotions_query);
-            ?>
+            */ ?>
 
             <!-- Dashboard Panels -->
             <div class="row g-4">
-                    <!-- Upcoming Appointments -->
-                    <div class="col-md-6">
-                        <div class="dashboard-card">
-                            <h3 class="card-title">Upcoming Appointments</h3>
-                            <?php if ($upcoming_result->num_rows > 0): ?>
-                                <ul class="appointment-list">
-                                    <?php while ($row = $upcoming_result->fetch_assoc()): ?>
-                                        <li class="appointment-item">
-                                            <strong><?= htmlspecialchars($row['service_name']) ?></strong><br>
-                                            <span class="text-muted">Date: <?= htmlspecialchars($row['appointment_date']) ?></span><br>
-                                            <span class="text-muted">Time: <?= htmlspecialchars($row['start_time']) ?> - <?= htmlspecialchars($row['end_time']) ?></span><br>
-                                            <span>Status: <?= htmlspecialchars($row['status']) ?></span><br>
-                                            <div class="appointment-actions">
-                                                <a href="cancel.php?appointment_id=<?= $row['appointment_id'] ?>" class="btn btn-outline-danger btn-sm">Cancel</a>
-                                                <a href="reschedule.php?appointment_id=<?= $row['appointment_id'] ?>" class="btn btn-outline-primary btn-sm">Reschedule</a>
-                                            </div>
-                                        </li>
-                                    <?php endwhile; ?>
-                                </ul>
-                            <?php else: ?>
-                                <p>No upcoming appointments.</p>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-
-                    <!-- Past Appointments -->
-                    <div class="col-md-6">
-                        <div class="dashboard-card">
-                            <h3 class="card-title">Past Appointments</h3>
-                            <?php if ($past_result->num_rows > 0): ?>
-                                <ul class="appointment-list">
-                                    <?php while ($row = $past_result->fetch_assoc()): ?>
-                                        <li class="appointment-item">
-                                            <strong><?= htmlspecialchars($row['service_name']) ?></strong><br>
-                                            <span class="text-muted">Date: <?= htmlspecialchars($row['appointment_date']) ?></span><br>
-                                            <a href="review.php?appointment_id=<?= $row['appointment_id'] ?>" class="btn btn-outline-success btn-sm">Leave a Review</a>
-                                        </li>
-                                    <?php endwhile; ?>
-                                </ul>
-                            <?php else: ?>
-                                <p>No past appointments.</p>
-                            <?php endif; ?>
-                        </div>
+                <!-- Upcoming Appointments -->
+                <div class="col-md-6">
+                    <div class="dashboard-card">
+                        <h3 class="card-title">Upcoming Appointments</h3>
+                        <?php /*
+                        if ($upcoming_result->num_rows > 0): ?>
+                            <ul class="appointment-list">
+                                <?php while ($row = $upcoming_result->fetch_assoc()): ?>
+                                    <li class="appointment-item">
+                                        <strong><?= htmlspecialchars($row['service_name']) ?></strong><br>
+                                        <span class="text-muted">Date: <?= htmlspecialchars($row['appointment_date']) ?></span><br>
+                                        <span class="text-muted">Time: <?= htmlspecialchars($row['start_time']) ?> - <?= htmlspecialchars($row['end_time']) ?></span><br>
+                                        <span>Status: <?= htmlspecialchars($row['status']) ?></span><br>
+                                        <div class="appointment-actions">
+                                            <a href="cancel.php?appointment_id=<?= $row['appointment_id'] ?>" class="btn btn-outline-danger btn-sm">Cancel</a>
+                                            <a href="reschedule.php?appointment_id=<?= $row['appointment_id'] ?>" class="btn btn-outline-primary btn-sm">Reschedule</a>
+                                        </div>
+                                    </li>
+                                <?php endwhile; ?>
+                            </ul>
+                        <?php else: ?>
+                            <p>No upcoming appointments.</p>
+                        <?php endif; */ ?>
                     </div>
                 </div>
 
-                <!-- Promotions Section -->
-                <div class="dashboard-card mt-5">
-                    <h3 class="card-title">Promotions and Rewards</h3>
-                    <?php if ($promotions_result->num_rows > 0): ?>
-                        <ul class="promotions-list">
-                            <?php while ($promo = $promotions_result->fetch_assoc()): ?>
-                                <li class="promotion-item">
-                                    <strong><?= htmlspecialchars($promo['promo_code']) ?></strong>: <?= htmlspecialchars($promo['description']) ?> 
-                                    (<?= htmlspecialchars($promo['discount_percent']) ?>% off)
-                                </li>
-                            <?php endwhile; ?>
-                        </ul>
-                    <?php else: ?>
-                        <p>No active promotions.</p>
-                    <?php endif; ?>
+                <!-- Past Appointments -->
+                <div class="col-md-6">
+                    <div class="dashboard-card">
+                        <h3 class="card-title">Past Appointments</h3>
+                        <?php /*
+                        if ($past_result->num_rows > 0): ?>
+                            <ul class="appointment-list">
+                                <?php while ($row = $past_result->fetch_assoc()): ?>
+                                    <li class="appointment-item">
+                                        <strong><?= htmlspecialchars($row['service_name']) ?></strong><br>
+                                        <span class="text-muted">Date: <?= htmlspecialchars($row['appointment_date']) ?></span><br>
+                                        <a href="review.php?appointment_id=<?= $row['appointment_id'] ?>" class="btn btn-outline-success btn-sm">Leave a Review</a>
+                                    </li>
+                                <?php endwhile; ?>
+                            </ul>
+                        <?php else: ?>
+                            <p>No past appointments.</p>
+                        <?php endif; */ ?>
+                    </div>
                 </div>
+            </div>
 
-                <!-- Account Settings -->
-                <div class="dashboard-card mt-5 text-center">
-                    <a href="edit-profile.php" class="btn btn-secondary btn-lg mx-2">Edit Profile</a>
-                    <a href="change-password.php" class="btn btn-secondary btn-lg mx-2">Change Password</a>
-                    <!-- <a href="logout.php" class="btn btn-danger btn-lg mx-2">Logout</a> -->
-                </div>
-            </section>
+            <!-- Promotions Section -->
+            <div class="dashboard-card mt-5">
+                <h3 class="card-title">Promotions and Rewards</h3>
+                <?php /*
+                if ($promotions_result->num_rows > 0): ?>
+                    <ul class="promotions-list">
+                        <?php while ($promo = $promotions_result->fetch_assoc()): ?>
+                            <li class="promotion-item">
+                                <strong><?= htmlspecialchars($promo['promo_code']) ?></strong>: <?= htmlspecialchars($promo['description']) ?> 
+                                (<?= htmlspecialchars($promo['discount_percent']) ?>% off)
+                            </li>
+                        <?php endwhile; ?>
+                    </ul>
+                <?php else: ?>
+                    <p>No active promotions.</p>
+                <?php endif; */ ?>
+            </div>
 
+            <!-- Account Settings -->
+            <div class="dashboard-card-buttons mt-5 text-center">
+                <a href="edit-profile.php" class="btn btn-edit btn-lg mx-2">Edit Profile</a>
+                <a href="change-password.php" class="btn btn-change-password btn-lg mx-2">Change Password</a>
+                <!-- <a href="logout.php" class="btn btn-danger btn-lg mx-2">Logout</a> -->
+            </div>
+        </div>
+    </section>
+
+    <br><br>
+    <br><br>
+    <br><br>
     <!-- Footer -->
     <footer class="footer-premium">
         <div class="footer-top">

@@ -7,6 +7,9 @@ body, th,tr {
     line-height: 1.6; /* Improve readability */
 }
 
+.index-body{
+    animation: fadeIn 1.5s ease-in-out; /* Apply fade-in animation */
+}
 
 .bg-dark {
     background: linear-gradient(to right, #1a1a1a, #2d2d2d) !important;
@@ -99,18 +102,45 @@ body, th,tr {
 
 /* Service Cards */
 .service-card {
-    transition: transform 0.3s ease;
-    height: 100%;
+    background-color: #ffffff; /* White background for the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    padding: 20px; /* Padding inside the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for hover effect */
+    text-align: center; /* Center text */
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
 }
 
-.price {
-    font-size: 1.25rem;
-    color: #28a745;
-    font-weight: bold;
+.service-title {
+    font-size: 1.5rem; /* Larger font size for the title */
+    color: #6c757d; /* Elegant dark gray for the title */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+.service-price, .service-duration {
+    font-size: 1.2rem; /* Slightly larger font size for price and duration */
+    color: #333; /* Darker text color */
+}
+
+.service-description {
+    color: #555; /* Darker description color */
+    margin-bottom: 15px; /* Space below the description */
+}
+
+.btn-primary {
+    background-color: #ffc107; /* Gold color for the button */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+}
+
+.btn-primary:hover {
+    background-color: #e0a800; /* Darker gold on hover */
 }
 
 /* Testimonial Cards */
@@ -139,43 +169,71 @@ body, th,tr {
     border-radius: 10px;
     padding: 2rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    animation: fadeIn 1.5s ease-in-out; /* Apply fade-in animation */
 }
 
 .dashboard-title {
-    font-family: 'Manhattan Darling', serif;
-    color: #355c7d;
-    margin-bottom: 0.5rem;
+    font-size: 2.5rem; /* Larger font size for the title */
+    color: #a8910e; /* Gold color for the title */
+    margin-top: 130px;
+    margin-bottom: 15px; /* Space below the title */
+    font-weight: bold;
 }
 
 .dashboard-subtitle {
-    font-family: 'Manhattan Darling', serif;
-    color: #6c757d;
-    margin-bottom: 1.5rem;
+    font-size: 1.2rem; /* Slightly larger font size for the subtitle */
+    color: #333; /* Gold color for the subtitle */
+    margin-bottom: 5px;
+    margin-bottom: 30px; /* Space below the subtitle */
 }
 
 .dashboard-card {
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa; /* Light background for cards */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    padding: 20px; /* Padding inside the card */
+    transition: transform 0.3s ease; /* Transition for hover effect */
+
+}
+
+.dashboard-card-buttons {
+    padding: 20px; /* Padding inside the card */
+    
+
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
 }
 
 .card-title {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Font size for card titles */
+    color: #000000; /* Gold color for card titles */
+    margin-bottom: 15px; /* Space below the title */
+
     font-weight: 600;
-    color: #2c3e50;
-    margin-bottom: 1rem;
 }
 
-.appointment-list, .promotions-list {
-    list-style: none;
-    padding: 0;
+.appointment-list {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
 }
 
-.appointment-item, .promotion-item {
-    margin-bottom: 1rem;
-    padding: 1rem;
-    border-bottom: 1px solid #e9ecef;
+.appointment-item {
+    margin-bottom: 10px; /* Space between appointment items */
+    padding: 10px; /* Padding for appointment items */
+    border: 1px solid #ddd; /* Light border for items */
+    border-radius: 5px; /* Rounded corners */
+    color: #333; /* Darker text color for appointment items */
+}
+
+.promotion-item {
+    margin-bottom: 10px; /* Space between promotion items */
+    padding: 10px; /* Padding for promotion items */
+    border: 1px solid #ddd; /* Light border for items */
+    border-radius: 5px; /* Rounded corners */
+    color: #333; /* Darker text color for promotion items */
 }
 
 .appointment-item:last-child, .promotion-item:last-child {
@@ -946,5 +1004,39 @@ body, th,tr {
 
 .login-page, .login-page body {
     background: hsla(60, 50%, 3%, 1); /* Apply the background color */
+}
+
+.btn-edit {
+    background-color: #0176fc; /* Blue color for Edit Profile */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 30px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+
+    transition: transform 0.3s ease; /* Transition for hover effect */
+}
+
+.btn-edit:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: white;
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.btn-change-password {
+    background-color: #ffbf00; /* Orange/Yellow color for Change Password */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 30px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+
+    transition: transform 0.3s ease; /* Transition for hover effect */
+}
+
+.btn-change-password:hover {
+    background-color: #e0a800; /* Darker yellow on hover */
+    color: white; 
+    transform: translateY(-5px); /* Lift effect on hover */
 }
 
