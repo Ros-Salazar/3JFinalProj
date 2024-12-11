@@ -1,3 +1,56 @@
+<?php
+    // Connect to database
+    include 'database.php';
+
+    // Start user session
+    session_start();
+
+    // For debugging
+    error_reporting(E_ALL);
+    ini_set('display_errors', '1');
+
+    // Get data
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+
+        // Check with database
+        $email_sql = "SELECT * FROM users WHERE email = '$email'";
+        $email_result = $conn -> query($email_sql);
+
+        if ($email_result -> num_rows > 0) {
+            $row = $email_result -> fetch_assoc();
+            // Hash the password
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+            // Verify password
+            if (password_verify($password, $row['password'])) {
+                // Store user information in session
+                $_SESSION["logged_in"] = true;
+                $_SESSION["email"] = $email;
+                $_SESSION["user_id"] = $row["user_id"];
+                $_SESSION["full_name"] = $row["full_name"];
+                $_SESSION["role"] = $row["role"];
+
+                // Redirect based on user role
+                if ($_SESSION['role'] == 'admin') {
+                    header("Location: dashboard-admin.php"); // Admin dashboard
+                } else {
+                    header("Location: dashboard.php"); // Customer dashboard
+                }
+                exit();
+            } else {
+                // Incorrect password
+                echo "<br>Incorrect password. Please try again.";
+            }
+        } else {
+            // User not found
+            echo "<br>User not found. Please register.";
+        }       
+        // $conn -> close(); 
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,17 +70,11 @@
     <!-- For Apple devices -->
     <link rel="apple-touch-icon" href="images/logo_favicon.png">
 </head>
-<body>
+<body>    
     <!-- Navigation -->
-    <?php
-        // Start session to get logged-in user data
-        session_start();
-    ?>
-    
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg py-3">
+    <nav class="navbar navbar-expand-lg bg-dark py-3">
         <div class="container">
-            <a class="navbar-brand" href="#">Serenity Spa</a>
+            <a class="brand-name" href="#">Serenity Spa</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -56,7 +103,7 @@
     <!-- Login Form -->
     <section class="cta-section py-5">
         <div class="container d-flex flex-column align-items-center justify-content-center">
-            <h2 class="cta-heading mb-4">Login to Your Account</h2>
+            <h2 class="text-center mb-5">Login to Your Account</h2>
 
             <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" class="login-form text-center w-50 p-4 shadow rounded bg-white">
                 <div class="mb-3">
@@ -67,81 +114,30 @@
                     <label for="password" class="form-label text-dark">Password:</label>
                     <input type="password" id="password" name="password" class="form-control" required>
                 </div>
-                <div class="mb-3 form-check">
+                <div class="mb-3">
                     <input type="checkbox" class="form-check-input" id="show-password">
                     <label class="form-check-label text-dark" for="show-password">Show Password</label>
-                </div>
-                <script>
-                    const passwordInput = document.getElementById('password');
-                    const showPasswordCheckbox = document.getElementById('show-password');
+                    <script>
+                        const passwordInput = document.getElementById('password');
+                        const showPasswordCheckbox = document.getElementById('show-password');
 
-                    showPasswordCheckbox.addEventListener('change',() => {
-                        if (showPasswordCheckbox.checked) {
-                            passwordInput.type = 'text';
-                        } else {
-                            passwordInput.type = 'password';
-                        }
-                    });
-                </script>
-
-                <br><br>
-                <button type="submit" class="btn btn-primary btn-lg w-100">Login</button>
-            </form>
-
-            <?php
-                // Connect to database
-                include 'database.php';
-
-                // Start user session
-                session_start();
-
-                // For debugging
-                error_reporting(E_ALL);
-                ini_set('display_errors', '1');
-
-                // Get data
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    $email = $_POST["email"];
-                    $password = $_POST["password"];
-
-                    // Check with database
-                    $email_sql = "SELECT * FROM users WHERE email = '$email'";
-                    $email_result = $conn -> query($email_sql);
-
-                    if ($email_result -> num_rows > 0) {
-                        $row = $email_result -> fetch_assoc();
-                        // Hash the password
-                        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-                        // Verify password
-                        if (password_verify($password, $row['password'])) {
-                            // Store user information in session
-                            $_SESSION["logged_in"] = true;
-                            $_SESSION["email"] = $email;
-                            $_SESSION["user_id"] = $row["user_id"];
-                            $_SESSION["full_name"] = $row["full_name"];
-                            $_SESSION["role"] = $row["role"];
-
-                            // Redirect based on user role
-                            if ($_SESSION['role'] == 'admin') {
-                                header("Location: dashboard-admin.php"); // Admin dashboard
+                        showPasswordCheckbox.addEventListener('change',() => {
+                            if (showPasswordCheckbox.checked) {
+                                passwordInput.type = 'text';
                             } else {
-                                header("Location: dashboard.php"); // Customer dashboard
+                                passwordInput.type = 'password';
                             }
-                            exit();
-                        } else {
-                            // Incorrect password
-                            echo "<br>Incorrect password. Please try again.";
-                        }
-                    } else {
-                        // User not found
-                        echo "<br>User not found. Please register.";
-                    }       
-                    // $conn -> close(); 
-                }
-            ?>
-
-            <p  class="lead mt-4">Don't have an account? <a href="register.php" class="text-primary">Register Here</a></p>
+                        });
+                    </script>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <?php if (!empty($error_message)): ?>
+                    <div class="alert alert-danger mt-3">
+                        <?php echo $error_message; ?>
+                    </div>
+                <?php endif; ?>
+            </form>
+            <p class="lead mt-4">Don't have an account? <a href="register.php" class="text-primary">Register</a></p>
         </div>
     </section>
 

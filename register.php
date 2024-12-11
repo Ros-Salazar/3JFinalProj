@@ -1,3 +1,53 @@
+<?php
+// Start session to handle logged-in users
+session_start();
+
+// Include database connection
+include 'database.php';
+
+// For debugging during development
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
+// Handle form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get form data
+    $full_name = $_POST["full_name"];
+    $email = $_POST["email"];
+    $phone_number = $_POST["phone_number"];
+    $password = $_POST["password"];
+
+    // Hash the password
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+    // Check if user already exists
+    $check_sql = "SELECT * FROM users WHERE email = ?";
+    $stmt = $conn->prepare($check_sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $check_result = $stmt->get_result();
+
+    if ($check_result->num_rows > 0) {
+        // User exists
+        $error_message = "User already exists. Please login instead.";
+    } else {
+        // Insert new user
+        $register_sql = "INSERT INTO users (full_name, email, phone_number, password, role, created_at) 
+                        VALUES (?, ?, ?, ?, 'customer', NOW())";
+        $stmt = $conn->prepare($register_sql);
+        $stmt->bind_param("ssss", $full_name, $email, $phone_number, $hashed_password);
+
+        if ($stmt->execute()) {
+            $success_message = "Registration successful! Redirecting to login page...";
+            header("refresh:4;url=login.php"); // Redirect after 4 seconds
+            // exit(); // Stop further script execution
+        } else {
+            $error_message = "Registration failed. Please try again.";
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,17 +67,11 @@
     <!-- For Apple devices -->
     <link rel="apple-touch-icon" href="images/logo_favicon.png">
 </head>
-<body>
+<body> 
     <!-- Navigation -->
-    <?php
-        // Start session to get logged-in user data
-        session_start();
-    ?>
-    
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg py-3">
+    <nav class="navbar navbar-expand-lg bg-dark py-3">
         <div class="container">
-            <a class="navbar-brand" href="#">Serenity Spa</a>
+            <a class="brand-name" href="#">Serenity Spa</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -57,22 +101,21 @@
     <section class="cta-section py-5">
         <div class="container d-flex flex-column align-items-center justify-content-center">
             <h2 class="cta-heading mb-4">Register</h2>
-
-            <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" class="login-form text-center w-50 p-4 shadow rounded bg-white">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form text-center w-50 p-4 shadow rounded bg-white">
                 <div class="mb-3">
-                    <label for="full_name" class="form-label text-dark">Full Name:</label>
+                    <label for="full_name" class="form-label">Full Name:</label>
                     <input type="text" id="full_name" name="full_name" class="form-control" required>
                 </div>
                 <div class="mb-3">
-                    <label for="email" class="form-label text-dark">Email:</label>
+                    <label for="email" class="form-label">Email:</label>
                     <input type="email" id="email" name="email" class="form-control" required>
                 </div>
                 <div class="mb-3">
-                    <label for="phone_number" class="form-label text-dark">Phone Number:</label>
+                    <label for="phone_number" class="form-label">Phone Number:</label>
                     <input type="tel" id="phone_number" name="phone_number" class="form-control" required>
                 </div>
                 <div class="mb-3">
-                    <label for="password" class="form-label text-dark">Password:</label>
+                    <label for="password" class="form-label">Password:</label>
                     <input type="password" id="password" name="password" class="form-control" required>
                 </div>
                 <div class="mb-3">
@@ -92,57 +135,18 @@
                         });
                     </script>
                 </div>
-                <br><br>
-                <button type="submit" class="btn btn-primary btn-lg w-100">Register</button>
+                <button type="submit" class="btn btn-primary">Register</button>
+                <?php if (!empty($error_message)): ?>
+                    <div class="alert alert-danger mt-3">
+                        <?php echo $error_message; ?>
+                    </div>
+                <?php endif; ?>
+                <?php if (!empty($success_message)): ?>
+                    <div class="alert alert-success mt-3">
+                        <?php echo $success_message; ?>
+                    </div>
+                <?php endif; ?>
             </form>
-
-            <?php
-                // Connect to database
-                include 'database.php';
-
-                // For debugging
-                error_reporting(E_ALL);
-                ini_set('display_errors', '1');
-
-                // Get data
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    $full_name = $_POST["full_name"];
-                    $email = $_POST["email"];
-                    $phone_number = $_POST["phone_number"];
-                    $password = $_POST["password"];
-
-                    // Hash the password
-                    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-                    // Check with database
-                    $check_sql = "SELECT * FROM users WHERE email = '$email'";
-                    $check_result = $conn -> query($check_sql);
-
-                    if ($check_result -> num_rows > 0) {
-                        echo "User already exists. Please login instead.";
-                    } else {
-                        // Insert the user into the database
-                        $register_sql = "INSERT INTO users (full_name, email, phone_number, password, role, created_at) 
-                        VALUES ('$full_name', '$email', '$phone_number', '$hashed_password', 'customer', NOW())";
-                        $register_result = $conn -> query($register_sql);
-                        
-                        if ($register_result) {
-                            // Registration successful
-                            echo "";
-                            echo "Registration successful";
-                            header("Location: login.php");
-                            exit();
-                        } else {
-                            // Registration failed
-                            echo "";
-                            echo "Registration failed. Please try again.";
-                        }
-                    }
-
-                    // $conn -> close();
-                }
-            ?>
-            <br> <br> <br>
             <p class="lead mt-4">Already have an account? <a href="login.php" class="text-primary">Login</a></p>
         </div>
     </section>
