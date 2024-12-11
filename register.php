@@ -104,8 +104,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p class="mb-5"></p>
             <p class="mb-3"></p>
             
-            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form text-center w-50 p-4 shadow rounded bg-white">
-            <h2 class="cta-heading mb-4">Register an Account</h2>    
+            <div class="card shadow-lg border-0 rounded-3 p-4 mx-auto w-50">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+            <h2 class="text-center mb-5">Register an Account</h2>    
             <div class="mb-3">
                     <label for="full_name" class="form-label">Full Name:</label>
                     <input type="text" id="full_name" name="full_name" class="form-control" required>
@@ -152,6 +153,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php endif; ?>
             </form>
             <p class="lead mt-4">Already have an account? <a href="login.php" class="text-primary">Login</a></p>
+            </div>
         </div>
     </section>
 

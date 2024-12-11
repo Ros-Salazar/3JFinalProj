@@ -110,13 +110,13 @@
 
     <!-- Login Form -->
     <section class="cta-section py-5">
-        <div class="container d-flex flex-column align-items-center justify-content-center" style="max-width: 1000px;">
+        <div class="container d-flex flex-column align-items-center justify-content-center" style="max-width: 1200px;">
             <p class="mb-5"></p>
             <p class="mb-5"></p>
             <p class="mb-3"></p>
             
-
-            <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" class="login-form text-center w-50 p-4 shadow rounded bg-white">
+            <div class="card shadow-lg border-0 rounded-3 p-4 mx-auto w-50">
+            <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
             <h2 class="text-center mb-5">Login to Your Account</h2>
                 <div class="mb-3">
                     <label for="email" class="form-label text-dark">Email:</label>
@@ -150,6 +150,7 @@
                 <?php endif; ?>
             </form>
             <p class="lead mt-4">Don't have an account? <a href="register.php" class="text-primary">Register</a></p>
+            </div>
         </div>
     </section>
 
