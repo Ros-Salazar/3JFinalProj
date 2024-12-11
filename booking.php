@@ -17,7 +17,7 @@
     <!-- For Apple devices -->
     <link rel="apple-touch-icon" href="images/logo_favicon.png">
 </head>
-<body class= "booking-body">
+<body >
     <!-- Navigation -->
     <?php
         session_start();
@@ -58,7 +58,7 @@
     
     <!-- Display services -->
     <div class="booking-container">
-        <h2 class="booking-title">Services</h2>
+        <!-- <h2 class="booking-title">Services</h2> -->
 
         <br> <br>
 
@@ -92,8 +92,7 @@
                 */?>
             </tbody>
         </table>
-
-        <br> <br>
+                        
 
         <h3 class="booking-subtitle">Service and Therapist</h3>
 

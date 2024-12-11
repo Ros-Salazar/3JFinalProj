@@ -59,7 +59,10 @@
     <link rel="stylesheet" type="text/css" href="css/base.css" />
     <link rel="stylesheet" type="text/css" href="css/premium.css" />
     <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
-</head>
+    
+    <link rel="icon" type="image/png" href="images/logo_favicon.png"><
+
+/head>
 <body class="demo-4">
     <main>
         <div class="frame">
@@ -71,7 +74,7 @@
 					<a href="index.php" class="frame__demo">Home</a>
 					<a href="index.php#services-section" class="frame__demo">Services</a>
 					<a href="booking.php" class="frame__demo">Booking</a>
-					<a href="index.php#footer-premium" class="frame__demo">Contact</a>
+					<a href="index.php#cta-section" class="frame__demo">Contact</a>
             </div>
 
         </div>

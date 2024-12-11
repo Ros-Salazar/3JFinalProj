@@ -99,18 +99,45 @@ body, th,tr {
 
 /* Service Cards */
 .service-card {
-    transition: transform 0.3s ease;
-    height: 100%;
+    background-color: #ffffff; /* White background for the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    padding: 20px; /* Padding inside the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for hover effect */
+    text-align: center; /* Center text */
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
 }
 
-.price {
-    font-size: 1.25rem;
-    color: #28a745;
-    font-weight: bold;
+.service-title {
+    font-size: 1.5rem; /* Larger font size for the title */
+    color: #6c757d; /* Elegant dark gray for the title */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+.service-price, .service-duration {
+    font-size: 1.2rem; /* Slightly larger font size for price and duration */
+    color: #333; /* Darker text color */
+}
+
+.service-description {
+    color: #555; /* Darker description color */
+    margin-bottom: 15px; /* Space below the description */
+}
+
+.btn-primary {
+    background-color: #ffc107; /* Gold color for the button */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+}
+
+.btn-primary:hover {
+    background-color: #e0a800; /* Darker gold on hover */
 }
 
 /* Testimonial Cards */
