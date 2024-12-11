@@ -249,6 +249,8 @@ body, th,tr {
     z-index: 1000;
     padding: 1.5rem 0;
     transition: all 0.3s ease;
+    margin: 0; /* Ensure no margin on the navbar */
+    padding: 0; /* Ensure no padding on the navbar */
 }
 
 .navbar.scrolled {
@@ -266,6 +268,7 @@ body, th,tr {
     display: flex;
     align-items: center;
     text-decoration: none;
+
 }
 
 /* Add gradient text effect for all states */
@@ -710,6 +713,22 @@ body, th,tr {
 
 /* Styles specific to booking.php */
 
+/* Animation for the form */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .booking-container {
+    animation: fadeIn 0.5s ease-in-out; /* Apply fade-in animation */
+  }
+
 .booking-container {
     max-width: 800px;
     margin: 0 auto;
@@ -907,3 +926,25 @@ body, th,tr {
     transition: max-height 0.3s ease; /* Animate max-height */
     overflow: hidden; /* Hide overflow */
 }
+
+.navbar-login {
+    background-color: #343a40; /* Dark background for the login navbar */
+    /* Add any other specific styles you want for the login navbar */
+}
+
+.navbar-login .navbar-brand {
+    color: #ffffff; /* Change brand color if needed */
+}
+
+.navbar-login .nav-link {
+    color: #ffffff; /* Change link color if needed */
+}
+
+.navbar-login .nav-link:hover {
+    color: #007bff; /* Change hover color if needed */
+}
+
+.login-page, .login-page body {
+    background: hsla(60, 50%, 3%, 1); /* Apply the background color */
+}
+
