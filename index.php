@@ -11,8 +11,10 @@
     <link href="css/styles.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Manhattan Font -->
-    <link href="https://fonts.cdnfonts.com/css/manhattan-darling" rel="stylesheet">
+    <!-- Libre Caslon Text Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&display=swap" rel="stylesheet">
 
 
 
@@ -41,12 +43,12 @@
                     <li class="nav-item"><a class="nav-link" href="booking.php">Book Now</a></li>
 
                     <!--development-->
-                    <li class="nav-item"><a class="nav-link" href="dashboard-admin.php">Admin Dashboard</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="dashboard-admin.php">Admin Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="dashboard.php">Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li> -->
                     <!-- Conditional Links Based on Login Status --> 
-                    <!-- <?php if (isset($_SESSION['user_id'])): ?>
+                    <?php if (isset($_SESSION['user_id'])): ?>
                         <?php if ($_SESSION['role'] == 'admin'): ?>
                             <li class="nav-item"><a class="nav-link" href="dashboard-admin.php">Admin Dashboard</a></li>
                         <?php else: ?>
@@ -55,7 +57,7 @@
                         <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
                     <?php else: ?>
                         <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
-                    <?php endif; ?> -->
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
@@ -70,7 +72,9 @@
                     <div class="hero-content mb-5">
                         <!-- Website Title and desc: We can change this. -->
                         <p class="mb-5"></p>
-                        <p class="mb-5"></p>
+                        <br>
+                        <br>
+                        <br>
                         <h1 class="mb-5 text-white">Luxury Rooted in Tranquility</h1>
                         <p class="lead text-white mb-5">Experience tranquility and rejuvenation with our premium wellness services. Let our expert therapists guide you to ultimate relaxation.</p>
                         <div class="hero-buttons">
@@ -360,7 +364,7 @@
         <div class="container text-center">
             <h2>Ready to Experience Luxurious Tranquility?</h2>
             <p class="lead">Join us today and experience the difference.</p>
-            <a href="register.php" class="btn btn-primary btn-lg">Create Account</a>
+            <a href="register.php" class="btn btn-primary btn-lg">Register</a>
         </div>
     </section>`
 
