@@ -56,8 +56,8 @@
     <!-- Display services -->
      <h2>Services</h2>
 
-     <!-- Greet user -->
-     <?php/*
+    <!-- Greet user -->
+    <!-- <?php
         // Connect to database
         include 'database.php';
 
@@ -79,7 +79,7 @@
           // Get user_id from session
           $user_id = $_SESSION['user_id'];
         }
-    */?>
+    ?> -->
 
     <br> <br>
 
