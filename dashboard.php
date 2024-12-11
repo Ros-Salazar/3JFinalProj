@@ -27,14 +27,14 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-dark py-3">
         <div class="container">
-            <a class="brand-name" href="#">Lotus Serenity Spa</a>
+            <a class="brand-name" href="#">Dashboard</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.php">Services</a></li>
+                <li class="nav-item"><a id="home-services" class="nav-link" href="index.php">Home</a></li>
+                <li class="nav-item"><a id="smooth-services" class="nav-link" href="index.php#services-section">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="booking.php">Book Now</a></li>
 
                     <!-- Conditional Links Based on Login Status -->
@@ -57,12 +57,9 @@
     <!-- User Dashboard -->
     <section class="dashboard container py-5">
         <div class="text-center mb-5">
-            <p class="mb-5">.</p>
         </div>
         <div class="text-center mb-5">
-            <p class="mb-5"></p>
-            <p class="mb-5"></p>
-            <h1 class="dashboard-title big-margin-top">Welcome, <?= htmlspecialchars($user_data['full_name']) ?>!</h1>
+            <h1 class="dashboard-title">Welcome, <?= htmlspecialchars($user_data['full_name']) ?>!</h1>
             <p class="dashboard-subtitle">Here's an overview of your appointments and rewards.</p>
         </div>
         <div class="container text-center position-relative align-items-center justify-content-center text-center">
@@ -182,14 +179,17 @@
             </div>
 
             <!-- Account Settings -->
-            <div class="dashboard-card mt-5 text-center">
-                <a href="edit-profile.php" class="btn btn-secondary btn-lg mx-2">Edit Profile</a>
-                <a href="change-password.php" class="btn btn-secondary btn-lg mx-2">Change Password</a>
+            <div class="dashboard-card-buttons mt-5 text-center">
+                <a href="edit-profile.php" class="btn btn-edit btn-lg mx-2">Edit Profile</a>
+                <a href="change-password.php" class="btn btn-change-password btn-lg mx-2">Change Password</a>
                 <!-- <a href="logout.php" class="btn btn-danger btn-lg mx-2">Logout</a> -->
             </div>
         </div>
     </section>
 
+    <br><br>
+    <br><br>
+    <br><br>
     <!-- Footer -->
     <footer class="footer-premium">
         <div class="footer-top">
