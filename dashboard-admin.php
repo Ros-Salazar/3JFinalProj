@@ -1,3 +1,29 @@
+<!-- PHP -->
+<?php
+    // Connect to database
+    include 'database.php';
+
+    // Start session to get logged-in user data
+    session_start();
+
+    // For debugging
+    error_reporting(E_ALL);
+    ini_set('display_errors', '1');
+
+    // Check if user is logged in
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: login.php");
+        exit();
+    }
+
+    // Get logged-in user's data
+        $user_id = $_SESSION['user_id'];
+        $user_query = "SELECT * FROM users WHERE user_id = $user_id";
+        $user_result = $conn->query($user_query);
+        $user_data = $user_result->fetch_assoc();
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,19 +36,16 @@
     <link href="css/styles.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Manhattan Font -->
-    <link href="https://fonts.cdnfonts.com/css/manhattan-darling" rel="stylesheet">
+    <!-- Libre Caslon Text Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="icon" type="image/png" href="images/logo_favicon.png">
     <!-- For Apple devices -->
     <link rel="apple-touch-icon" href="images/logo_favicon.png">
 </head>
 <body class="admin-dashboard">
-    <!-- Navigation -->
-    <?php
-        // Start session to get logged-in user data
-        // session_start();
-    ?>
     
     <!-- Top Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark admin-top-nav">
@@ -115,14 +138,18 @@
                         </div>
                         <div class="card-content">
                             <h3>Monthly Revenue</h3>
-                            <p class="card-number">$12,450</p>
+                            <p class="card-number">₱12,450</p>
                         </div>
                     </div>
                 </div>
             </section>
+            <?php include 'admin-bookings.php'; ?>
+            <?php include 'admin-services.php'; ?>
+            <!-- <?php include 'admin-therapists.php'; ?> -->
         </main>
     </div>
 
+     
     <script>
         // $(document).ready(function () {
         //     // Handle form submissions and actions using AJAX
