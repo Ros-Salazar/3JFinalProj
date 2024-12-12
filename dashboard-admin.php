@@ -145,7 +145,7 @@
             </section>
             <?php include 'admin-bookings.php'; ?>
             <?php include 'admin-services.php'; ?>
-            <!-- <?php include 'admin-therapists.php'; ?> -->
+            <?php include 'admin-therapists.php'; ?>
         </main>
     </div>
 
