@@ -107,7 +107,7 @@
         </div>
 
         <!-- Main Content Area -->
-        <main class="admin-main-content">
+        <main class="admin-main-content" style="margin-top: 100px;">
             <!-- Dashboard Overview -->
             <section id="dashboard" class="admin-section active">
                 <div class="admin-section-header">
