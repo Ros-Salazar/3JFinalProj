@@ -53,7 +53,7 @@
         </div>
     </nav>
 
-    <?php/*
+    <?php
     // Connect to database
     include 'database.php';
 
@@ -83,10 +83,15 @@
             $error_message = "Profile update failed. Please try again.";
         }
     }
-    */?>
+    ?>
 
     <!-- Edit Profile Form -->
     <section class="container-edit py-5">
+    <div class="text-center mb-5">
+            <br>
+            <br>
+            <br>
+        </div>
     <div class="text-center mb-5">
         </div>
         <div class="card-edit shadow-lg border-0 rounded-3 p-4 mx-auto" style="max-width: 500px;">

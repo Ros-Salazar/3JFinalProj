@@ -50,7 +50,7 @@
     </nav>
 
 
-    <?php/*
+    <?php
     // Connect to database
     include 'database.php';
 
@@ -84,15 +84,19 @@
             echo "Current password is incorrect.";
         }
     }
-    */?>
+    ?>
 
     <!-- Change Password Form -->
     <section class="container-pass py-5">
-    <div class="text-centermb-5">
+    <div class="text-center mb-5">
+            <br>
+            <br>
             <br>
         </div>
+    <div class="text-center mb-5">
+        </div>
         <div class="card-pass shadow-lg border-0 rounded-3 p-4 mx-auto" style="max-width: 500px;">
-            <h2 class="text-center-pass mb-4 text-header-bold">Change Password</h2>
+            <h2 class="text-center-edit mb-4">Change Password</h2>
             <form method="post" class="form-pass">
                 <div class="mb-3">
                     <label for="current_password" class="form-label">Current Password</label>
