@@ -161,7 +161,7 @@
             <!-- Promotions Section -->
             <div class="dashboard-card mt-5">
                 <h3 class="card-title">Promotions and Rewards</h3>
-                <?php /*
+                <?php
                 if ($promotions_result->num_rows > 0): ?>
                     <ul class="promotions-list">
                         <?php while ($promo = $promotions_result->fetch_assoc()): ?>
@@ -173,7 +173,8 @@
                     </ul>
                 <?php else: ?>
                     <p>No active promotions.</p>
-                <?php endif; */ ?>
+                <?php endif;
+                ?>
             </div>
 
             <!-- Account Settings -->

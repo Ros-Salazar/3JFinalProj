@@ -105,7 +105,7 @@
                 </div>
                 <div class="d-flex justify-content-between mt-4">
                     <button type="submit" class="btn btn-primary">Update</button>
-                    <a href="dashboard.php" class="btn btn-outline-secondary">Cancel</a>
+                    <a href="dashboard.php" class="btn btn-secondary">Cancel</a>
                 </div>
             </form>
         </div>

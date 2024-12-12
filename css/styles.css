@@ -254,6 +254,7 @@ body, th,tr {
 
 .btn-secondary {
     font-size: 1rem;
+    padding: 10px 20px; /* Padding for the button */
     background-color: #6c757d;
     color: #ffffff;
     border: none;
@@ -1014,6 +1015,7 @@ body, th,tr {
 }
 
 .btn-edit {
+    font-size: 1rem;
     background-color: #0176fc; /* Blue color for Edit Profile */
     color: white; /* White text color */
     border: none; /* No border */
@@ -1031,6 +1033,7 @@ body, th,tr {
 }
 
 .btn-change-password {
+    font-size: 1rem;
     background-color: #ffbf00; /* Orange/Yellow color for Change Password */
     color: white; /* White text color */
     border: none; /* No border */
