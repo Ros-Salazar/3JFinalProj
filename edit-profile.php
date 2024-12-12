@@ -62,8 +62,8 @@
     ini_set('display_errors', '1');
     
     // Get logged-in user's data
-    $user_id = 10;
-    // $user_id = $_SESSION['user_id'];
+    // $user_id = 10;
+    $user_id = $_SESSION['user_id'];
     $user_query = "SELECT * FROM users WHERE user_id = $user_id";
     $user_result = $conn->query($user_query);
     $user_data = $user_result->fetch_assoc();
@@ -133,7 +133,7 @@
                 
                 <div class="d-flex justify-content-between mt-4">
                     <button type="submit" class="btn btn-primary">Update</button>
-                    <a href="dashboard.php" class="btn btn-secondary">Cancel</a>
+                    <a href="javascript:history.back()" class="btn btn-secondary">Cancel</a>
                 </div>
             </form>
         </div>
