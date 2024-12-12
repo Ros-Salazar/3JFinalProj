@@ -20,8 +20,8 @@
 <body class="admin-dashboard">
     <!-- Navigation -->
     <?php
-        // Start session to get logged-in user data
-        // session_start();
+        Start session to get logged-in user data
+        session_start();
     ?>
     
     <!-- Top Navigation -->
@@ -124,52 +124,52 @@
     </div>
 
     <script>
-        // $(document).ready(function () {
-        //     // Handle form submissions and actions using AJAX
-        //     $('#addServiceForm').submit(function (e) {
-        //         e.preventDefault();
-        //         $.ajax({
-        //             url: 'add_service.php',
-        //             method: 'POST',
-        //             data: $(this).serialize(),
-        //             success: function (response) {
-        //                 alert('Service added successfully');
-        //                 location.reload();
-        //             }
-        //         });
-        //     });
+        $(document).ready(function () {
+            // Handle form submissions and actions using AJAX
+            $('#addServiceForm').submit(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: 'add_service.php',
+                    method: 'POST',
+                    data: $(this).serialize(),
+                    success: function (response) {
+                        alert('Service added successfully');
+                        location.reload();
+                    }
+                });
+            });
 
-        //     // Approve, Cancel, Reschedule booking actions
-        //     $('.approve, .cancel, .reschedule').click(function () {
-        //         var action = $(this).hasClass('approve') ? 'approve' :
-        //                      $(this).hasClass('cancel') ? 'cancel' : 'reschedule';
-        //         var appointmentId = $(this).data('id');
+            // Approve, Cancel, Reschedule booking actions
+            $('.approve, .cancel, .reschedule').click(function () {
+                var action = $(this).hasClass('approve') ? 'approve' :
+                             $(this).hasClass('cancel') ? 'cancel' : 'reschedule';
+                var appointmentId = $(this).data('id');
                 
-        //         $.ajax({
-        //             url: 'manage_booking.php',
-        //             method: 'POST',
-        //             data: { action: action, appointment_id: appointmentId },
-        //             success: function (response) {
-        //                 alert('Booking status updated');
-        //                 location.reload();
-        //             }
-        //         });
-        //     });
+                $.ajax({
+                    url: 'manage_booking.php',
+                    method: 'POST',
+                    data: { action: action, appointment_id: appointmentId },
+                    success: function (response) {
+                        alert('Booking status updated');
+                        location.reload();
+                    }
+                });
+            });
 
-        //     // Handle therapist availability form
-        //     $('#availabilityForm').submit(function (e) {
-        //         e.preventDefault();
-        //         $.ajax({
-        //             url: 'add_availability.php',
-        //             method: 'POST',
-        //             data: $(this).serialize(),
-        //             success: function (response) {
-        //                 alert('Availability added successfully');
-        //                 location.reload();
-        //             }
-        //         });
-        //     });
-        // });
+            // Handle therapist availability form
+            $('#availabilityForm').submit(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: 'add_availability.php',
+                    method: 'POST',
+                    data: $(this).serialize(),
+                    success: function (response) {
+                        alert('Availability added successfully');
+                        location.reload();
+                    }
+                });
+            });
+        });
     </script>
 
   

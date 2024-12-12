@@ -1,6 +1,6 @@
 <!--Development(Backend)-->
 <?php
-/*
+
     // Connect to database
     include 'database.php';
 
@@ -50,7 +50,7 @@
             echo "<br>User not found. Please register.";
         }
     }
-*/?>
+?>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>

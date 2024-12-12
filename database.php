@@ -14,36 +14,36 @@
     }
 
     // Create the database if it doesn't exist
-    // $db = "CREATE DATABASE IF NOT EXISTS $databasename";
-    // if ($conn->query($db) === TRUE) {
-        // echo "Database created successfully or already exists.<br>";
-    // } else {
-        // die("Error creating database: " . $conn->error);
-    // }
+    $db = "CREATE DATABASE IF NOT EXISTS $databasename";
+    if ($conn->query($db) === TRUE) {
+        echo "Database created successfully or already exists.<br>";
+    } else {
+        die("Error creating database: " . $conn->error);
+    }
 
-    // Select the database
-    // $conn->select_db($databasename);
+    Select the database
+    $conn->select_db($databasename);
 
-    // Read the SQL file
-    // $sqlFile = __DIR__ . "/sql_initial_setup.sql";
-    // $sqlCommands = file_get_contents($sqlFile);
+    Read the SQL file
+    $sqlFile = __DIR__ . "/sql_initial_setup.sql";
+    $sqlCommands = file_get_contents($sqlFile);
 
-    // Split the commands into individual SQL statements
-    // $sqlStatements = explode(';', $sqlCommands);
+    Split the commands into individual SQL statements
+    $sqlStatements = explode(';', $sqlCommands);
 
-    // Execute each SQL statement
-    // foreach ($sqlStatements as $statement) {
-        // $statement = trim($statement);
-        // if (!empty($statement)) {
-            // if ($conn->query($statement) === TRUE) {
-                // echo "SQL statement executed successfully: $statement<br>";
-            // } else {
-                // echo "Error executing statement: " . $conn->error . "<br>";
-            // }
-        // }
-    // }
+    Execute each SQL statement
+    foreach ($sqlStatements as $statement) {
+        $statement = trim($statement);
+        if (!empty($statement)) {
+            if ($conn->query($statement) === TRUE) {
+                echo "SQL statement executed successfully: $statement<br>";
+            } else {
+                echo "Error executing statement: " . $conn->error . "<br>";
+            }
+        }
+    }
 
-    // echo "Database setup complete.";
+    echo "Database setup complete.";
 
-    // $conn->close();
+    $conn->close();
 ?>

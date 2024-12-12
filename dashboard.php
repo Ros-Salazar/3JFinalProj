@@ -21,10 +21,10 @@
 </head>
 <body>
     <!-- Navigation -->
-    <?php /*
+    <?php 
         // Start session to get logged-in user data
         session_start();
-    */ ?>
+    ?>
     
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-dark py-3">
@@ -40,7 +40,7 @@
                     <li class="nav-item"><a class="nav-link" href="booking.php">Book Now</a></li>
 
                     <!-- Conditional Links Based on Login Status -->
-                    <?php /*
+                    <?php 
                     if (isset($_SESSION['user_id'])): ?>
                         <?php if ($_SESSION['role'] == 'admin'): ?>
                             <li class="nav-item"><a class="nav-link" href="dashboard-admin.php">Admin Dashboard</a></li>
@@ -50,7 +50,7 @@
                         <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
                     <?php else: ?>
                         <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
-                    <?php endif; */ ?>
+                    <?php endif;  ?>
                 </ul>
             </div>
         </div>
@@ -64,7 +64,7 @@
         </div>
         <div class="container text-center position-relative align-items-center justify-content-center text-center">
             
-            <?php /*
+            <?php 
             // Connect to database
             include 'database.php';
 
@@ -73,10 +73,10 @@
             ini_set('display_errors', '1');
 
             // Check if user is logged in
-            // if (!isset($_SESSION['user_id'])) {
-            //     header("Location: login.php");
-            //     exit();
-            // }
+            if (!isset($_SESSION['user_id'])) {
+                header("Location: login.php");
+                exit();
+            }
 
             // Get logged-in user's data
             $user_id = 10;
@@ -108,7 +108,7 @@
             SELECT * FROM promotions 
             WHERE start_date <= CURDATE() AND end_date >= CURDATE()";
             $promotions_result = $conn->query($promotions_query);
-            */ ?>
+             ?>
 
             <!-- Dashboard Panels -->
             <div class="row g-4">

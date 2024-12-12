@@ -49,8 +49,7 @@
         </div>
     </nav>
 
-
-    <?php/*
+    <?php
     // Connect to database
     include 'database.php';
 
@@ -84,7 +83,7 @@
             echo "Current password is incorrect.";
         }
     }
-    */?>
+    ?>
 
     <!-- Change Password Form -->
     <section class="container-pass py-5">

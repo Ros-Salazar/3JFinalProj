@@ -53,7 +53,7 @@
         </div>
     </nav>
 
-    <?php/*
+    <?php
     // Connect to database
     include 'database.php';
 
@@ -83,7 +83,7 @@
             $error_message = "Profile update failed. Please try again.";
         }
     }
-    */?>
+    ?>
 
     <!-- Edit Profile Form -->
     <section class="container-edit py-5">
