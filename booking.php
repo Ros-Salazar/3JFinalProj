@@ -1,3 +1,23 @@
+<?php
+    // Connect to database
+    include 'database.php';
+
+    session_start();
+
+    // For debugging
+    error_reporting(E_ALL);
+    ini_set('display_errors', '1');
+
+    // Check if user is logged in
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: login.php");
+        exit();
+    }
+
+    // Get user_id from session
+    $user_id = $_SESSION['user_id'];
+?>        
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,13 +40,9 @@
     <link rel="apple-touch-icon" href="images/logo_favicon.png">
 </head>
 <body >
-    <!-- Navigation -->
-    <?php
-        session_start();
-    ?>
     
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg booking-navbar">
+  <nav class="navbar navbar-expand-lg bg-dark py-3">
         <div class="container">
             <a class="navbar-brand" href="#">Lotus Serenity Spa</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -35,15 +51,17 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a id="home-services" class="nav-link" href="index.php">Home</a></li>
-                    <li class="nav-item"><a id="smooth-services" class="nav-link" href="index.php#services-section">Services</a></li>
-                   
+                    <!-- <li class="nav-item"><a id="smooth-services" class="nav-link" href="index.php#services-section">Services</a></li> -->
+                <li class="nav-item"><a id="smooth-services" class="nav-link" href="services.php">Services</a></li>
+                <li class="nav-item"><a class="nav-link-active" href="booking.php">Book Now</a></li>
+
                     <!--development-->
-                    <li class="nav-item"><a class="nav-link" href="dashboard-admin.php">Admin Dashboard</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="dashboard-admin.php">Admin Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="dashboard.php">Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li> -->
                     <!-- Conditional Links Based on Login Status --> 
-                    <!-- <?php if (isset($_SESSION['user_id'])): ?>
+                    <?php if (isset($_SESSION['user_id'])): ?>
                         <?php if ($_SESSION['role'] == 'admin'): ?>
                             <li class="nav-item"><a class="nav-link" href="dashboard-admin.php">Admin Dashboard</a></li>
                         <?php else: ?>
@@ -52,7 +70,7 @@
                         <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
                     <?php else: ?>
                         <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
-                    <?php endif; ?> -->
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
@@ -60,10 +78,10 @@
     
     <!-- Display services -->
     <div class="booking-container">
-        <div class="text-center mb-5">
+        <!-- <div class="text-center mb-5">
             <br>
-        </div>
-        <h2 class="booking-title">Booking</h2>
+        </div> -->
+        <!-- <h2 class="booking-title">Booking</h2> -->
 
         <!-- <table class="table booking-table styled-table">
             <thead>
@@ -75,22 +93,22 @@
             </thead>
             <tbody>
                 <?php
-                  // Connect to database
-                  include "database.php";
-                  // Get services
-                  $display_sql = "SELECT * FROM services";
-                  $display_result = $conn -> query($display_sql);
-                  if ($display_result -> num_rows > 0) {
-                      while ($display_row = $display_result -> fetch_assoc()) {
-                          echo "<tr>";
-                          echo "<td>" . $display_row['service_name'] . "</td>";
-                          echo "<td>" . $display_row['description'] . "</td>";
-                          echo "<td>". "PHP " . $display_row['price'] . " / ". $display_row['duration'] . " minutes" . "</td>";
-                          echo "</tr>";
-                      };
-                  } else {
-                      echo "<tr><td colspan='3'>No Services</td></tr>";
-                  };
+                //   // Connect to database
+                //   include "database.php";
+                //   // Get services
+                //   $display_sql = "SELECT * FROM services";
+                //   $display_result = $conn -> query($display_sql);
+                //   if ($display_result -> num_rows > 0) {
+                //       while ($display_row = $display_result -> fetch_assoc()) {
+                //           echo "<tr>";
+                //           echo "<td>" . $display_row['service_name'] . "</td>";
+                //           echo "<td>" . $display_row['description'] . "</td>";
+                //           echo "<td>". "PHP " . $display_row['price'] . " / ". $display_row['duration'] . " minutes" . "</td>";
+                //           echo "</tr>";
+                //       };
+                //   } else {
+                //       echo "<tr><td colspan='3'>No Services</td></tr>";
+                //   };
                 ?>
             </tbody>
         </table> -->
@@ -162,7 +180,130 @@
             <br><br>
 
             <button type="submit" class="btn btn-primary">Confirm Appointment</button>
+            
         </form>
+        <?php
+            // Get data
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    $service_id = $_POST['service_id'];
+                    $therapist_id = $_POST['therapist_id'];
+                    $appointment_date = $_POST['appointment_date'];
+                    $start_time = $_POST['start_time'];
+                    $end_time = $_POST['end_time'];
+                    $promo_code = $_POST['promo_code'];
+                    $payment_method = $_POST['payment_method'];
+                    $status = 'pending';
+                }
+
+                // Validate inputs
+                if (empty($service_id) || empty($therapist_id) || empty($appointment_date) || empty($start_time) || empty($end_time)) {
+                    $error_message = "All fields are required. Please fill out the form completely.";
+                } else {
+                    $discount = 0;
+                    if (!empty($promo_code)) {
+                        $promo_sql = "SELECT * FROM promotions WHERE promo_code = '$promo_code' AND start_date <= CURDATE() AND end_date >= CURDATE()";
+                        $promo_result = $conn->query($promo_sql);
+                        if ($promo_result->num_rows > 0) {
+                            $promo_row = $promo_result->fetch_assoc();
+                            $discount = $promo_row['discount_percent'];
+                            // echo "<p>Promo applied: " . $promo_row['description'] . " (" . $discount . "% off)</p>";
+                        } else {
+                            $error_message = "Invalid promo code.";
+                        }
+                    }    
+
+                // Check therapist availability
+                $check_sql = "SELECT * FROM availability WHERE therapist_id = $therapist_id AND date = '$appointment_date'";
+                $check_result = $conn -> query($check_sql);
+                // echo "Check SQL: $check_sql<br>";
+                $therapist_availability = false;
+                if ($check_result -> num_rows > 0) {
+                    while ($row = $check_result -> fetch_assoc()) {
+                        if ($start_time >= $row['start_time'] && $end_time <= $row['end_time']) {
+                            $therapist_availability = true;
+                            // break;
+                        }
+                    }
+                }
+
+                if ($therapist_availability) {
+                    // Get user details
+                    $user_sql = "SELECT full_name, email FROM users WHERE user_id = $user_id";
+                    $user_result = $conn -> query($user_sql);
+                    $user_row = $user_result -> fetch_assoc();
+                    $full_name = $user_row['full_name'];
+                    $email = $user_row['email'];
+        
+                    // Match services
+                    $service_sql = "SELECT service_name FROM services WHERE service_id = $service_id";
+                    $service_result = $conn -> query($service_sql);
+                    $service_row = $service_result -> fetch_assoc();
+                    $service_name = $service_row['service_name'];
+        
+                    // Match therapist
+                    $therapist_sql = "SELECT full_name FROM users WHERE user_id = $therapist_id";
+                    $therapist_result = $conn -> query($therapist_sql);
+                    $therapist_row = $therapist_result -> fetch_assoc();
+                    $therapist_name = $therapist_row['full_name'];
+        
+                    // Match status
+                    switch ($status) {
+                      case 'pending':
+                          $appointment_status = 'Pending';
+                          break;
+                      case 'confirmed':
+                          $appointment_status = 'Confirmed';
+                          break;
+                      case 'cancelled':
+                          $appointment_status = 'Canceled';
+                          break;
+                      default:
+                          $appointment_status = 'Completed';
+                    }
+        
+                    // Therapist is available, so add appointment to database
+                    $add_sql = "INSERT INTO appointments (user_id, service_id, therapist_id, appointment_date, start_time, end_time, status)
+                    VALUES ($user_id, $service_id, $therapist_id, '$appointment_date', '$start_time', '$end_time', '$status')";
+        
+                    if ($conn -> query($add_sql)) {
+                        echo "<br> <br>";
+                        $booking_message = "Booking successful! Please wait for confirmation.";
+                        if (!empty($booking_message)) {
+                            echo "<div class='alert alert-success mt-3'>$booking_message</div>";
+                        }
+                        // echo "Appointment created successfully! Please wait for our confirmation.";
+                        echo "<br>";
+                        echo "<p>Customer Name: " . $full_name . "</p>";
+                        echo "<p>Customer Email: " . $email . "</p>";
+                        echo "<p>Service: " . $service_name . "</p>";
+                        echo "<p>Therapist: " . $therapist_name . "</p>";
+                        echo "<p>Appointment Date: " . date('F j, Y', strtotime($appointment_date)) . "</p>";
+                        echo "<p>Start Time: " . $start_time . "</p>";
+                        echo "<p>Expected End Time: " . $end_time . "</p>";
+                        echo "<p>Appointment Status: " . $appointment_status . "</p>";
+                        
+                    } else {
+                        // echo "Error creating appointment: " . $conn -> error . ". Please try again.";
+                        $error_message = "Booking failed. Please try again.";
+                    }
+                    } else {
+                    // Therapist is unavailable
+                    $error_message = "Sorry, the therapist is not available at that time.";
+                    // exit;
+                  }
+                }
+            ?>
+
+            <?php if (!empty($error_message)): ?>
+                <div class="alert alert-danger mt-3">
+                    <?php echo $error_message; ?>
+                </div>
+            <?php endif; ?>
+            <?php if (!empty($success_message)): ?>
+                <div class="alert alert-success mt-3">
+                    <?php echo $success_message; ?>
+                </div>
+            <?php endif; ?>
     </div>
 
     <!-- Footer -->

@@ -354,7 +354,18 @@ body, th,tr {
     padding: 0; /* Remove padding */
 }
 
+.appointment-item-cancel {
+    font-size: 1.25rem;
+    list-style-type: none;
+    margin-top: 10px; /* Space between appointment items */
+    margin-bottom: 10px; /* Space between appointment items */
+    padding: 10px; /* Padding for appointment items */
+    color: #333; /* Darker text color for appointment items */
+}
+
 .appointment-item {
+    list-style-type: none;
+    margin-top: 10px; /* Space between appointment items */
     margin-bottom: 10px; /* Space between appointment items */
     padding: 10px; /* Padding for appointment items */
     border: 1px solid #ddd; /* Light border for items */

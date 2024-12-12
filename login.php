@@ -1,13 +1,7 @@
 <!--Development(Backend)-->
 <?php
-/*
     // Connect to database
     include 'database.php';
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
 
     // Start user session
     session_start();
@@ -50,7 +44,7 @@
             echo "<br>User not found. Please register.";
         }
     }
-*/?>
+?>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
@@ -65,7 +59,8 @@
     
     <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
     
-    <link rel="icon" type="image/png" href="images/logo_favicon.png"><
+    <link rel="icon" type="image/png" href="images/logo_favicon.png">
+    <title>Login</title>
 
 </head>
 <body class="demo-4">
