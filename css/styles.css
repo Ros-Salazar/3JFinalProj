@@ -315,6 +315,8 @@ body, th,tr {
     margin-bottom: 0.5rem;
 }
 
+
+
 .dashboard-subtitle {
     font-size: 1.2rem; /* Slightly larger font size for the subtitle */
     margin-bottom: 5px;
@@ -361,9 +363,12 @@ body, th,tr {
 }
 
 .promotion-item {
+    list-style-type: none;
+    align-items: center;
+    text-align: center;
     margin-bottom: 10px; /* Space between promotion items */
     padding: 10px; /* Padding for promotion items */
-    border: 1px solid #ddd; /* Light border for items */
+    /* border: 1px solid #ddd;  Light border for items */
     border-radius: 5px; /* Rounded corners */
     color: #333; /* Darker text color for promotion items */
 }
@@ -378,6 +383,21 @@ body, th,tr {
 
 .text-header-bold {
     font-weight: 700;
+}
+
+.price-filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.price-filter label {
+    padding-right: 10px;
+    width: 225px;
+}
+
+.price-filter input {
+    width: 100px;
 }
 
 .btn {
@@ -535,6 +555,46 @@ body, th,tr {
 
 .navbar.scrolled .navbar-brand {
     color: #333 !important;
+}
+
+.text-gold {
+    color: #d4af37 !important;
+}
+
+.nav-link-active {
+    font-family: 'Libre Caslon Text', serif;
+    color: #d4af37 !important;
+    text-decoration: none !important;
+    font-size: 1.4rem;
+    padding: 0.5rem 1.5rem !important;
+    margin-bottom: 0px;
+    margin: 0 0.2rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar.scrolled .nav-link-active {
+    color: #333 !important;
+}
+
+.nav-link-active::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar.scrolled .nav-link-active::after {
+    background-color: #333;
+}
+
+.nav-link-active:hover::after {
+    width: 70%;
 }
 
 .nav-link {
@@ -884,7 +944,15 @@ body, th,tr {
     background-color: #fff;
 }
 
+.nav-link-active:not([data-section="services"]):not([data-section="testimonials"])::after {
+    background-color: #fff;
+}
+
 .navbar.scrolled .nav-link:not([data-section="services"]):not([data-section="testimonials"])::after {
+    background-color: #333;
+}
+
+.navbar.scrolled .nav-link-active:not([data-section="services"]):not([data-section="testimonials"])::after {
     background-color: #333;
 }
 
@@ -924,6 +992,42 @@ body, th,tr {
   .booking-container {
     animation: fadeIn 0.5s ease-in-out; /* Apply fade-in animation */
   }
+
+.services-form {
+    background-color: #fff; /* White background for form */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.services-form label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.services-form select, .services-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.services-form button {
+    background-color: #d4af37; /* Gold color for button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.booking-form button:hover {
+    background-color: #b5942a; /* Darker gold on hover */
+}
 
 .booking-container {
     max-width: 800px;
@@ -1041,9 +1145,13 @@ body, th,tr {
     z-index: 1000; /* Ensure it stays on top */
 }
 
-.booking-navbar .nav-link {
-    color: white; /* White text for links */
+.booking-navbar .nav-link-active {
+    color: #d4af37; /* White text for links */
     transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.booking-navbar .nav-link-active:hover {
+    color: white; /* Gold color on hover */
 }
 
 .booking-navbar .nav-link:hover {
@@ -1132,6 +1240,14 @@ body, th,tr {
 
 .navbar-login .navbar-brand {
     color: #ffffff; /* Change brand color if needed */
+}
+
+.navbar-login .nav-link-active {
+    color: #ffffff; /* Change link color if needed */
+}
+
+.navbar-login .nav-link-active:hover {
+    color: #007bff; /* Change hover color if needed */
 }
 
 .navbar-login .nav-link {
