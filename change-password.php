@@ -50,7 +50,7 @@
     </nav>
 
 
-    <?php
+    <?php/*
     // Connect to database
     include 'database.php';
 
@@ -84,17 +84,16 @@
             echo "Current password is incorrect.";
         }
     }
-    ?>
+    */?>
 
     <!-- Change Password Form -->
-    <section class="container py-5">
-    <div class="text-center mb-5">
-            <p class="mb-5">.</p>
+    <section class="container-pass py-5">
+    <div class="text-centermb-5">
             <br>
         </div>
-        <div class="card shadow-lg border-0 rounded-3 p-4 mx-auto" style="max-width: 500px;">
-            <h2 class="text-center mb-4 text-header-bold">Change Password</h2>
-            <form method="post" class="form">
+        <div class="card-pass shadow-lg border-0 rounded-3 p-4 mx-auto" style="max-width: 500px;">
+            <h2 class="text-center-pass mb-4 text-header-bold">Change Password</h2>
+            <form method="post" class="form-pass">
                 <div class="mb-3">
                     <label for="current_password" class="form-label">Current Password</label>
                     <input type="password" class="form-control" id="current_password" name="current_password" placeholder="Enter current password" required>
@@ -144,22 +143,22 @@
                         <div class="quick-links">
                             <h4>Quick Links</h4>
                             <div class="links-grid">
-                                <a href="#" class="link-item">
-                                    <i class="fas fa-spa"></i>
-                                    <span>Our Services</span>
-                                </a>
-                                <a href="#" class="link-item">
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <span>Book Appointment</span>
-                                </a>
-                                <a href="#" class="link-item">
-                                    <i class="fas fa-info-circle"></i>
-                                    <span>About Us</span>
-                                </a>
-                                <a href="#" class="link-item">
-                                    <i class="fas fa-gift"></i>
-                                    <span>Gift Cards</span>
-                                </a>
+                            <a id="smooth-services2" href="#services-section" class="link-item">
+                                <i class="fas fa-spa"></i>
+                                <span>Our Services</span>
+                            </a>
+                            <a id="home-services" href="#hero-section" class="link-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Book Appointment</span>
+                            </a>
+                            <a id="home-services" href="#hero-section"  class="link-item">
+                                <i class="fas fa-info-circle"></i>
+                                <span>About Us</span>
+                            </a>
+                            <a id="home-services" href="#hero-section"  class="link-item">
+                                <i class="fas fa-gift"></i>
+                                <span>Gift Cards</span>
+                            </a>
                             </div>
                         </div>
                     </div>

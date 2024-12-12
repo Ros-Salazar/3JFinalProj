@@ -360,7 +360,7 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="cta-section py-5">
+    <section id="cta-id" class="cta-section py-5">
         <div class="container text-center">
             <h2>Ready to Experience Luxurious Tranquility?</h2>
             <p class="lead">Join us today and experience the difference.</p>
@@ -369,104 +369,106 @@
     </section>`
 
     <!-- Footer -->
-    <footer class="footer-premium">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row g-4">
-                    <!-- Contact Info -->
-                    <div class="col-lg-4">
-                        <div class="footer-info">
-                            <h3 class="brand-name">Lotus Serenity Spa</h3>
-                            <p class="footer-desc">Where tranquility meets luxury. Experience the perfect blend of traditional techniques and modern wellness solutions.</p>
-                            <div class="contact-info">
+    <section id="footers-section" class="footers-section">
+        <footer class="footer-premium">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row g-4">
+                        <!-- Contact Info -->
+                        <div class="col-lg-4">
+                            <div class="footer-info">
+                                <h3 class="brand-name">Lotus Serenity Spa</h3>
+                                <p class="footer-desc">Where tranquility meets luxury. Experience the perfect blend of traditional techniques and modern wellness solutions.</p>
+                                <div class="contact-info">
 
-                                <div class="contact-item">
-                                    <i class="fas fa-phone-alt"></i>
-                                    <span>+63 912 345 6789</span>
-                                </div>
-                                <div class="contact-item">
-                                    <i class="fas fa-envelope"></i>
-                                    <span>info@lotusserenityspa.ph</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Quick Links -->
-                    <div class="col-lg-4">
-                        <div class="quick-links">
-                            <h4>Quick Links</h4>
-                            <div class="links-grid">
-                            <a id="smooth-services2" href="#services-section" class="link-item">
-                                <i class="fas fa-spa"></i>
-                                <span>Our Services</span>
-                            </a>
-                            <a id="home-services" href="#hero-section" class="link-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                <span>Book Appointment</span>
-                            </a>
-                            <a id="home-services" href="#hero-section"  class="link-item">
-                                <i class="fas fa-info-circle"></i>
-                                <span>About Us</span>
-                            </a>
-                            <a id="home-services" href="#hero-section"  class="link-item">
-                                <i class="fas fa-gift"></i>
-                                <span>Gift Cards</span>
-                            </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Social Media & Newsletter -->
-                    <div class="col-lg-4">
-                        <div class="social-newsletter">
-                            <h4>Connect With Us</h4>
-                            <div class="social-links">
-                                <a href="#" class="social-icon facebook">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="#" class="social-icon instagram">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="#" class="social-icon twitter">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="#" class="social-icon tiktok">
-                                    <i class="fab fa-tiktok"></i>
-                                </a>
-                            </div>
-                            <div class="newsletter-signup">
-                                <h5>Subscribe to Our Newsletter</h5>
-                                <form class="newsletter-form">
-                                    <div class="input-group">
-                                        <input type="email" class="form-control" placeholder="Enter your email">
-                                        <button class="btn btn-primary" type="submit">
-                                            <i class="fas fa-paper-plane"></i>
-                                        </button>
+                                    <div class="contact-item">
+                                        <i class="fas fa-phone-alt"></i>
+                                        <span>+63 912 345 6789</span>
                                     </div>
-                                </form>
+                                    <div class="contact-item">
+                                        <i class="fas fa-envelope"></i>
+                                        <span>info@lotusserenityspa.ph</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Quick Links -->
+                        <div class="col-lg-4">
+                            <div class="quick-links">
+                                <h4>Quick Links</h4>
+                                <div class="links-grid">
+                                <a id="smooth-services2" href="#services-section" class="link-item">
+                                    <i class="fas fa-spa"></i>
+                                    <span>Our Services</span>
+                                </a>
+                                <a id="home-services" href="#hero-section" class="link-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>Book Appointment</span>
+                                </a>
+                                <a id="home-services" href="#hero-section"  class="link-item">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>About Us</span>
+                                </a>
+                                <a id="home-services" href="#hero-section"  class="link-item">
+                                    <i class="fas fa-gift"></i>
+                                    <span>Gift Cards</span>
+                                </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Media & Newsletter -->
+                        <div class="col-lg-4">
+                            <div class="social-newsletter">
+                                <h4>Connect With Us</h4>
+                                <div class="social-links">
+                                    <a href="#" class="social-icon facebook">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="social-icon instagram">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#" class="social-icon twitter">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="social-icon tiktok">
+                                        <i class="fab fa-tiktok"></i>
+                                    </a>
+                                </div>
+                                <div class="newsletter-signup">
+                                    <h5>Subscribe to Our Newsletter</h5>
+                                    <form class="newsletter-form">
+                                        <div class="input-group">
+                                            <input type="email" class="form-control" placeholder="Enter your email">
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="fas fa-paper-plane"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-6">
-                        <p class="copyright">© 2024 Lotus Serenity Spa. All rights reserved.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="footer-links">
-                            <a href="#">Privacy Policy</a>
-                            <a href="#">Terms of Service</a>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <p class="copyright">© 2024 Lotus Serenity Spa. All rights reserved.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="footer-links">
+                                <a href="#">Privacy Policy</a>
+                                <a href="#">Terms of Service</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </section>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
