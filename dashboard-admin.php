@@ -21,7 +21,7 @@
     <!-- Navigation -->
     <?php
         // Start session to get logged-in user data
-        session_start();
+        // session_start();
     ?>
     
     <!-- Navigation -->
@@ -85,30 +85,30 @@
                 </thead>
                 <tbody>
                     <?php
-                    include 'database.php';
+                    // include 'database.php';
 
                     // Fetch all bookings
-                    $sql = "SELECT * FROM appointments JOIN users ON appointments.user_id = users.user_id JOIN services ON appointments.service_id = services.service_id";
-                    $result = $conn->query($sql);
+                    // $sql = "SELECT * FROM appointments JOIN users ON appointments.user_id = users.user_id JOIN services ON appointments.service_id = services.service_id";
+                    // $result = $conn->query($sql);
                     
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr>";
-                        echo "<td>" . $row['appointment_id'] . "</td>";
-                        echo "<td>" . $row['full_name'] . "</td>";
-                        echo "<td>" . $row['service_name'] . "</td>";
-                        echo "<td>" . $row['therapist_name'] . "</td>";
-                        echo "<td>" . $row['appointment_date'] . "</td>";
-                        echo "<td>" . ucfirst($row['status']) . "</td>";
-                        echo "<td>
-                                <form method='POST'>
-                                    <input type='hidden' name='appointment_id' value='" . $row['appointment_id'] . "'>
-                                    <button type='submit' name='action' value='approve'>Approve</button>
-                                    <button type='submit' name='action' value='cancel'>Cancel</button>
-                                    <button type='submit' name='action' value='reschedule'>Reschedule</button>
-                                </form>
-                            </td>";
-                        echo "</tr>";
-                    }
+                    // while ($row = $result->fetch_assoc()) {
+                    //     echo "<tr>";
+                    //     echo "<td>" . $row['appointment_id'] . "</td>";
+                    //     echo "<td>" . $row['full_name'] . "</td>";
+                    //     echo "<td>" . $row['service_name'] . "</td>";
+                    //     echo "<td>" . $row['therapist_name'] . "</td>";
+                    //     echo "<td>" . $row['appointment_date'] . "</td>";
+                    //     echo "<td>" . ucfirst($row['status']) . "</td>";
+                    //     echo "<td>
+                    //             <form method='POST'>
+                    //                 <input type='hidden' name='appointment_id' value='" . $row['appointment_id'] . "'>
+                    //                 <button type='submit' name='action' value='approve'>Approve</button>
+                    //                 <button type='submit' name='action' value='cancel'>Cancel</button>
+                    //                 <button type='submit' name='action' value='reschedule'>Reschedule</button>
+                    //             </form>
+                    //         </td>";
+                    //     echo "</tr>";
+                    // }
                     ?>
                 </tbody>
             </table>
@@ -116,31 +116,31 @@
 
         <?php
         // Handle booking actions (approve, cancel, reschedule)
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $action = $_POST['action'];
-            $appointment_id = $_POST['appointment_id'];
-            $new_status = '';
+        // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        //     $action = $_POST['action'];
+        //     $appointment_id = $_POST['appointment_id'];
+        //     $new_status = '';
 
-            if ($action == 'approve') {
-                $new_status = 'confirmed';
-            } elseif ($action == 'cancel') {
-                $new_status = 'canceled';
-            } elseif ($action == 'reschedule') {
-                // Additional logic for rescheduling can be implemented
-                $new_status = 'pending';
-            }
+        //     if ($action == 'approve') {
+        //         $new_status = 'confirmed';
+        //     } elseif ($action == 'cancel') {
+        //         $new_status = 'canceled';
+        //     } elseif ($action == 'reschedule') {
+        //         // Additional logic for rescheduling can be implemented
+        //         $new_status = 'pending';
+        //     }
 
-            if ($new_status) {
-                // Update appointment status in the database
-                $update_sql = "UPDATE appointments SET status = '$new_status' WHERE appointment_id = $appointment_id";
-                if ($conn->query($update_sql)) {
-                    echo "Booking status updated successfully!";
-                    header("Refresh:0"); // Refresh page to see updated status
-                } else {
-                    echo "Error updating status: " . $conn->error;
-                }
-            }
-        }
+        //     if ($new_status) {
+        //         // Update appointment status in the database
+        //         $update_sql = "UPDATE appointments SET status = '$new_status' WHERE appointment_id = $appointment_id";
+        //         if ($conn->query($update_sql)) {
+        //             echo "Booking status updated successfully!";
+        //             header("Refresh:0"); // Refresh page to see updated status
+        //         } else {
+        //             echo "Error updating status: " . $conn->error;
+        //         }
+        //     }
+        // }
         ?>
 
         <!-- Manage Services Section -->
@@ -159,24 +159,24 @@
                 <tbody>
                     <?php
                     // Fetch all services
-                    $sql = "SELECT * FROM services";
-                    $result = $conn->query($sql);
+                    // $sql = "SELECT * FROM services";
+                    // $result = $conn->query($sql);
                     
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr>";
-                        echo "<td>" . $row['service_name'] . "</td>";
-                        echo "<td>" . $row['description'] . "</td>";
-                        echo "<td>" . $row['price'] . "</td>";
-                        echo "<td>" . $row['duration'] . " minutes</td>";
-                        echo "<td>
-                                <form method='POST'>
-                                    <input type='hidden' name='service_id' value='" . $row['service_id'] . "'>
-                                    <button type='submit' name='action' value='edit'>Edit</button>
-                                    <button type='submit' name='action' value='delete'>Delete</button>
-                                </form>
-                            </td>";
-                        echo "</tr>";
-                    }
+                    // while ($row = $result->fetch_assoc()) {
+                    //     echo "<tr>";
+                    //     echo "<td>" . $row['service_name'] . "</td>";
+                    //     echo "<td>" . $row['description'] . "</td>";
+                    //     echo "<td>" . $row['price'] . "</td>";
+                    //     echo "<td>" . $row['duration'] . " minutes</td>";
+                    //     echo "<td>
+                    //             <form method='POST'>
+                    //                 <input type='hidden' name='service_id' value='" . $row['service_id'] . "'>
+                    //                 <button type='submit' name='action' value='edit'>Edit</button>
+                    //                 <button type='submit' name='action' value='delete'>Delete</button>
+                    //             </form>
+                    //         </td>";
+                    //     echo "</tr>";
+                    // }
                     ?>
                 </tbody>
             </table>
@@ -193,27 +193,27 @@
 
         <?php
         // Handle add, edit, delete service actions
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $action = $_POST['action'];
+        // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        //     $action = $_POST['action'];
 
-            // Add new service
-            if ($action == 'add') {
-                $service_name = $_POST['service_name'];
-                $description = $_POST['description'];
-                $price = $_POST['price'];
-                $duration = $_POST['duration'];
+        //     // Add new service
+        //     if ($action == 'add') {
+        //         $service_name = $_POST['service_name'];
+        //         $description = $_POST['description'];
+        //         $price = $_POST['price'];
+        //         $duration = $_POST['duration'];
 
-                $add_sql = "INSERT INTO services (service_name, description, price, duration) VALUES ('$service_name', '$description', '$price', '$duration')";
-                if ($conn->query($add_sql)) {
-                    echo "Service added successfully!";
-                    header("Refresh:0"); // Refresh page to see new service
-                } else {
-                    echo "Error adding service: " . $conn->error;
-                }
-            }
+        //         $add_sql = "INSERT INTO services (service_name, description, price, duration) VALUES ('$service_name', '$description', '$price', '$duration')";
+        //         if ($conn->query($add_sql)) {
+        //             echo "Service added successfully!";
+        //             header("Refresh:0"); // Refresh page to see new service
+        //         } else {
+        //             echo "Error adding service: " . $conn->error;
+        //         }
+        //     }
 
-            // Edit or delete service logic can be implemented similarly.
-        }
+        //     // Edit or delete service logic can be implemented similarly.
+        // }
         ?>
 
         <!-- Therapist Schedule Section -->
@@ -223,10 +223,10 @@
                 <select name="therapist_id" required>
                     <?php
                     // Fetch therapist list
-                    $therapists = $conn->query("SELECT * FROM users WHERE role = 'therapist'");
-                    while ($therapist = $therapists->fetch_assoc()) {
-                        echo "<option value='" . $therapist['user_id'] . "'>" . $therapist['full_name'] . "</option>";
-                    }
+                    // $therapists = $conn->query("SELECT * FROM users WHERE role = 'therapist'");
+                    // while ($therapist = $therapists->fetch_assoc()) {
+                    //     echo "<option value='" . $therapist['user_id'] . "'>" . $therapist['full_name'] . "</option>";
+                    // }
                     ?>
                 </select>
                 <input type="date" name="date" required>
@@ -238,70 +238,70 @@
 
         <?php
         // Handle availability form submission
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['action'] == 'add_availability') {
-            $therapist_id = $_POST['therapist_id'];
-            $date = $_POST['date'];
-            $start_time = $_POST['start_time'];
-            $end_time = $_POST['end_time'];
+        // if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['action'] == 'add_availability') {
+        //     $therapist_id = $_POST['therapist_id'];
+        //     $date = $_POST['date'];
+        //     $start_time = $_POST['start_time'];
+        //     $end_time = $_POST['end_time'];
 
-            $insert_sql = "INSERT INTO therapist_availability (therapist_id, date, start_time, end_time) VALUES ('$therapist_id', '$date', '$start_time', '$end_time')";
-            if ($conn->query($insert_sql)) {
-                echo "Availability added successfully!";
-                header("Refresh:0"); // Refresh page to see updated availability
-            } else {
-                echo "Error adding availability: " . $conn->error;
-            }
-        }
+        //     $insert_sql = "INSERT INTO therapist_availability (therapist_id, date, start_time, end_time) VALUES ('$therapist_id', '$date', '$start_time', '$end_time')";
+        //     if ($conn->query($insert_sql)) {
+        //         echo "Availability added successfully!";
+        //         header("Refresh:0"); // Refresh page to see updated availability
+        //     } else {
+        //         echo "Error adding availability: " . $conn->error;
+        //     }
+        // }
         ?>
     </div>
 
     <script>
-        $(document).ready(function () {
-            // Handle form submissions and actions using AJAX
-            $('#addServiceForm').submit(function (e) {
-                e.preventDefault();
-                $.ajax({
-                    url: 'add_service.php',
-                    method: 'POST',
-                    data: $(this).serialize(),
-                    success: function (response) {
-                        alert('Service added successfully');
-                        location.reload();
-                    }
-                });
-            });
+        // $(document).ready(function () {
+        //     // Handle form submissions and actions using AJAX
+        //     $('#addServiceForm').submit(function (e) {
+        //         e.preventDefault();
+        //         $.ajax({
+        //             url: 'add_service.php',
+        //             method: 'POST',
+        //             data: $(this).serialize(),
+        //             success: function (response) {
+        //                 alert('Service added successfully');
+        //                 location.reload();
+        //             }
+        //         });
+        //     });
 
-            // Approve, Cancel, Reschedule booking actions
-            $('.approve, .cancel, .reschedule').click(function () {
-                var action = $(this).hasClass('approve') ? 'approve' :
-                             $(this).hasClass('cancel') ? 'cancel' : 'reschedule';
-                var appointmentId = $(this).data('id');
+        //     // Approve, Cancel, Reschedule booking actions
+        //     $('.approve, .cancel, .reschedule').click(function () {
+        //         var action = $(this).hasClass('approve') ? 'approve' :
+        //                      $(this).hasClass('cancel') ? 'cancel' : 'reschedule';
+        //         var appointmentId = $(this).data('id');
                 
-                $.ajax({
-                    url: 'manage_booking.php',
-                    method: 'POST',
-                    data: { action: action, appointment_id: appointmentId },
-                    success: function (response) {
-                        alert('Booking status updated');
-                        location.reload();
-                    }
-                });
-            });
+        //         $.ajax({
+        //             url: 'manage_booking.php',
+        //             method: 'POST',
+        //             data: { action: action, appointment_id: appointmentId },
+        //             success: function (response) {
+        //                 alert('Booking status updated');
+        //                 location.reload();
+        //             }
+        //         });
+        //     });
 
-            // Handle therapist availability form
-            $('#availabilityForm').submit(function (e) {
-                e.preventDefault();
-                $.ajax({
-                    url: 'add_availability.php',
-                    method: 'POST',
-                    data: $(this).serialize(),
-                    success: function (response) {
-                        alert('Availability added successfully');
-                        location.reload();
-                    }
-                });
-            });
-        });
+        //     // Handle therapist availability form
+        //     $('#availabilityForm').submit(function (e) {
+        //         e.preventDefault();
+        //         $.ajax({
+        //             url: 'add_availability.php',
+        //             method: 'POST',
+        //             data: $(this).serialize(),
+        //             success: function (response) {
+        //                 alert('Availability added successfully');
+        //                 location.reload();
+        //             }
+        //         });
+        //     });
+        // });
     </script>
 
     <!-- Footer -->

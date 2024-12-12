@@ -79,7 +79,7 @@
 					<a href="index.php" class="frame__demo">Home</a>
 					<a href="index.php#services-section" class="frame__demo">Services</a>
 					<a href="booking.php" class="frame__demo">Booking</a>
-					<a href="index.php#cta-section" class="frame__demo">Contact</a>
+                    <a href="index.php#footers-section" class="frame__demo" >Contact</a>
             </div>
 
         </div>

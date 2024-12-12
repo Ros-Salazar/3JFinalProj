@@ -36,7 +36,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a id="home-services" class="nav-link" href="index.php">Home</a></li>
                     <li class="nav-item"><a id="smooth-services" class="nav-link" href="index.php#services-section">Services</a></li>
-
+                   
                     <!--development-->
                     <li class="nav-item"><a class="nav-link" href="dashboard-admin.php">Admin Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="dashboard.php">Dashboard</a></li>
