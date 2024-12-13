@@ -34,11 +34,14 @@
                     <li class="nav-item"><a class="nav-link" href="booking.php">Book Now</a></li>
 
                     <!-- Conditional Links Based on Login Status -->
-                    <?php if (isset($_SESSION['user_id'])): ?>
+                    <?php
+                    // Start user session
+                    session_start();
+                    if (isset($_SESSION['user_id'])): ?>
                         <?php if ($_SESSION['role'] == 'admin'): ?>
                             <li class="nav-item"><a class="nav-link" href="dashboard-admin.php">Admin Dashboard</a></li>
                         <?php else: ?>
-                            <li class="nav-item"><a class="nav-link" href="dashboard.php">Dashboard</a></li>
+                            <li class="nav-item"><a class="nav-link-active" href="dashboard.php">Dashboard</a></li>
                         <?php endif; ?>
                         <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
                     <?php else: ?>
@@ -58,8 +61,7 @@
     error_reporting(E_ALL);
     ini_set('display_errors', '1');
 
-    // Start user session
-    session_start();
+    
 
     // Get logged-in user's data
     $user_id = 10;

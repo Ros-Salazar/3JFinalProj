@@ -65,6 +65,9 @@
         <div class="container text-center position-relative align-items-center justify-content-center text-center">
             
             <?php
+            // Connect to database
+            include 'database.php';
+
             
 
             // For debugging

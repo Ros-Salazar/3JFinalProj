@@ -42,7 +42,7 @@
                         <?php if ($_SESSION['role'] == 'admin'): ?>
                             <li class="nav-item"><a class="nav-link" href="dashboard-admin.php">Admin Dashboard</a></li>
                         <?php else: ?>
-                            <li class="nav-item"><a class="nav-link" href="dashboard.php">Dashboard</a></li>
+                            <li class="nav-item"><a class="nav-link-active" href="dashboard.php">Dashboard</a></li>
                         <?php endif; ?>
                         <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
                     <?php else: ?>
