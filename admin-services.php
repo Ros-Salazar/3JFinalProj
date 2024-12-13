@@ -82,7 +82,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $add_sql = "INSERT INTO services (service_name, description, price, duration) VALUES ('$service_name', '$description', '$price', '$duration')";
         if ($conn->query($add_sql)) {
             echo "<br><div class='alert alert-success'>Service added successfully!</div>";
-            echo "<script>window.location.href = 'dashboard-admin.php#services';</script>";
         } else {
             echo "<br><div class='alert alert-danger'>Failed to add service. Please try again.</div>";
         }
@@ -101,7 +100,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $delete_sql = "DELETE FROM services WHERE service_id = $service_id";
         if ($conn->query($delete_sql)) {
             echo "<br><div class='alert alert-success'>Service deleted successfully!</div>";
-            echo "<script>window.location.href = 'dashboard-admin.php#services';</script>"; // Refresh page to see new service
         } else {
             echo "<br><div class='alert alert-danger'>Failed to delete service. Please try again.</div>";
         }
