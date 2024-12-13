@@ -1395,7 +1395,7 @@ body, th,tr {
 
 .admin-dashboard-container {
     display: flex;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 0px);
 }
 
 .admin-sidebar {

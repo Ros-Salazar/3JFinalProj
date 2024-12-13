@@ -22,7 +22,7 @@
                 include 'database.php';
 
                 // Fetch all bookings
-                $sql = "SELECT * FROM appointments JOIN users ON appointments.user_id = users.user_id JOIN services ON appointments.service_id = services.service_id";
+                $sql = "SELECT * FROM appointments JOIN users ON appointments.user_id = users.user_id JOIN services ON appointments.service_id = services.service_id ORDER BY CASE WHEN status = 'pending' THEN 1 ELSE 2 END";
                 $result = $conn->query($sql);
 
                 while ($row = $result->fetch_assoc()) {
@@ -53,13 +53,14 @@
                     echo "<td>" . $row['start_time'] . "</td>";
                     echo "<td>" . $row['end_time'] . "</td>";
                     echo "<td>" . ucfirst($row['status']) . "</td>";
-                    echo "<td>
-                            <form method='POST'>
-                                <input type='hidden' name='appointment_id' value='" . $row['appointment_id'] . "'>
-                                <button type='submit' name='action' value='confirmed' class='btn btn-outline-primary'>Approve</button>
-                                <button type='submit' name='action' value='cancel' class='btn btn-outline-danger'>Cancel</button>
-                            </form>
-                        </td>";
+                    echo "<td>";
+                    if ($row['status'] == 'pending') {
+                        echo "<form method='POST'>
+                            <input type='hidden' name='appointment_id' value='" . $row['appointment_id'] . "'>
+                            <button type='submit' name='action' value='approve' class='btn btn-outline-primary'>Approve</button>
+                            <button type='submit' name='action' value='cancel' class='btn btn-outline-danger'>Cancel</button>
+                        </form>";
+                    }
                     echo "</tr>";
                 }
                 ?>
@@ -71,7 +72,7 @@
 <?php
 // Handle booking actions (approve, cancel, reschedule)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if ($_POST['appointment_id']) {
+    if ($_POST['appointment_id'] && isset($_POST['action'])) {
         $action = $_POST['action'];
         $appointment_id = $_POST['appointment_id'];
         $new_status = '';
@@ -80,21 +81,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $new_status = 'confirmed';
         } elseif ($action == 'cancel') {
             $new_status = 'canceled';
-        } elseif ($action == 'reschedule') {
-            // Additional logic for rescheduling can be implemented
-            $new_status = 'pending';
-        }
+        } 
+        // elseif ($action == 'reschedule') {
+        //     // Additional logic for rescheduling can be implemented
+        //     $new_status = 'pending';
+        // }
 
         if ($new_status) {
             // Update appointment status in the database
             $update_sql = "UPDATE appointments SET status = '$new_status' WHERE appointment_id = $appointment_id";
             if ($conn->query($update_sql)) {
-                echo "Booking status updated successfully!";
-                header("Refresh:0"); // Refresh page to see updated status
+                echo "<script>window.location.href = 'dashboard-admin.php';</script>";
+                echo "<br><div class='alert alert-success'>Booking status updated successfully!</div>";
             } else {
-                echo "Error updating status: " . $conn->error;
+                echo "<br><div class='alert alert-danger'>Booking update failed. Please try again.</div>";
             }
+        } else {
+            // echo "<br><div class='alert alert-danger'>Invalid action.</div>";
         }
+    } else {
+        // echo "<br><div class='alert alert-danger'>Missing appointment ID or action.</div>";
     }
 }
 ?>

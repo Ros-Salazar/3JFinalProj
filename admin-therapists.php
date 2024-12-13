@@ -41,12 +41,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['action'] == 'add_availabili
     $start_time = $_POST['start_time'];
     $end_time = $_POST['end_time'];
 
-    $insert_sql = "INSERT INTO therapist_availability (therapist_id, date, start_time, end_time) VALUES ('$therapist_id', '$date', '$start_time', '$end_time')";
+    $insert_sql = "INSERT INTO availability (therapist_id, date, start_time, end_time) VALUES ('$therapist_id', '$date', '$start_time', '$end_time')";
     if ($conn->query($insert_sql)) {
-        echo "Availability added successfully!";
-        header("Refresh:0"); // Refresh page to see updated availability
+        // echo "<script>window.location.href = 'dashboard-admin.php';</script>";
+        echo "<br><div class='alert alert-success'>Availability added successfully!</div>";
     } else {
-        echo "Error adding availability: " . $conn->error;
+        echo "<br><div class='alert alert-danger'>Failed to add availability!</div>";
     }
 }
 ?>

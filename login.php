@@ -1,50 +1,5 @@
 <!--Development(Backend)-->
-<?php
-    // Connect to database
-    include 'database.php';
 
-    // Start user session
-    session_start();
-
-    // For debugging
-    error_reporting(E_ALL);
-    ini_set('display_errors', '1');
-
-    // Get data
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $email = $_POST["email"];
-        $password = $_POST["password"];
-
-        // Check with database
-        $email_sql = "SELECT * FROM users WHERE email = '$email'";
-        $email_result = $conn -> query($email_sql);
-
-        if ($email_result -> num_rows > 0) {
-            $row = $email_result -> fetch_assoc();
-            // Verify password
-            if (password_verify($password, $row['password'])) {
-                // Store user information in session
-                $_SESSION["logged_in"] = true;
-                $_SESSION["email"] = $email;
-                $_SESSION["user_id"] = $row["user_id"];
-                $_SESSION["full_name"] = $row["full_name"];
-                $_SESSION["role"] = $row["role"];
-
-                // Redirect based on user role
-                if ($_SESSION['role'] == 'admin') {
-                    header("Location: dashboard-admin.php");
-                } else {
-                    header("Location: dashboard.php");
-                }
-                exit();
-            } else {
-                echo "<br>Incorrect password. Please try again.";
-            }
-        } else {
-            echo "<br>User not found. Please register.";
-        }
-    }
-?>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
@@ -72,7 +27,7 @@
 
             <div class="frame__demos">
 					<a href="index.php" class="frame__demo">Home</a>
-					<a href="index.php#services-section" class="frame__demo">Services</a>
+					<a href="services.php" class="frame__demo">Services</a>
 					<a href="booking.php" class="frame__demo">Booking</a>
                     <a href="index.php#footers-section" class="frame__demo" >Contact</a>
             </div>
@@ -109,6 +64,52 @@
                 <?php endif; ?>
                 <br>
                 </form>
+                <?php
+                    // Connect to database
+                    include 'database.php';
+
+                    // Start user session
+                    session_start();
+
+                    // For debugging
+                    error_reporting(E_ALL);
+                    ini_set('display_errors', '1');
+
+                    // Get data
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        $email = $_POST["email"];
+                        $password = $_POST["password"];
+
+                        // Check with database
+                        $email_sql = "SELECT * FROM users WHERE email = '$email'";
+                        $email_result = $conn -> query($email_sql);
+
+                        if ($email_result -> num_rows > 0) {
+                            $row = $email_result -> fetch_assoc();
+                            // Verify password
+                            if (password_verify($password, $row['password'])) {
+                                // Store user information in session
+                                $_SESSION["logged_in"] = true;
+                                $_SESSION["email"] = $email;
+                                $_SESSION["user_id"] = $row["user_id"];
+                                $_SESSION["full_name"] = $row["full_name"];
+                                $_SESSION["role"] = $row["role"];
+
+                                // Redirect based on user role
+                                if ($_SESSION['role'] == 'admin') {
+                                    header("Location: dashboard-admin.php");
+                                } else {
+                                    header("Location: dashboard.php");
+                                }
+                                // exit();
+                            } else {
+                                echo "<div class='alert alert-danger'>Incorrect password. Please try again.</div>";
+                            }
+                        } else {
+                            echo "<div class='alert alert-danger'>User not found. Please register.</div>";
+                        }
+                    }
+                ?>
                 <p class="lead mt-4">Don't have an account? <a href="register.php" class="text-primary">Register</a></p>
             </div>
         </section>

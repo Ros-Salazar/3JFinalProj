@@ -7,8 +7,8 @@
     session_start();
 
     // For debugging
-    error_reporting(E_ALL);
-    ini_set('display_errors', '1');
+    // error_reporting(E_ALL);
+    // ini_set('display_errors', '1');
 
     // Check if user is logged in
     if (!isset($_SESSION['user_id'])) {
@@ -45,7 +45,7 @@
     <!-- For Apple devices -->
     <link rel="apple-touch-icon" href="images/logo_favicon.png">
 </head>
-<body class="admin-dashboard">
+<body class="admin-dashboard" style="position: absolute;">
     
     <!-- Top Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark admin-top-nav">
@@ -72,7 +72,7 @@
     <div class="admin-dashboard-container">
         <!-- Sidebar Navigation -->
         <div class="admin-sidebar">
-            <ul class="admin-sidebar-nav">
+            <ul class="admin-sidebar-nav" style="margin-top: 100px;">
                 <li class="active">
                     <a href="#dashboard">
                         <i class="fas fa-tachometer-alt"></i>
@@ -97,12 +97,12 @@
                         <span>Therapist Schedule</span>
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="#reports">
                         <i class="fas fa-chart-bar"></i>
                         <span>Reports</span>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </div>
 
@@ -137,20 +137,70 @@
                             <i class="fas fa-dollar-sign"></i>
                         </div>
                         <div class="card-content">
-                            <h3>Monthly Revenue</h3>
+                            <h3>Average Monthly Revenue</h3>
                             <p class="card-number">₱12,450</p>
                         </div>
                     </div>
                 </div>
             </section>
+            <div id="bookings"></div>
             <?php include 'admin-bookings.php'; ?>
+            <div id="services"></div>
             <?php include 'admin-services.php'; ?>
+            <div id="therapists"></div>
             <?php include 'admin-therapists.php'; ?>
         </main>
     </div>
 
+    <!-- <footer class="text-center py-3">
+        <p>&copy; 2024 Lotus Serenity Spa. All rights reserved.</p>
+    </footer> -->
+
      
     <script>
+        document.getElementById('addServiceButton').addEventListener('click', function() {
+            var form = document.getElementById('addServiceForm');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        });
+
+        document.getElementById('editServiceButton').addEventListener('click', function() {
+            var form = document.getElementById('editServiceForm');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        });
+
+        document.querySelectorAll('.edit-button').forEach(button => {
+    button.addEventListener('click', function() {
+        const serviceId = this.dataset.id;
+
+        // Fetch service details using AJAX or PHP and populate the modal form
+        fetch('fetch_service.php', {
+            method: 'POST',
+            body: new URLSearchParams({
+                service_id: serviceId
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                // Handle error, e.g., display an error message
+            } else {
+                document.getElementById('edit_service_id').value = data.service_id;
+                document.getElementById('edit_service_name').value = data.service_name;                                                                                              
+                document.getElementById('edit_description').value = data.description;
+                document.getElementById('edit_price').value = data.price;
+                document.getElementById('edit_duration').value = data.duration;
+
+                // Show the modal
+                const editServiceModal = new bootstrap.Modal(document.getElementById('editServiceModal'));
+                editServiceModal.show();
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching service data:', error);
+        });
+    });
+});
+        
         // $(document).ready(function () {
         //     // Handle form submissions and actions using AJAX
         //     $('#addServiceForm').submit(function (e) {

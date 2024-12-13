@@ -59,7 +59,7 @@
     <!-- User Dashboard -->
     <section class="dashboard container py-5">
         <div class="text-center mb-5">
-            <h1 class="dashboard-title">Welcome, <?= htmlspecialchars($user_data['full_name']) ?>!</h1>
+            <h1 class="dashboard-title">Welcome, <?= htmlspecialchars($_SESSION['full_name']) ?>!</h1>
             <p class="dashboard-subtitle">Here's an overview of your appointments and rewards.</p>
         </div>
         <div class="container text-center position-relative align-items-center justify-content-center text-center">
