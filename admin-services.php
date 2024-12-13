@@ -39,6 +39,34 @@
         </table>
     </div>    
 
+
+    <button id="addServiceButton" type="submit" name="action" value="blank" class="btn btn-outline-primary" style="margin-top: 20px;">Add New Service</button>
+    <div id="addServiceForm" style="display: none;">
+        <h3 style="margin-top: 20px;">Add New Service</h3>
+        <div class="admin-dashboard-card" style="max-width: 800px;">
+            <form method="POST" class="form" style="width: 750px;">
+                <div class="mb-3">
+                    <label for="service_name" class="form-label">Service Name</label>
+                    <input type="text" class="form-control" id="service_name" name="service_name" placeholder="Service Name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" id="description" name="description" placeholder="Description" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="number" class="form-control" id="price" name="price" placeholder="Price" required>
+                </div>
+                <div class="mb-3">
+                    <label for="duration" class="form-label">Duration (minutes)</label>
+                    <input type="number" class="form-control" id="duration" name="duration" placeholder="Duration (minutes)" required>
+                </div>
+                <button type="submit" name="action" value="add" class="btn btn-primary">Add Service</button>
+            </form>
+        </div>
+    </div>    
+</section>
+
 <?php
 // Handle add, edit, delete service actions
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
