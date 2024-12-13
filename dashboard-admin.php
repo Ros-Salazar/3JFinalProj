@@ -73,7 +73,7 @@
         <!-- Sidebar Navigation -->
         <div class="admin-sidebar">
             <ul class="admin-sidebar-nav" style="margin-top: 100px;">
-                <li class="active">
+                <li class="">
                     <a href="#dashboard">
                         <i class="fas fa-tachometer-alt"></i>
                         <span>Dashboard</span>
